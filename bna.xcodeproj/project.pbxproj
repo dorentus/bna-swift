@@ -12,6 +12,13 @@
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
 		8C10126319403C7D00ED0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C10126219403C7D00ED0557 /* Images.xcassets */; };
 		8C10126F19403C7D00ED0557 /* bnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10126E19403C7D00ED0557 /* bnaTests.swift */; };
+		8C10127B19403EAC00ED0557 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127A19403EAC00ED0557 /* Authenticator.swift */; };
+		8C10127D194063A600ED0557 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127C194063A600ED0557 /* Serial.swift */; };
+		8C10127F194063D700ED0557 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127E194063D700ED0557 /* Secret.swift */; };
+		8C1012811940640000ED0557 /* Restorecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012801940640000ED0557 /* Restorecode.swift */; };
+		8C1012831940642D00ED0557 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012821940642D00ED0557 /* Constants.swift */; };
+		8C15DA8D1944382600A380BC /* Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15DA8C1944382600A380BC /* Extensions.m */; };
+		8C25090C194166DF00E7582A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25090B194166DF00E7582A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,15 @@
 		8C10126819403C7D00ED0557 /* bnaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bnaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C10126D19403C7D00ED0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C10126E19403C7D00ED0557 /* bnaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bnaTests.swift; sourceTree = "<group>"; };
+		8C10127A19403EAC00ED0557 /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		8C10127C194063A600ED0557 /* Serial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
+		8C10127E194063D700ED0557 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		8C1012801940640000ED0557 /* Restorecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restorecode.swift; sourceTree = "<group>"; };
+		8C1012821940642D00ED0557 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8C15DA8B1944382500A380BC /* bna-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bna-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C15DA8C1944382600A380BC /* Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Extensions.m; sourceTree = "<group>"; };
+		8C15DA8E1944387A00A380BC /* Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Extensions.h; sourceTree = "<group>"; };
+		8C25090B194166DF00E7582A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +73,7 @@
 		8C10124D19403C7D00ED0557 = {
 			isa = PBXGroup;
 			children = (
+				8C10127819403E9900ED0557 /* lib */,
 				8C10125819403C7D00ED0557 /* bna */,
 				8C10126B19403C7D00ED0557 /* bnaTests */,
 				8C10125719403C7D00ED0557 /* Products */,
@@ -87,6 +104,7 @@
 		8C10125919403C7D00ED0557 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C15DA8B1944382500A380BC /* bna-Bridging-Header.h */,
 				8C10125A19403C7D00ED0557 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -107,6 +125,45 @@
 				8C10126D19403C7D00ED0557 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C10127819403E9900ED0557 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				8C10127919403E9900ED0557 /* bnet */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		8C10127919403E9900ED0557 /* bnet */ = {
+			isa = PBXGroup;
+			children = (
+				8C1012821940642D00ED0557 /* Constants.swift */,
+				8C15DA8F19446D8D00A380BC /* ext */,
+				8C15DA9019446D9F00A380BC /* attr */,
+				8C10127A19403EAC00ED0557 /* Authenticator.swift */,
+			);
+			path = bnet;
+			sourceTree = "<group>";
+		};
+		8C15DA8F19446D8D00A380BC /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				8C25090B194166DF00E7582A /* Extensions.swift */,
+				8C15DA8E1944387A00A380BC /* Extensions.h */,
+				8C15DA8C1944382600A380BC /* Extensions.m */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		8C15DA9019446D9F00A380BC /* attr */ = {
+			isa = PBXGroup;
+			children = (
+				8C10127C194063A600ED0557 /* Serial.swift */,
+				8C10127E194063D700ED0557 /* Secret.swift */,
+				8C1012801940640000ED0557 /* Restorecode.swift */,
+			);
+			path = attr;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +266,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C10125E19403C7D00ED0557 /* ViewController.swift in Sources */,
+				8C15DA8D1944382600A380BC /* Extensions.m in Sources */,
+				8C10127F194063D700ED0557 /* Secret.swift in Sources */,
 				8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */,
+				8C25090C194166DF00E7582A /* Extensions.swift in Sources */,
+				8C10127B19403EAC00ED0557 /* Authenticator.swift in Sources */,
+				8C1012831940642D00ED0557 /* Constants.swift in Sources */,
+				8C10127D194063A600ED0557 /* Serial.swift in Sources */,
+				8C1012811940640000ED0557 /* Restorecode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,9 +389,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = bna/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -336,9 +403,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = bna/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -397,6 +466,7 @@
 				8C10127419403C7D00ED0557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C10127519403C7D00ED0557 /* Build configuration list for PBXNativeTarget "bnaTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +475,7 @@
 				8C10127719403C7D00ED0557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

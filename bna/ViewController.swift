@@ -13,6 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        let serial = "CN-1402-1943-1283"
+        let secret = "4202aa2182640745d8a807e0fe7e34b30c1edb23"
+        let restorecode = "4CKBN08QEB"
+
+        let sl = Authenticator.Serial(text: serial)
+        let st = Authenticator.Secret(text: secret)
+
+        let r0 = Authenticator.Restorecode(serial: sl, secret: st)
+        let r1 = Authenticator.Restorecode(text: restorecode)
+
+        println(r0.text)
+        println(r1.text)
     }
 
     override func didReceiveMemoryWarning() {
