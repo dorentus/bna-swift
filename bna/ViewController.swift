@@ -26,6 +26,9 @@ class ViewController: UIViewController {
 
         println(r0.text)
         println(r1.text)
+
+        println(hmac_sha1_hexdigest(serial, secret))
+        println(hmac_sha1_hexdigest(serial.bytes, st.binary))
     }
 
     override func didReceiveMemoryWarning() {

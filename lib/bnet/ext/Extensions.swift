@@ -48,11 +48,29 @@ func bin2hex(bin: UInt8[]) -> String {
     return bin.map({ c in NSString(format: "%02x", c) }).joinedBy("")
 }
 
-func sha1hexdigest(bin: UInt8[]) -> String {
+func sha1_hexdigest(bin: UInt8[]) -> String {
     let data = NSData(bytes: bin, length: countElements(bin))
     return data.SHA1HexDigest()
 }
 
-func sha1digest(bin: UInt8[]) -> UInt8[] {
-    return hex2bin(sha1hexdigest(bin))
+func sha1_digest(bin: UInt8[]) -> UInt8[] {
+    return hex2bin(sha1_hexdigest(bin))
+}
+
+func hmac_sha1_hexdigest(input: UInt8[], key: UInt8[]) -> String {
+    let input_data = NSData(bytes: input, length: countElements(input))
+    let key_data = NSData(bytes: key, length: countElements(key))
+    return input_data.HMACSHA1HexDigestWithKey(key_data)
+}
+
+func hmac_sha1_hexdigest(input: String, key: String) -> String {
+    return hmac_sha1_hexdigest(input.bytes, key.bytes)
+}
+
+func hmac_sha1_digest(input: UInt8[], key: UInt8[]) -> UInt8[] {
+    return hex2bin(hmac_sha1_hexdigest(input, key))
+}
+
+func hmac_sha1_digest(input: String, key: String) -> UInt8[] {
+    return hmac_sha1_digest(input.bytes, key.bytes)
 }

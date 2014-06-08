@@ -37,7 +37,7 @@ extension Authenticator {
         }
 
         init(serial: Serial, secret: Secret) {
-            let bytes = sha1digest(serial.normalized.bytes + secret.binary)
+            let bytes = sha1_digest(serial.normalized.bytes + secret.binary)
             let s = countElements(bytes)-10
             let last_10_bytes = [] + bytes[s..s+10]
             let parts:Array<String> = last_10_bytes.map({ i in
@@ -46,6 +46,10 @@ extension Authenticator {
             })
             let restorecode = parts.joinedBy("")
             self.init(text: restorecode)
+        }
+
+        init(serial: String, secret: String) {
+            self.init(serial: Serial(text: serial), secret: Secret(text: secret))
         }
 
         init(text: String) {
