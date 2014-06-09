@@ -36,7 +36,7 @@ extension Authenticator {
             return parts.joinedBy("")
         }
 
-        init(serial: Serial, secret: Secret) {
+        init(_ serial: Serial, _ secret: Secret) {
             let bytes = sha1_digest(serial.normalized.bytes + secret.binary)
             let s = countElements(bytes)-10
             let last_10_bytes = [] + bytes[s..s+10]
@@ -45,14 +45,14 @@ extension Authenticator {
                 return NSString(format: "%c", c)
             })
             let restorecode = parts.joinedBy("")
-            self.init(text: restorecode)
+            self.init(restorecode)
         }
 
-        init(serial: String, secret: String) {
-            self.init(serial: Serial(text: serial), secret: Secret(text: secret))
+        init(_ serial: String, _ secret: String) {
+            self.init(Serial(serial), Secret(secret))
         }
 
-        init(text: String) {
+        init(_ text: String) {
             var code = text
             if Restorecode.isValid(&code) {
                 self.text = code

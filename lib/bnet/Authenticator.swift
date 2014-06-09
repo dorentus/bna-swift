@@ -17,11 +17,11 @@ struct Authenticator {
     init(serial: Serial, secret: Secret) {
         self.serial = serial
         self.secret = secret
-        self.restorecode = Restorecode(serial: serial, secret: secret)
+        self.restorecode = Restorecode(serial, secret)
     }
 
     init(serial: String, secret: String) {
-        self.init(serial: Serial(text: serial), secret: Secret(text: secret))
+        self.init(serial: Serial(serial), secret: Secret(secret))
     }
 
     func getToken(timestamp: UInt64?) -> (String, Float) {

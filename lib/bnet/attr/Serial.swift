@@ -19,7 +19,7 @@ extension Authenticator {
         }
         var region: String { return normalized.substringToIndex(2) }
 
-        init(text: String) {
+        init(_ text: String) {
             var serial = text
             if Serial.isValid(&serial) {
                 self.normalized = serial

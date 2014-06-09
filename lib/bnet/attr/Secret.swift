@@ -13,16 +13,16 @@ extension Authenticator {
         var text: String!
         var binary: UInt8[] { return hex2bin(text) }
 
-        init(text: String) {
+        init(_ text: String) {
             var secret = text
             if Secret.isValid(&secret) {
                 self.text = secret
             }
         }
 
-        init(binary: UInt8[]) {
+        init(_ binary: UInt8[]) {
             var secret = bin2hex(binary)
-            self.init(text: secret)
+            self.init(secret)
         }
 
         func toString() -> String { return text }

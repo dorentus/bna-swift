@@ -18,17 +18,17 @@ class ViewController: UIViewController {
         let secret = "4202aa2182640745d8a807e0fe7e34b30c1edb23"
         let restorecode = "4CKBN08QEB"
 
-        let sl = Authenticator.Serial(text: serial)
-        let st = Authenticator.Secret(text: secret)
+        let sl = Authenticator.Serial(serial)
+        let st = Authenticator.Secret(secret)
 
-        let r0 = Authenticator.Restorecode(serial: sl, secret: st)
-        let r1 = Authenticator.Restorecode(text: restorecode)
-
+        let r0 = Authenticator.Restorecode(sl, st)
         println(r0.text)
+
+        let r1 = Authenticator.Restorecode(restorecode)
         println(r1.text)
 
-        println(hmac_sha1_hexdigest(serial, secret))
-        println(hmac_sha1_hexdigest(serial.bytes, st.binary))
+        let r2 = Authenticator.Restorecode(serial, secret)
+        println(r2.text)
     }
 
     override func didReceiveMemoryWarning() {
