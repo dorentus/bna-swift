@@ -8,9 +8,10 @@
 
 import Foundation
 
-class Secret {
+class Secret: Printable {
     var text: String!
-    var binary: UInt8[] { return hex2bin(text) }
+    var binary: UInt8[] { get { return hex2bin(text) } }
+    var description: String { get { return text } }
 
     init(_ text: String) {
         var secret = text
@@ -20,11 +21,9 @@ class Secret {
     }
 
     convenience init(_ binary: UInt8[]) {
-        var secret = bin2hex(binary)
+        let secret = bin2hex(binary)
         self.init(secret)
     }
-
-    func toString() -> String { return text }
 
     class func isValid(inout secret: String) -> Bool {
         let text = secret.lowercaseString

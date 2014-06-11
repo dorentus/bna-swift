@@ -30,6 +30,9 @@ class ViewController: UIViewController {
 
         let r2 = Restorecode(serial, secret)
         println(r2.text)
+
+        println(hmac_sha1_hexdigest(serial, secret))
+        println(hmac_sha1_hexdigest(serial.bytes, secret.bytes))
     }
 
     override func didReceiveMemoryWarning() {

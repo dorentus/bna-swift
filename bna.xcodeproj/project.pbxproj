@@ -12,18 +12,19 @@
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
 		8C10126319403C7D00ED0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C10126219403C7D00ED0557 /* Images.xcassets */; };
 		8C10126F19403C7D00ED0557 /* bnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10126E19403C7D00ED0557 /* bnaTests.swift */; };
-		8C10127B19403EAC00ED0557 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127A19403EAC00ED0557 /* Authenticator.swift */; };
-		8C10127D194063A600ED0557 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127C194063A600ED0557 /* Serial.swift */; };
-		8C10127F194063D700ED0557 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127E194063D700ED0557 /* Secret.swift */; };
-		8C1012811940640000ED0557 /* Restorecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012801940640000ED0557 /* Restorecode.swift */; };
-		8C1012831940642D00ED0557 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012821940642D00ED0557 /* Constants.swift */; };
-		8C15DA8D1944382600A380BC /* Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C15DA8C1944382600A380BC /* Extensions.m */; };
-		8C25090C194166DF00E7582A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25090B194166DF00E7582A /* Extensions.swift */; };
-		8C48B6ED194821C500829493 /* authenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C48B6EC194821C500829493 /* authenticator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C48B6F3194821C500829493 /* authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* authenticator.framework */; };
-		8C48B6FA194821C500829493 /* authenticatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48B6F9194821C500829493 /* authenticatorTests.swift */; };
-		8C48B6FD194821C500829493 /* authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* authenticator.framework */; };
-		8C48B6FE194821C500829493 /* authenticator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* authenticator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8C48B6ED194821C500829493 /* Authenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C48B6EC194821C500829493 /* Authenticator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C48B6F3194821C500829493 /* Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; };
+		8C48B6FA194821C500829493 /* AuthenticatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48B6F9194821C500829493 /* AuthenticatorTests.swift */; };
+		8C48B6FD194821C500829493 /* Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; };
+		8C48B6FE194821C500829493 /* Authenticator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8C48B7131948274000829493 /* NSData+Crypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C48B7121948274000829493 /* NSData+Crypt.m */; };
+		8C48B7141948274700829493 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012821940642D00ED0557 /* Constants.swift */; };
+		8C48B7151948274D00829493 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25090B194166DF00E7582A /* Extensions.swift */; };
+		8C48B7171948276500829493 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127C194063A600ED0557 /* Serial.swift */; };
+		8C48B7181948276500829493 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127E194063D700ED0557 /* Secret.swift */; };
+		8C48B7191948276500829493 /* Restorecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012801940640000ED0557 /* Restorecode.swift */; };
+		8C48B71A1948276700829493 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127A19403EAC00ED0557 /* Authenticator.swift */; };
+		8C48B71D1948282600829493 /* Authenticator-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C48B71C1948282600829493 /* Authenticator-Bridging-Header.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,34 @@
 			remoteGlobalIDString = 8C48B6E7194821C400829493;
 			remoteInfo = authenticator;
 		};
+		8C48B70A194821C700829493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C48B6E7194821C400829493;
+			remoteInfo = authenticator;
+		};
+		8C48B70C194821C900829493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C48B6E7194821C400829493;
+			remoteInfo = authenticator;
+		};
+		8C48B70E194821D700829493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C48B6E7194821C400829493;
+			remoteInfo = authenticator;
+		};
+		8C48B710194821D900829493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C10125519403C7D00ED0557;
+			remoteInfo = bna;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +100,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8C48B6FE194821C500829493 /* authenticator.framework in Embed Frameworks */,
+				8C48B6FE194821C500829493 /* Authenticator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,16 +122,16 @@
 		8C10127E194063D700ED0557 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		8C1012801940640000ED0557 /* Restorecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restorecode.swift; sourceTree = "<group>"; };
 		8C1012821940642D00ED0557 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8C15DA8B1944382500A380BC /* bna-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bna-Bridging-Header.h"; sourceTree = "<group>"; };
-		8C15DA8C1944382600A380BC /* Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Extensions.m; sourceTree = "<group>"; };
-		8C15DA8E1944387A00A380BC /* Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Extensions.h; sourceTree = "<group>"; };
 		8C25090B194166DF00E7582A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		8C48B6E8194821C400829493 /* authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C48B6E8194821C400829493 /* Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C48B6EB194821C500829493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C48B6EC194821C500829493 /* authenticator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = authenticator.h; sourceTree = "<group>"; };
-		8C48B6F2194821C500829493 /* authenticatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = authenticatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C48B6EC194821C500829493 /* Authenticator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authenticator.h; sourceTree = "<group>"; };
+		8C48B6F2194821C500829493 /* AuthenticatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C48B6F8194821C500829493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C48B6F9194821C500829493 /* authenticatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authenticatorTests.swift; sourceTree = "<group>"; };
+		8C48B6F9194821C500829493 /* AuthenticatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorTests.swift; sourceTree = "<group>"; };
+		8C48B7121948274000829493 /* NSData+Crypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Crypt.m"; sourceTree = "<group>"; };
+		8C48B71B1948279A00829493 /* NSData+Crypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Crypt.h"; sourceTree = "<group>"; };
+		8C48B71C1948282600829493 /* Authenticator-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Authenticator-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6FD194821C500829493 /* authenticator.framework in Frameworks */,
+				8C48B6FD194821C500829493 /* Authenticator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6F3194821C500829493 /* authenticator.framework in Frameworks */,
+				8C48B6F3194821C500829493 /* Authenticator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,11 +171,10 @@
 		8C10124D19403C7D00ED0557 = {
 			isa = PBXGroup;
 			children = (
-				8C10127819403E9900ED0557 /* lib */,
 				8C10125819403C7D00ED0557 /* bna */,
 				8C10126B19403C7D00ED0557 /* bnaTests */,
-				8C48B6E9194821C400829493 /* authenticator */,
-				8C48B6F6194821C500829493 /* authenticatorTests */,
+				8C48B6E9194821C400829493 /* Authenticator */,
+				8C48B6F6194821C500829493 /* AuthenticatorTests */,
 				8C10125719403C7D00ED0557 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,8 +184,8 @@
 			children = (
 				8C10125619403C7D00ED0557 /* bna.app */,
 				8C10126819403C7D00ED0557 /* bnaTests.xctest */,
-				8C48B6E8194821C400829493 /* authenticator.framework */,
-				8C48B6F2194821C500829493 /* authenticatorTests.xctest */,
+				8C48B6E8194821C400829493 /* Authenticator.framework */,
+				8C48B6F2194821C500829493 /* AuthenticatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,7 +205,6 @@
 		8C10125919403C7D00ED0557 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8C15DA8B1944382500A380BC /* bna-Bridging-Header.h */,
 				8C10125A19403C7D00ED0557 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -200,14 +227,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8C10127819403E9900ED0557 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				8C10127919403E9900ED0557 /* bnet */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
 		8C10127919403E9900ED0557 /* bnet */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,8 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				8C25090B194166DF00E7582A /* Extensions.swift */,
-				8C15DA8E1944387A00A380BC /* Extensions.h */,
-				8C15DA8C1944382600A380BC /* Extensions.m */,
+				8C48B71B1948279A00829493 /* NSData+Crypt.h */,
+				8C48B7121948274000829493 /* NSData+Crypt.m */,
 			);
 			path = ext;
 			sourceTree = "<group>";
@@ -239,13 +258,15 @@
 			path = attr;
 			sourceTree = "<group>";
 		};
-		8C48B6E9194821C400829493 /* authenticator */ = {
+		8C48B6E9194821C400829493 /* Authenticator */ = {
 			isa = PBXGroup;
 			children = (
-				8C48B6EC194821C500829493 /* authenticator.h */,
+				8C48B71C1948282600829493 /* Authenticator-Bridging-Header.h */,
+				8C48B6EC194821C500829493 /* Authenticator.h */,
+				8C10127919403E9900ED0557 /* bnet */,
 				8C48B6EA194821C400829493 /* Supporting Files */,
 			);
-			path = authenticator;
+			path = Authenticator;
 			sourceTree = "<group>";
 		};
 		8C48B6EA194821C400829493 /* Supporting Files */ = {
@@ -256,13 +277,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8C48B6F6194821C500829493 /* authenticatorTests */ = {
+		8C48B6F6194821C500829493 /* AuthenticatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C48B6F9194821C500829493 /* authenticatorTests.swift */,
+				8C48B6F9194821C500829493 /* AuthenticatorTests.swift */,
 				8C48B6F7194821C500829493 /* Supporting Files */,
 			);
-			path = authenticatorTests;
+			path = AuthenticatorTests;
 			sourceTree = "<group>";
 		};
 		8C48B6F7194821C500829493 /* Supporting Files */ = {
@@ -280,7 +301,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6ED194821C500829493 /* authenticator.h in Headers */,
+				8C48B6ED194821C500829493 /* Authenticator.h in Headers */,
+				8C48B71D1948282600829493 /* Authenticator-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,15 +341,16 @@
 			);
 			dependencies = (
 				8C10126A19403C7D00ED0557 /* PBXTargetDependency */,
+				8C48B711194821D900829493 /* PBXTargetDependency */,
 			);
 			name = bnaTests;
 			productName = bnaTests;
 			productReference = 8C10126819403C7D00ED0557 /* bnaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8C48B6E7194821C400829493 /* authenticator */ = {
+		8C48B6E7194821C400829493 /* Authenticator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C48B705194821C500829493 /* Build configuration list for PBXNativeTarget "authenticator" */;
+			buildConfigurationList = 8C48B705194821C500829493 /* Build configuration list for PBXNativeTarget "Authenticator" */;
 			buildPhases = (
 				8C48B6E3194821C400829493 /* Sources */,
 				8C48B6E4194821C400829493 /* Frameworks */,
@@ -338,14 +361,14 @@
 			);
 			dependencies = (
 			);
-			name = authenticator;
+			name = Authenticator;
 			productName = authenticator;
-			productReference = 8C48B6E8194821C400829493 /* authenticator.framework */;
+			productReference = 8C48B6E8194821C400829493 /* Authenticator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8C48B6F1194821C500829493 /* authenticatorTests */ = {
+		8C48B6F1194821C500829493 /* AuthenticatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C48B707194821C500829493 /* Build configuration list for PBXNativeTarget "authenticatorTests" */;
+			buildConfigurationList = 8C48B707194821C500829493 /* Build configuration list for PBXNativeTarget "AuthenticatorTests" */;
 			buildPhases = (
 				8C48B6EE194821C500829493 /* Sources */,
 				8C48B6EF194821C500829493 /* Frameworks */,
@@ -356,10 +379,13 @@
 			dependencies = (
 				8C48B6F5194821C500829493 /* PBXTargetDependency */,
 				8C48B709194821C600829493 /* PBXTargetDependency */,
+				8C48B70B194821C700829493 /* PBXTargetDependency */,
+				8C48B70D194821C900829493 /* PBXTargetDependency */,
+				8C48B70F194821D700829493 /* PBXTargetDependency */,
 			);
-			name = authenticatorTests;
+			name = AuthenticatorTests;
 			productName = authenticatorTests;
-			productReference = 8C48B6F2194821C500829493 /* authenticatorTests.xctest */;
+			productReference = 8C48B6F2194821C500829493 /* AuthenticatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -402,8 +428,8 @@
 			targets = (
 				8C10125519403C7D00ED0557 /* bna */,
 				8C10126719403C7D00ED0557 /* bnaTests */,
-				8C48B6E7194821C400829493 /* authenticator */,
-				8C48B6F1194821C500829493 /* authenticatorTests */,
+				8C48B6E7194821C400829493 /* Authenticator */,
+				8C48B6F1194821C500829493 /* AuthenticatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -447,14 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C10125E19403C7D00ED0557 /* ViewController.swift in Sources */,
-				8C15DA8D1944382600A380BC /* Extensions.m in Sources */,
-				8C10127F194063D700ED0557 /* Secret.swift in Sources */,
 				8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */,
-				8C25090C194166DF00E7582A /* Extensions.swift in Sources */,
-				8C10127B19403EAC00ED0557 /* Authenticator.swift in Sources */,
-				8C1012831940642D00ED0557 /* Constants.swift in Sources */,
-				8C10127D194063A600ED0557 /* Serial.swift in Sources */,
-				8C1012811940640000ED0557 /* Restorecode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +489,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C48B7131948274000829493 /* NSData+Crypt.m in Sources */,
+				8C48B71A1948276700829493 /* Authenticator.swift in Sources */,
+				8C48B7181948276500829493 /* Secret.swift in Sources */,
+				8C48B7151948274D00829493 /* Extensions.swift in Sources */,
+				8C48B7141948274700829493 /* Constants.swift in Sources */,
+				8C48B7171948276500829493 /* Serial.swift in Sources */,
+				8C48B7191948276500829493 /* Restorecode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6FA194821C500829493 /* authenticatorTests.swift in Sources */,
+				8C48B6FA194821C500829493 /* AuthenticatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,23 +517,43 @@
 		};
 		8C48B6F5194821C500829493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* authenticator */;
+			target = 8C48B6E7194821C400829493 /* Authenticator */;
 			targetProxy = 8C48B6F4194821C500829493 /* PBXContainerItemProxy */;
 		};
 		8C48B6FC194821C500829493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* authenticator */;
+			target = 8C48B6E7194821C400829493 /* Authenticator */;
 			targetProxy = 8C48B6FB194821C500829493 /* PBXContainerItemProxy */;
 		};
 		8C48B700194821C500829493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* authenticator */;
+			target = 8C48B6E7194821C400829493 /* Authenticator */;
 			targetProxy = 8C48B6FF194821C500829493 /* PBXContainerItemProxy */;
 		};
 		8C48B709194821C600829493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* authenticator */;
+			target = 8C48B6E7194821C400829493 /* Authenticator */;
 			targetProxy = 8C48B708194821C600829493 /* PBXContainerItemProxy */;
+		};
+		8C48B70B194821C700829493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C48B6E7194821C400829493 /* Authenticator */;
+			targetProxy = 8C48B70A194821C700829493 /* PBXContainerItemProxy */;
+		};
+		8C48B70D194821C900829493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C48B6E7194821C400829493 /* Authenticator */;
+			targetProxy = 8C48B70C194821C900829493 /* PBXContainerItemProxy */;
+		};
+		8C48B70F194821D700829493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C48B6E7194821C400829493 /* Authenticator */;
+			targetProxy = 8C48B70E194821D700829493 /* PBXContainerItemProxy */;
+		};
+		8C48B711194821D900829493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8C10125519403C7D00ED0557 /* bna */;
+			targetProxy = 8C48B710194821D900829493 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -608,9 +654,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = bna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -623,9 +669,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = bna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -683,6 +729,7 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "authenticator/authenticator-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -703,6 +750,7 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "authenticator/authenticator-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -771,21 +819,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C48B705194821C500829493 /* Build configuration list for PBXNativeTarget "authenticator" */ = {
+		8C48B705194821C500829493 /* Build configuration list for PBXNativeTarget "Authenticator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C48B701194821C500829493 /* Debug */,
 				8C48B702194821C500829493 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		8C48B707194821C500829493 /* Build configuration list for PBXNativeTarget "authenticatorTests" */ = {
+		8C48B707194821C500829493 /* Build configuration list for PBXNativeTarget "AuthenticatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C48B703194821C500829493 /* Debug */,
 				8C48B704194821C500829493 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

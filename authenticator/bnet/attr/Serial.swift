@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Serial {
+class Serial: Printable {
     var normalized: String!
     var prettified: String {
         get {
@@ -17,6 +17,7 @@ class Serial {
         }
     }
     var region: String { get { return normalized.substringToIndex(2) } }
+    var description: String { get { return prettified } }
 
     init(_ text: String) {
         var serial = text
@@ -24,8 +25,6 @@ class Serial {
             self.normalized = serial
         }
     }
-
-    func toString() -> String { return prettified }
 
     class func isValid(inout serial: String) -> Bool {
         let text = serial.uppercaseString.stringByReplacingOccurrencesOfString("-", withString: "")

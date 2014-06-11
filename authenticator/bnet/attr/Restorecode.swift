@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Restorecode {
+class Restorecode: Printable {
     struct Constants {
         static let RESTORECODE_MAP: Dictionary = [
             0:  48,  1: 49,  2: 50,  3: 51,  4: 52,
@@ -30,12 +30,15 @@ class Restorecode {
 
     let text: String!
     var binary: String {
-        let parts:Array<String> = text.bytes.map({ i in
-            let c = Constants.RESTORECODE_MAP_INVERSE[Int(i)]!
-            return NSString(format: "%c", c)
-        })
-        return parts.joinedBy("")
+        get {
+            let parts:Array<String> = text.bytes.map({ i in
+                let c = Constants.RESTORECODE_MAP_INVERSE[Int(i)]!
+                return NSString(format: "%c", c)
+            })
+            return parts.joinedBy("")
+        }
     }
+    var description: String { get { return text } }
 
     init(_ text: String) {
         var code = text
@@ -52,15 +55,12 @@ class Restorecode {
             let c = Constants.RESTORECODE_MAP[Int(i & 0x1f)]!
             return NSString(format: "%c", c)
         })
-        let restorecode = parts.joinedBy("")
-        self.init(restorecode)
+        self.init(parts.joinedBy(""))
     }
 
     convenience init(_ serial: String, _ secret: String) {
         self.init(Serial(serial), Secret(secret))
     }
-
-    func toString() -> String { return self.text }
 
     class func isValid(inout restorecode: String) -> Bool {
         let text = restorecode.uppercaseString

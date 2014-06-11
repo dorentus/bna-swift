@@ -10,13 +10,19 @@ import Foundation
 
 extension Array {
     func joinedBy(joiner: String) -> String! {
-        return self.reduce(nil) { (m: String?, v: Element) in m? ? "\(m)\(joiner)\(v)" : "\(v)" }
+        return self.reduce(nil) { (m: String?, v: Element) in
+            if let s = m {
+                return "\(s)\(joiner)\(v)"
+            } else {
+                return "\(v)"
+            }
+        }
     }
 }
 
 extension String {
-    var length: Int { return countElements(self) }
-    var bytes: UInt8[] { return Array(self.utf8) }
+    var length: Int { get { return countElements(self) } }
+    var bytes: UInt8[] { get { return Array(self.utf8) } }
 
     func matches(pattern: String) -> Bool {
         let regex = NSRegularExpression.regularExpressionWithPattern(pattern, options: .DotMatchesLineSeparators, error: nil)
@@ -27,9 +33,9 @@ extension String {
         let regex = NSRegularExpression.regularExpressionWithPattern(pattern, options: .DotMatchesLineSeparators, error: nil)
         let matches = regex.matchesInString(self, options: nil, range: NSMakeRange(0, self.length))
 
-        return matches.map({ (m: AnyObject) -> String in
+        return matches.map { m in
             (self as NSString).substringWithRange((m as NSTextCheckingResult).rangeAtIndex(0))
-        })
+        }
     }
 }
 
@@ -57,20 +63,28 @@ func sha1_digest(bin: UInt8[]) -> UInt8[] {
     return hex2bin(sha1_hexdigest(bin))
 }
 
-func hmac_sha1_hexdigest(input: UInt8[], key: UInt8[]) -> String {
-    let input_data = NSData(bytes: input, length: countElements(input))
-    let key_data = NSData(bytes: key, length: countElements(key))
+func hmac_sha1_hexdigest<T>(input: T, key: T) -> String {
+    var input_bytes: UInt8[]
+    var key_bytes: UInt8[]
+
+    if let bytes = input as? UInt8[] {
+        input_bytes = bytes
+    } else {
+        input_bytes = "\(input)".bytes
+    }
+
+    if let bytes = key as? UInt8[] {
+        key_bytes = bytes
+    } else {
+        key_bytes = "\(key)".bytes
+    }
+
+    let input_data = NSData(bytes: input_bytes, length: countElements(input_bytes))
+    let key_data = NSData(bytes: key_bytes, length: countElements(key_bytes))
+
     return input_data.HMACSHA1HexDigestWithKey(key_data)
 }
 
-func hmac_sha1_hexdigest(input: String, key: String) -> String {
-    return hmac_sha1_hexdigest(input.bytes, key.bytes)
-}
-
-func hmac_sha1_digest(input: UInt8[], key: UInt8[]) -> UInt8[] {
+func hmac_sha1_digest<T>(input: T, key: T) -> UInt8[] {
     return hex2bin(hmac_sha1_hexdigest(input, key))
-}
-
-func hmac_sha1_digest(input: String, key: String) -> UInt8[] {
-    return hmac_sha1_digest(input.bytes, key.bytes)
 }
