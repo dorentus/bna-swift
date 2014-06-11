@@ -1,12 +1,12 @@
 //
-//  Extensions.m
-//  bna
+//  NSData+Crypt.m
+//  Authenticator
 //
-//  Created by Rox Dorentus on 14-6-8.
+//  Created by Zhang Yi on 2014-6-11.
 //  Copyright (c) 2014年 rubyist.today. All rights reserved.
 //
 
-#import "Extensions.h"
+#import "NSData+Crypt.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonHMAC.h>
 
@@ -42,7 +42,7 @@
     {
         [output appendFormat:@"%02x", digest[i]];
     }
-
+    
     return output;
 }
 

@@ -1,8 +1,8 @@
 //
-//  Extensions.h
-//  bna
+//  NSData+Crypt.h
+//  Authenticator
 //
-//  Created by Rox Dorentus on 14-6-8.
+//  Created by Zhang Yi on 2014-6-11.
 //  Copyright (c) 2014年 rubyist.today. All rights reserved.
 //
 

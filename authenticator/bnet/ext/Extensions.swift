@@ -1,6 +1,6 @@
 //
 //  Extensions.swift
-//  bna
+//  Authenticator
 //
 //  Created by Rox Dorentus on 14-6-6.
 //  Copyright (c) 2014年 rubyist.today. All rights reserved.

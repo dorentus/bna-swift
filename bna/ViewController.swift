@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Authenticator
 
 class ViewController: UIViewController {
                             
@@ -18,16 +19,16 @@ class ViewController: UIViewController {
         let secret = "4202aa2182640745d8a807e0fe7e34b30c1edb23"
         let restorecode = "4CKBN08QEB"
 
-        let sl = Authenticator.Serial(serial)
-        let st = Authenticator.Secret(secret)
+        let sl = Serial(serial)
+        let st = Secret(secret)
 
-        let r0 = Authenticator.Restorecode(sl, st)
+        let r0 = Restorecode(sl, st)
         println(r0.text)
 
-        let r1 = Authenticator.Restorecode(restorecode)
+        let r1 = Restorecode(restorecode)
         println(r1.text)
 
-        let r2 = Authenticator.Restorecode(serial, secret)
+        let r2 = Restorecode(serial, secret)
         println(r2.text)
     }
 
