@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Restorecode: Printable {
+class Restorecode: Printable, Equatable {
     struct Constants {
         static let RESTORECODE_MAP: Dictionary = [
             0:  48,  1: 49,  2: 50,  3: 51,  4: 52,
@@ -30,15 +30,13 @@ class Restorecode: Printable {
 
     let text: String!
     var binary: String {
-        get {
-            let parts:Array<String> = text.bytes.map({ i in
-                let c = Constants.RESTORECODE_MAP_INVERSE[Int(i)]!
-                return NSString(format: "%c", c)
-            })
-            return parts.joinedBy("")
-        }
+        let parts:Array<String> = text.bytes.map({ i in
+            let c = Constants.RESTORECODE_MAP_INVERSE[Int(i)]!
+            return NSString(format: "%c", c)
+        })
+        return parts.joinedBy("")
     }
-    var description: String { get { return text } }
+    var description: String { return text }
 
     init(_ text: String) {
         var code = text
@@ -71,4 +69,8 @@ class Restorecode: Printable {
 
         return false
     }
+}
+
+func ==(lhs: Restorecode, rhs: Restorecode) -> Bool {
+    return lhs.text == rhs.text
 }

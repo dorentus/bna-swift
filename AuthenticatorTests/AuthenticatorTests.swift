@@ -24,7 +24,21 @@ class AuthenticatorTests: XCTestCase {
         super.tearDown()
     }
 
-    func testRestorecode() {
+    func testEquatableSerials() {
+        let s0 = Serial(serial)
+        let s1 = Serial(s0.prettified)
+
+        XCTAssertEqual(s0, s1);
+    }
+
+    func testEquatableSecrets() {
+        let s0 = Secret(secret)
+        let s1 = Secret(s0.binary)
+
+        XCTAssertEqual(s0, s1);
+    }
+
+    func testEquatableRestorecodes() {
         let sl = Serial(serial)
         let st = Secret(secret)
 
@@ -33,7 +47,7 @@ class AuthenticatorTests: XCTestCase {
         let r2 = Restorecode(serial, secret)
 
         XCTAssertEqual(r0.text, restorecode)
-        XCTAssertEqual(r0.text!, r1.text!)
-        XCTAssertEqual(r1.text!, r2.text!)
+        XCTAssertEqual(r0, r1)
+        XCTAssertEqual(r1, r2)
     }
 }

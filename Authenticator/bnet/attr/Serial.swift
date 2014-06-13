@@ -8,16 +8,14 @@
 
 import Foundation
 
-class Serial: Printable {
+class Serial: Printable, Equatable {
     var normalized: String!
     var prettified: String {
-        get {
-            let suffix = normalized.substringFromIndex(2).scan(".{4}").joinedBy("-")
-            return "\(region)\(suffix)"
-        }
+        let suffix = normalized.substringFromIndex(2).scan(".{4}").joinedBy("-")
+        return "\(region)\(suffix)"
     }
-    var region: String { get { return normalized.substringToIndex(2) } }
-    var description: String { get { return prettified } }
+    var region: String { return normalized.substringToIndex(2) }
+    var description: String { return prettified }
 
     init(_ text: String) {
         var serial = text
@@ -37,4 +35,8 @@ class Serial: Printable {
 
         return false
     }
+}
+
+func ==(lhs: Serial, rhs: Serial) -> Bool {
+    return lhs.normalized == rhs.normalized
 }

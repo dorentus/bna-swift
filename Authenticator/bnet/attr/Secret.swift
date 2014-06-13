@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Secret: Printable {
+class Secret: Printable, Equatable {
     var text: String!
-    var binary: UInt8[] { get { return hex2bin(text) } }
-    var description: String { get { return text } }
+    var binary: UInt8[] { return hex2bin(text) }
+    var description: String { return text }
 
     init(_ text: String) {
         var secret = text
@@ -35,4 +35,8 @@ class Secret: Printable {
 
         return false
     }
+}
+
+func ==(lhs: Secret, rhs: Secret) -> Bool {
+    return lhs.text == rhs.text
 }
