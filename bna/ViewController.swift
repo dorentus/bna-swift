@@ -19,9 +19,15 @@ class ViewController: UIViewController {
         let restorecode = "4CKBN08QEB"
 
         let a = Authenticator(serial, secret)
-        println(a.tokenAtTime(timestamp: 1347279358))
-        println(a.tokenAtTime(timestamp: 1347279360))
-        println(a.tokenAtTime(timestamp: 1370448000))
+        println(a.token(timestamp: 1347279358))
+        println(a.token(timestamp: 1347279360))
+        println(a.token(timestamp: 1370448000))
+
+        Authenticator.syncTime(region: "CN") {
+            time in
+            println("local: \(NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate)")
+            println("time: \(time)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

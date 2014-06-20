@@ -23,7 +23,7 @@ class Authenticator {
         self.init(Serial(serial), Secret(secret))
     }
 
-    func tokenAtTime(timestamp: NSTimeInterval = { NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate }()) -> (String, Double) {
+    func token(timestamp: NSTimeInterval = { NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate }()) -> (String, Double) {
 
         let t = UInt32(timestamp / 30)
 
@@ -48,21 +48,57 @@ class Authenticator {
 
         return (token_str, progress)
     }
-/*
-    init(region: String) {
-        // TODO: request for a new authenticator
-    }
 
-    init(serial: Serial, restorecode: Restorecode) {
-        // TODO: request to restore an authenticator
-    }
-
-    func getToken(timestamp: UInt64?) -> (String, Float) {
+    class func request(#region: String, completion: (Authenticator? -> Void)) {
 
     }
 
-    static func requestServerTime(region: String) -> UInt64 {
+    class func restore(#serial: Serial, restorecode: Restorecode, completion: (Authenticator? -> Void)) {
 
     }
-*/
+
+    class func restore(serial: String, restorecode: String, completion: (Authenticator? -> Void)) {
+        restore(serial: Serial(serial), restorecode: Restorecode(restorecode), completion)
+    }
+
+    class func syncTime(#region: String, completion: (NSTimeInterval? -> Void)) {
+        httpRequest(region: region, path: AuthenticatorConstants.TIME_REQUEST_PATH, body: nil) {
+            data, error in
+            if let error = error {
+                completion(nil)
+            }
+            else {
+                let ptr = UnsafePointer<UInt8>(data!.bytes)
+                let bytes = Array<UInt8>(UnsafeArray<UInt8>(start:ptr, length:data!.length))
+                let mm = Array(enumerate(bytes)).reduce(0.0) {
+                    rem, pair in
+                    let (index, byte) = pair
+                    let exp = Double(7 - index) * 8
+                    return rem + Double(byte) * pow(2, exp)
+                }
+                completion(mm / 1000)
+            }
+        }
+    }
+
+    class func httpRequest(#region: String, path: String, body: NSData?, completion: ((NSData?, NSError?) -> Void)) {
+        let host = AuthenticatorConstants.AUTHENTICATOR_HOSTS[region]
+        let url = NSURL(string: "http://\(host)\(path)")
+        let request = NSMutableURLRequest(URL: url)
+        request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+        if let body = body {
+            request.HTTPMethod = "POST"
+            request.HTTPBody = body
+        }
+
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.currentQueue()) {
+            (response, data, error) in
+            if let error = error {
+                completion(nil, error)
+            }
+            else {
+                completion(data, nil)
+            }
+        }
+    }
 }

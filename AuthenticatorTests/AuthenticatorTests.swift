@@ -61,13 +61,26 @@ class AuthenticatorTests: XCTestCase {
     func testTokens() {
         let a = Authenticator(serial, secret)
 
-        let (t0, _) = a.tokenAtTime(timestamp: 1347279358)
+        let (t0, _) = a.token(timestamp: 1347279358)
         XCTAssertEqual("61459300", t0)
 
-        let (t1, _) = a.tokenAtTime(timestamp: 1347279360)
+        let (t1, _) = a.token(timestamp: 1347279360)
         XCTAssertEqual("75939986", t1)
 
-        let (t2, _) = a.tokenAtTime(timestamp: 1370448000)
+        let (t2, _) = a.token(timestamp: 1370448000)
         XCTAssertEqual("59914793", t2)
+    }
+
+    func testSyncTime() {
+        let expectation = expectationWithDescription("time synced")
+        Authenticator.syncTime(region: "CN") {
+            time in
+            if let time = time {
+                XCTAssertEqualWithAccuracy(NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate, time, 1.0)
+                expectation.fulfill()
+            }
+        }
+        waitForExpectationsWithTimeout(5.0, nil)
+
     }
 }
