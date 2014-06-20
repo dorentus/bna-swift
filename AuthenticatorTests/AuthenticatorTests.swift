@@ -50,4 +50,24 @@ class AuthenticatorTests: XCTestCase {
         XCTAssertEqual(r0, r1)
         XCTAssertEqual(r1, r2)
     }
+
+    func testRestorecode() {
+        let a = Authenticator(serial, secret)
+        let r = Restorecode(serial, secret)
+
+        XCTAssertEqual(a.restorecode, r)
+    }
+
+    func testTokens() {
+        let a = Authenticator(serial, secret)
+
+        let (t0, _) = a.tokenAtTime(timestamp: 1347279358)
+        XCTAssertEqual("61459300", t0)
+
+        let (t1, _) = a.tokenAtTime(timestamp: 1347279360)
+        XCTAssertEqual("75939986", t1)
+
+        let (t2, _) = a.tokenAtTime(timestamp: 1370448000)
+        XCTAssertEqual("59914793", t2)
+    }
 }
