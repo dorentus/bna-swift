@@ -40,5 +40,7 @@ mod_exp_hex(NSString * value, NSString * exp, NSString * mod)
 
     NSString * result = [NSString stringWithCString:result_str encoding:NSASCIIStringEncoding];
 
+    free(result_str);
+
     return result;
 }
