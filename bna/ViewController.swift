@@ -14,20 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let serial = "CN-1402-1943-1283"
-        let secret = "4202aa2182640745d8a807e0fe7e34b30c1edb23"
-        let restorecode = "4CKBN08QEB"
-
-        let a = Authenticator(serial, secret)
-        println(a.token(timestamp: 1347279358))
-        println(a.token(timestamp: 1347279360))
-        println(a.token(timestamp: 1370448000))
-
-        Authenticator.syncTime(region: "CN") {
-            time in
-            println("local: \(NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate)")
-            println("time: \(time)")
-        }
+        sha1_hexdigest([213, 94, 11, 68, 151, 187, 76, 141, 91, 5, 4, 160, 11, 152, 204, 54, 111, 43, 36, 225])
     }
 
     override func didReceiveMemoryWarning() {

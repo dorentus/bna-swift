@@ -24,18 +24,32 @@ class AuthenticatorTests: XCTestCase {
         super.tearDown()
     }
 
+    func testSHA1() {
+        XCTAssertEqual("356a192b7913b04c54574d18c28d46e6395428ab", sha1_hexdigest("1"))
+        XCTAssertEqual("15714dbb066e5379b6d4fd70f061dbf0b4a0978b", sha1_hexdigest([213, 94, 11, 68, 151, 187, 76, 141, 91, 5, 4, 160, 11, 152, 204, 54, 111, 43, 36, 225]))
+    }
+
+    func testHMACSHA1() {
+        XCTAssertEqual("7480bfb8a50d1c8797cb137e9258d1c899713b1d", hmac_sha1_hexdigest("aaa", "bbb"))
+    }
+
+    func testModExp() {
+        XCTAssertEqualObjects("3", mod_exp_hex("64", "5", "d"))
+        XCTAssertEqualObjects("299", mod_exp_hex("955e4bd989f3917d2f15544a7e0504eb9d7bb66b6f8a2fe470e453c779200e5e3ad2e43a02d06c4adbd8d328f1a426b83658e88bfd949b2af4eaf30054673a1419a250fa4cc1278d12855b5b25818d162c6e6ee2ab4a350d401d78f6ddb99711e72626b48bd8b5b0b7f3acf9ea3c9e0005fee59e19136cdb7c83f2ab8b0a2a99", "101", "400"))
+    }
+
     func testEquatableSerials() {
         let s0 = Serial(serial)
         let s1 = Serial(s0.prettified)
 
-        XCTAssertEqual(s0, s1);
+        XCTAssertEqual(s0, s1)
     }
 
     func testEquatableSecrets() {
         let s0 = Secret(secret)
         let s1 = Secret(s0.binary)
 
-        XCTAssertEqual(s0, s1);
+        XCTAssertEqual(s0, s1)
     }
 
     func testEquatableRestorecodes() {

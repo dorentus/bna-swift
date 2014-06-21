@@ -10,6 +10,7 @@
 
 @interface NSData (Crypto)
 
+- (NSString *)hexString;
 - (NSString *)SHA1HexDigest;
 - (NSString *)HMACSHA1HexDigestWithKey:(NSData *)keyData;
 

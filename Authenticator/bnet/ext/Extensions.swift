@@ -54,37 +54,89 @@ func bin2hex(bin: UInt8[]) -> String {
     return bin.map({ c in NSString(format: "%02x", c) }).joinedBy("")
 }
 
-func sha1_hexdigest(bin: UInt8[]) -> String {
-    let data = NSData(bytes: bin, length: countElements(bin))
+func sha1_hexdigest(input: String) -> String {
+    return sha1_hexdigest(input.bytes)
+}
+
+func sha1_hexdigest(input_bytes: UInt8[]) -> String {
+    let data = NSData(bytes: input_bytes, length: countElements(input_bytes))
     return data.SHA1HexDigest()
 }
 
-func sha1_digest(bin: UInt8[]) -> UInt8[] {
-    return hex2bin(sha1_hexdigest(bin))
+func sha1_digest(input: String) -> UInt8[] {
+    return hex2bin(sha1_hexdigest(input))
 }
 
-func hmac_sha1_hexdigest<T>(input: T, key: T) -> String {
-    var input_bytes: UInt8[]
-    var key_bytes: UInt8[]
+func sha1_digest(input: UInt8[]) -> UInt8[] {
+    return hex2bin(sha1_hexdigest(input))
+}
 
-    if let bytes = input as? UInt8[] {
-        input_bytes = bytes
-    } else {
-        input_bytes = "\(input)".bytes
-    }
-
-    if let bytes = key as? UInt8[] {
-        key_bytes = bytes
-    } else {
-        key_bytes = "\(key)".bytes
-    }
-
+func hmac_sha1_hexdigest(input_bytes: UInt8[], key_bytes: UInt8[]) -> String {
     let input_data = NSData(bytes: input_bytes, length: countElements(input_bytes))
     let key_data = NSData(bytes: key_bytes, length: countElements(key_bytes))
 
     return input_data.HMACSHA1HexDigestWithKey(key_data)
 }
 
-func hmac_sha1_digest<T>(input: T, key: T) -> UInt8[] {
+func hmac_sha1_hexdigest(input: String, key: String) -> String {
+    return hmac_sha1_hexdigest(input.bytes, key.bytes)
+}
+
+func hmac_sha1_digest(input: UInt8[], key: UInt8[]) -> UInt8[] {
     return hex2bin(hmac_sha1_hexdigest(input, key))
 }
+
+func hmac_sha1_digest(input: String, key: String) -> UInt8[] {
+    return hex2bin(hmac_sha1_hexdigest(input, key))
+}
+
+func http_request(#region: String, #path: String, #body: NSData?, completion: ((Array<UInt8>?, NSError?) -> Void)) {
+    let host = AuthenticatorConstants.AUTHENTICATOR_HOSTS[region]
+    let url = NSURL(string: "http://\(host)\(path)")
+    let request = NSMutableURLRequest(URL: url)
+    request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+    if let body = body {
+        request.HTTPMethod = "POST"
+        request.HTTPBody = body
+    }
+
+    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.currentQueue()) {
+        (response, data, error) in
+        if let error = error {
+            completion(nil, error)
+        }
+        else {
+            let ptr = UnsafePointer<UInt8>(data!.bytes)
+            let bytes = Array<UInt8>(UnsafeArray<UInt8>(start:ptr, length:data!.length))
+            completion(bytes, nil)
+        }
+    }
+}
+
+func get_otp(length: Int) -> String {
+    var result: String = ""
+    while true {
+        if result.length >= length {
+            break
+        }
+        result += sha1_hexdigest(String(arc4random()))
+    }
+    return result.substringToIndex(length)
+}
+
+func decrypt_response(input: UInt8[], key: UInt8[]) -> UInt8[] {
+    let length = countElements(input)
+
+    assert(length == countElements(key))
+
+    var result: UInt8[] = []
+    for index in (0 .. length) {
+        result.append(input[index] ^ key[index])
+    }
+
+    return result
+}
+
+//func rsa_encrypt(input: UInt8[]) -> UInt8[] {
+//
+//}

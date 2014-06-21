@@ -12,20 +12,30 @@
 
 @implementation NSData (Crypto)
 
-- (NSString *)SHA1HexDigest
+- (NSString *)hexString
 {
-    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    size_t length = self.length;
+    uint8_t bytes[length];
 
-    CC_SHA1(self.bytes, (CC_LONG)self.length, digest);
+    [self getBytes:&bytes length:length];
 
-    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    NSMutableString *output = [NSMutableString stringWithCapacity:length * 2];
 
     for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
     {
-        [output appendFormat:@"%02x", digest[i]];
+        [output appendFormat:@"%02x", bytes[i]];
     }
 
     return output;
+}
+
+- (NSString *)SHA1HexDigest
+{
+    NSMutableData *result = [NSMutableData dataWithLength:CC_SHA1_DIGEST_LENGTH];
+
+    CC_SHA1(self.bytes, (CC_LONG)self.length, result.mutableBytes);
+
+    return [result hexString];
 }
 
 - (NSString *)HMACSHA1HexDigestWithKey:(NSData *)keyData
@@ -33,17 +43,7 @@
     NSMutableData *result = [NSMutableData dataWithLength:CC_SHA1_DIGEST_LENGTH];
     CCHmac(kCCHmacAlgSHA1, keyData.bytes, keyData.length, self.bytes, self.length, result.mutableBytes);
 
-    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-
-    [result getBytes:&digest length:CC_SHA1_DIGEST_LENGTH];
-
-    for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
-    {
-        [output appendFormat:@"%02x", digest[i]];
-    }
-    
-    return output;
+    return [result hexString];
 }
 
 @end

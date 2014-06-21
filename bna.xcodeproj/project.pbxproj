@@ -25,6 +25,12 @@
 		8C48B7191948276500829493 /* Restorecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012801940640000ED0557 /* Restorecode.swift */; };
 		8C48B71A1948276700829493 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127A19403EAC00ED0557 /* Authenticator.swift */; };
 		8C48B71D1948282600829493 /* Authenticator-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C48B71C1948282600829493 /* Authenticator-Bridging-Header.h */; };
+		8CAE2D501955832800370B1A /* bigd.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2D4B1955832800370B1A /* bigd.c */; };
+		8CAE2D511955832800370B1A /* bigd.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAE2D4C1955832800370B1A /* bigd.h */; };
+		8CAE2D521955832800370B1A /* bigdigits.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2D4D1955832800370B1A /* bigdigits.c */; };
+		8CAE2D531955832800370B1A /* bigdigits.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAE2D4E1955832800370B1A /* bigdigits.h */; };
+		8CAE2D541955832800370B1A /* bigdtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAE2D4F1955832800370B1A /* bigdtypes.h */; };
+		8CAE2D571955851600370B1A /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2D561955851600370B1A /* functions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +138,13 @@
 		8C48B7121948274000829493 /* NSData+Crypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Crypt.m"; sourceTree = "<group>"; };
 		8C48B71B1948279A00829493 /* NSData+Crypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Crypt.h"; sourceTree = "<group>"; };
 		8C48B71C1948282600829493 /* Authenticator-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Authenticator-Bridging-Header.h"; sourceTree = "<group>"; };
+		8CAE2D4B1955832800370B1A /* bigd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigd.c; sourceTree = "<group>"; };
+		8CAE2D4C1955832800370B1A /* bigd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigd.h; sourceTree = "<group>"; };
+		8CAE2D4D1955832800370B1A /* bigdigits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigdigits.c; sourceTree = "<group>"; };
+		8CAE2D4E1955832800370B1A /* bigdigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdigits.h; sourceTree = "<group>"; };
+		8CAE2D4F1955832800370B1A /* bigdtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdtypes.h; sourceTree = "<group>"; };
+		8CAE2D551955850C00370B1A /* functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
+		8CAE2D561955851600370B1A /* functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +257,8 @@
 				8C25090B194166DF00E7582A /* Extensions.swift */,
 				8C48B71B1948279A00829493 /* NSData+Crypt.h */,
 				8C48B7121948274000829493 /* NSData+Crypt.m */,
+				8CAE2D551955850C00370B1A /* functions.h */,
+				8CAE2D561955851600370B1A /* functions.m */,
 			);
 			path = ext;
 			sourceTree = "<group>";
@@ -264,6 +279,7 @@
 				8C48B71C1948282600829493 /* Authenticator-Bridging-Header.h */,
 				8C48B6EC194821C500829493 /* Authenticator.h */,
 				8C10127919403E9900ED0557 /* bnet */,
+				8CAE2D4A1955832800370B1A /* vendor */,
 				8C48B6EA194821C400829493 /* Supporting Files */,
 			);
 			path = Authenticator;
@@ -294,6 +310,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8CAE2D4A1955832800370B1A /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				8CAE2D4B1955832800370B1A /* bigd.c */,
+				8CAE2D4C1955832800370B1A /* bigd.h */,
+				8CAE2D4D1955832800370B1A /* bigdigits.c */,
+				8CAE2D4E1955832800370B1A /* bigdigits.h */,
+				8CAE2D4F1955832800370B1A /* bigdtypes.h */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -302,7 +330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C48B6ED194821C500829493 /* Authenticator.h in Headers */,
+				8CAE2D511955832800370B1A /* bigd.h in Headers */,
+				8CAE2D541955832800370B1A /* bigdtypes.h in Headers */,
 				8C48B71D1948282600829493 /* Authenticator-Bridging-Header.h in Headers */,
+				8CAE2D531955832800370B1A /* bigdigits.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,8 +525,11 @@
 				8C48B7181948276500829493 /* Secret.swift in Sources */,
 				8C48B7151948274D00829493 /* Extensions.swift in Sources */,
 				8C48B7141948274700829493 /* Constants.swift in Sources */,
+				8CAE2D501955832800370B1A /* bigd.c in Sources */,
 				8C48B7171948276500829493 /* Serial.swift in Sources */,
+				8CAE2D571955851600370B1A /* functions.m in Sources */,
 				8C48B7191948276500829493 /* Restorecode.swift in Sources */,
+				8CAE2D521955832800370B1A /* bigdigits.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

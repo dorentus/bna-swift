@@ -62,42 +62,19 @@ class Authenticator {
     }
 
     class func syncTime(#region: String, completion: (NSTimeInterval? -> Void)) {
-        httpRequest(region: region, path: AuthenticatorConstants.TIME_REQUEST_PATH, body: nil) {
-            data, error in
+        http_request(region: region, path: AuthenticatorConstants.TIME_REQUEST_PATH, body: nil) {
+            bytes, error in
             if let error = error {
                 completion(nil)
             }
             else {
-                let ptr = UnsafePointer<UInt8>(data!.bytes)
-                let bytes = Array<UInt8>(UnsafeArray<UInt8>(start:ptr, length:data!.length))
-                let mm = Array(enumerate(bytes)).reduce(0.0) {
+                let mm = Array(enumerate(bytes!)).reduce(0.0) {
                     rem, pair in
                     let (index, byte) = pair
                     let exp = Double(7 - index) * 8
                     return rem + Double(byte) * pow(2, exp)
                 }
                 completion(mm / 1000)
-            }
-        }
-    }
-
-    class func httpRequest(#region: String, path: String, body: NSData?, completion: ((NSData?, NSError?) -> Void)) {
-        let host = AuthenticatorConstants.AUTHENTICATOR_HOSTS[region]
-        let url = NSURL(string: "http://\(host)\(path)")
-        let request = NSMutableURLRequest(URL: url)
-        request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
-        if let body = body {
-            request.HTTPMethod = "POST"
-            request.HTTPBody = body
-        }
-
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.currentQueue()) {
-            (response, data, error) in
-            if let error = error {
-                completion(nil, error)
-            }
-            else {
-                completion(data, nil)
             }
         }
     }
