@@ -88,13 +88,36 @@ class AuthenticatorTests: XCTestCase {
     func testSyncTime() {
         let expectation = expectationWithDescription("time synced")
         Authenticator.syncTime(region: "CN") {
-            time in
+            time, _ in
             if let time = time {
                 XCTAssertEqualWithAccuracy(NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate, time, 1.0)
                 expectation.fulfill()
             }
         }
         waitForExpectationsWithTimeout(5.0, nil)
+    }
 
+    func testRequestAuthenticator() {
+        let expectation = expectationWithDescription("authenticator get")
+        Authenticator.request(region: "CN") {
+            authenticator, _ in
+            if let a = authenticator {
+                XCTAssertNotNil(a)
+                expectation.fulfill()
+            }
+        }
+        waitForExpectationsWithTimeout(5.0, nil)
+    }
+
+    func testRestoreAuthenticator() {
+        let expectation = expectationWithDescription("authenticator restored")
+        Authenticator.restore(serial: "CN-1402-1943-1283", restorecode: "4CKBN08QEB") {
+            authenticator, _ in
+            if let a = authenticator {
+                XCTAssertEqual("4202aa2182640745d8a807e0fe7e34b30c1edb23", a.secret.description)
+                expectation.fulfill()
+            }
+        }
+        waitForExpectationsWithTimeout(5.0, nil)
     }
 }

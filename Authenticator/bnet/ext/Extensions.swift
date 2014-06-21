@@ -21,8 +21,8 @@ extension Array {
 }
 
 extension String {
-    var length: Int { get { return countElements(self) } }
-    var bytes: UInt8[] { get { return Array(self.utf8) } }
+    var length: Int { return countElements(self) }
+    var bytes: UInt8[] { return Array(self.utf8) }
 
     func matches(pattern: String) -> Bool {
         let regex = NSRegularExpression.regularExpressionWithPattern(pattern, options: .DotMatchesLineSeparators, error: nil)
@@ -35,6 +35,20 @@ extension String {
 
         return matches.map { m in
             (self as NSString).substringWithRange((m as NSTextCheckingResult).rangeAtIndex(0))
+        }
+    }
+
+    func leftFixedString(#length: Int, pad: Character) -> String {
+        if self.length <= length {
+            let diff = length - self.length
+            var suffix = ""
+            for i in 0 .. diff {
+                suffix += pad
+            }
+            return self + suffix
+        }
+        else {
+            return self.substringToIndex(length)
         }
     }
 }
@@ -90,14 +104,14 @@ func hmac_sha1_digest(input: String, key: String) -> UInt8[] {
     return hex2bin(hmac_sha1_hexdigest(input, key))
 }
 
-func http_request(#region: String, #path: String, #body: NSData?, completion: ((Array<UInt8>?, NSError?) -> Void)) {
+func http_request(#region: String, #path: String, #body: Array<UInt8>?, completion: ((Array<UInt8>!, NSError?) -> Void)) {
     let host = AuthenticatorConstants.AUTHENTICATOR_HOSTS[region]
     let url = NSURL(string: "http://\(host)\(path)")
     let request = NSMutableURLRequest(URL: url)
     request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
     if let body = body {
         request.HTTPMethod = "POST"
-        request.HTTPBody = body
+        request.HTTPBody = NSData(bytes: body, length: countElements(body))
     }
 
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.currentQueue()) {
@@ -137,6 +151,12 @@ func decrypt_response(input: UInt8[], key: UInt8[]) -> UInt8[] {
     return result
 }
 
-//func rsa_encrypt(input: UInt8[]) -> UInt8[] {
-//
-//}
+func rsa_encrypt(input: UInt8[]) -> UInt8[] {
+    let input_hex = bin2hex(input)
+    let result_hex = mod_exp_hex(input_hex, AuthenticatorConstants.RSA_KEY, AuthenticatorConstants.RSA_MOD)
+    return hex2bin(result_hex)
+}
+
+func rsa_encrypt(input: String) -> UInt8[] {
+    return rsa_encrypt(input.bytes)
+}

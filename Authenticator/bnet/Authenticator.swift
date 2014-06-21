@@ -23,8 +23,11 @@ class Authenticator {
         self.init(Serial(serial), Secret(secret))
     }
 
-    func token(timestamp: NSTimeInterval = { NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate }()) -> (String, Double) {
+    convenience init(_ serial: UInt8[], _ secret: UInt8[]) {
+        self.init(Serial(serial), Secret(secret))
+    }
 
+    func token(timestamp: NSTimeInterval = { NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate }()) -> (String, Double) {
         let t = UInt32(timestamp / 30)
 
         let t0 = UInt8((t & 0xff000000) >> 24)
@@ -49,23 +52,63 @@ class Authenticator {
         return (token_str, progress)
     }
 
-    class func request(#region: String, completion: (Authenticator? -> Void)) {
+    class func request(#region: String, completion: ((Authenticator?, NSError?) -> Void)) {
+        let key = get_otp(37)
+        let text = ("\x01" + key + region + AuthenticatorConstants.CLIENT_MODEL).leftFixedString(length: 56, pad: "\0")
+        let payload = rsa_encrypt(text)
 
+        http_request(region: region, path: AuthenticatorConstants.ENROLLMENT_REQUEST_PATH, body: payload) {
+            bytes, error in
+            if error {
+                completion(nil, error)
+            }
+            else {
+                let decrypted = decrypt_response(Array(bytes![8..45]), key.bytes)
+                let serial_bytes = Array(decrypted[20..37])
+                let secret_bytes = Array(decrypted[0..20])
+
+                let authenticator = Authenticator(serial_bytes, secret_bytes)
+                completion(authenticator, nil)
+            }
+        }
     }
 
-    class func restore(#serial: Serial, restorecode: Restorecode, completion: (Authenticator? -> Void)) {
+    class func restore(#serial: Serial, restorecode: Restorecode, completion: ((Authenticator?, NSError?) -> Void)) {
+        http_request(region: serial.region, path: AuthenticatorConstants.RESTORE_INIT_REQUEST_PATH, body: serial.binary) {
+            challenge, error in
+            if error {
+                completion(nil, error)
+                return
+            }
 
+            let digest = hmac_sha1_digest(serial.binary + challenge, restorecode.binary)
+            let key = get_otp(20)
+
+            let payload = serial.binary + rsa_encrypt(digest + key.bytes)
+
+            http_request(region: serial.region, path: AuthenticatorConstants.RESTORE_VALIDATE_REQUEST_PATH, body: payload) {
+                bytes, error in
+                if error {
+                    completion(nil, error)
+                }
+                else {
+                    let secret_bytes = decrypt_response(bytes, key.bytes)
+                    let authenticator = Authenticator(serial.binary, secret_bytes)
+                    completion(authenticator, nil)
+                }
+            }
+        }
     }
 
-    class func restore(serial: String, restorecode: String, completion: (Authenticator? -> Void)) {
+    class func restore(#serial: String, restorecode: String, completion: ((Authenticator?, NSError?) -> Void)) {
         restore(serial: Serial(serial), restorecode: Restorecode(restorecode), completion)
     }
 
-    class func syncTime(#region: String, completion: (NSTimeInterval? -> Void)) {
+    class func syncTime(#region: String, completion: ((NSTimeInterval?, NSError?) -> Void)) {
         http_request(region: region, path: AuthenticatorConstants.TIME_REQUEST_PATH, body: nil) {
             bytes, error in
-            if let error = error {
-                completion(nil)
+            if error {
+                completion(nil, error)
             }
             else {
                 let mm = Array(enumerate(bytes!)).reduce(0.0) {
@@ -74,7 +117,7 @@ class Authenticator {
                     let exp = Double(7 - index) * 8
                     return rem + Double(byte) * pow(2, exp)
                 }
-                completion(mm / 1000)
+                completion(mm / 1000, nil)
             }
         }
     }

@@ -10,6 +10,7 @@ import Foundation
 
 class Serial: Printable, Equatable {
     var normalized: String!
+    var binary: UInt8[] { return normalized.bytes }
     var prettified: String {
         let suffix = normalized.substringFromIndex(2).scan(".{4}").joinedBy("-")
         return "\(region)\(suffix)"
@@ -22,6 +23,11 @@ class Serial: Printable, Equatable {
         if Serial.isValid(&serial) {
             self.normalized = serial
         }
+    }
+
+    convenience init(_ binary: UInt8[]) {
+        let serial = NSString(bytes: binary, length: countElements(binary), encoding: NSASCIIStringEncoding)
+        self.init(serial)
     }
 
     class func isValid(inout serial: String) -> Bool {

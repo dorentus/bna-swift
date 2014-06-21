@@ -10,7 +10,7 @@ import Foundation
 
 class Restorecode: Printable, Equatable {
     struct Constants {
-        static let RESTORECODE_MAP: Dictionary = [
+        static let RESTORECODE_MAP: Dictionary<UInt8, UInt8> = [
             0:  48,  1: 49,  2: 50,  3: 51,  4: 52,
             5:  53,  6: 54,  7: 55,  8: 56,  9: 57,
             10: 65, 11: 66, 12: 67, 13: 68, 14: 69,
@@ -19,8 +19,8 @@ class Restorecode: Printable, Equatable {
             25: 84, 26: 85, 27: 86, 28: 87, 29: 88,
             30: 89, 31: 90, 32: 91
         ]
-        static let RESTORECODE_MAP_INVERSE: Dictionary<Int, Int> = {
-            var dict = Dictionary<Int, Int>()
+        static let RESTORECODE_MAP_INVERSE: Dictionary<UInt8, UInt8> = {
+            var dict = Dictionary<UInt8, UInt8>()
             for (key, value) in RESTORECODE_MAP {
                 dict[value] = key
             }
@@ -29,12 +29,8 @@ class Restorecode: Printable, Equatable {
     }
 
     let text: String!
-    var binary: String {
-        let parts:Array<String> = text.bytes.map({ i in
-            let c = Constants.RESTORECODE_MAP_INVERSE[Int(i)]!
-            return NSString(format: "%c", c)
-        })
-        return parts.joinedBy("")
+    var binary: UInt8[] {
+        return text.bytes.map { i in Constants.RESTORECODE_MAP_INVERSE[i]! }
     }
     var description: String { return text }
 
@@ -46,11 +42,11 @@ class Restorecode: Printable, Equatable {
     }
 
     convenience init(_ serial: Serial, _ secret: Secret) {
-        let bytes = sha1_digest(serial.normalized.bytes + secret.binary)
+        let bytes = sha1_digest(serial.binary + secret.binary)
         let s = countElements(bytes)-10
         let last_10_bytes = [] + bytes[s..s+10]
         let parts:Array<String> = last_10_bytes.map({ i in
-            let c = Constants.RESTORECODE_MAP[Int(i & 0x1f)]!
+            let c = Constants.RESTORECODE_MAP[UInt8(i & 0x1f)]!
             return NSString(format: "%c", c)
         })
         self.init(parts.joinedBy(""))
