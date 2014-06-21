@@ -28,19 +28,23 @@ let RESTORECODE_MAP_INVERSE: Dictionary<UInt8, UInt8> = {
     return dict
 }()
 
-extension Authenticator {
-    enum Region: String {
-        case CN = "mobile-service.battlenet.com.cn"
-        case EU = "m.eu.mobileservice.blizzard.com"
-        case US = "m.us.mobileservice.blizzard.com"
-    }
-    enum RequestPath: String {
-        case Enroll = "/enrollment/enroll.htm"
-        case Time = "/enrollment/time.htm"
-        case RestoreInit = "/enrollment/initiatePaperRestore.htm"
-        case RestoreValidate = "/enrollment/validatePaperRestore.htm"
-    }
+enum Region: String {
+    case CN = "CN"
+    case EU = "EU"
+    case US = "US"
 }
+enum RequestPath: String {
+    case Enroll = "/enrollment/enroll.htm"
+    case Time = "/enrollment/time.htm"
+    case RestoreInit = "/enrollment/initiatePaperRestore.htm"
+    case RestoreValidate = "/enrollment/validatePaperRestore.htm"
+}
+
+let REQUEST_HOSTS = [
+    Region.CN: "mobile-service.battlenet.com.cn",
+    Region.EU: "m.eu.mobileservice.blizzard.com",
+    Region.US: "m.us.mobileservice.blizzard.com",
+]
 
 extension Array {
     func joinedBy(joiner: String) -> String! {
@@ -138,8 +142,8 @@ func hmac_sha1_digest(input: String, key: String) -> UInt8[] {
     return hex2bin(hmac_sha1_hexdigest(input, key))
 }
 
-func http_request(#region: Authenticator.Region, #path: Authenticator.RequestPath, #body: Array<UInt8>?, completion: ((Array<UInt8>!, NSError?) -> Void)) {
-    let host = region.toRaw()
+func http_request(#region: Region, #path: RequestPath, #body: Array<UInt8>?, completion: ((Array<UInt8>!, NSError?) -> Void)) {
+    let host = REQUEST_HOSTS[region]!
     let url = NSURL(string: "http://\(host)\(path.toRaw())")
     let request = NSMutableURLRequest(URL: url)
     request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
@@ -193,28 +197,4 @@ func rsa_encrypt(input: UInt8[]) -> UInt8[] {
 
 func rsa_encrypt(input: String) -> UInt8[] {
     return rsa_encrypt(input.bytes)
-}
-
-func extract_region(input: String) -> Authenticator.Region? {
-    switch(input) {
-    case "CN":
-        return Authenticator.Region.CN
-    case "US":
-        return Authenticator.Region.US
-    case "EU":
-        return Authenticator.Region.EU
-    default:
-        return nil
-    }
-}
-
-func stringify_region(region: Authenticator.Region) -> String {
-    switch(region) {
-    case .CN:
-        return "CN"
-    case .US:
-        return "US"
-    case .EU:
-        return "EU"
-    }
 }

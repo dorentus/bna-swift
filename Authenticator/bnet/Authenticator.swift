@@ -52,7 +52,7 @@ class Authenticator {
         return (token_str, progress)
     }
 
-    class func request(#region: Authenticator.Region, completion: ((Authenticator?, NSError?) -> Void)) {
+    class func request(#region: Region, completion: ((Authenticator?, NSError?) -> Void)) {
         let key = get_otp(37)
         let text = ("\x01" + key + region.toRaw() + CLIENT_MODEL).leftFixedString(length: 56, pad: "\0")
         let payload = rsa_encrypt(text)
@@ -104,7 +104,7 @@ class Authenticator {
         restore(serial: Serial(serial), restorecode: Restorecode(restorecode), completion)
     }
 
-    class func syncTime(#region: Authenticator.Region, completion: ((NSTimeInterval?, NSError?) -> Void)) {
+    class func syncTime(#region: Region, completion: ((NSTimeInterval?, NSError?) -> Void)) {
         http_request(region: region, path: .Time, body: nil) {
             bytes, error in
             if error {
