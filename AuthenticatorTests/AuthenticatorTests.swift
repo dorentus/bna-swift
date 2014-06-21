@@ -87,7 +87,7 @@ class AuthenticatorTests: XCTestCase {
 
     func testSyncTime() {
         let expectation = expectationWithDescription("time synced")
-        Authenticator.syncTime(region: "CN") {
+        Authenticator.syncTime(region: .US) {
             time, _ in
             if let time = time {
                 XCTAssertEqualWithAccuracy(NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate, time, 1.0)
@@ -99,7 +99,7 @@ class AuthenticatorTests: XCTestCase {
 
     func testRequestAuthenticator() {
         let expectation = expectationWithDescription("authenticator get")
-        Authenticator.request(region: "CN") {
+        Authenticator.request(region: .CN) {
             authenticator, _ in
             if let a = authenticator {
                 XCTAssertNotNil(a)

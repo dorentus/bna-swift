@@ -12,7 +12,7 @@ class Authenticator {
     let serial: Serial
     let secret: Secret
     var restorecode: Restorecode { return Restorecode(serial, secret) }
-    var region: String { return serial.region }
+    var region: Region { return serial.region }
 
     init(_ serial: Serial, _ secret: Secret) {
         self.serial = serial
@@ -52,12 +52,12 @@ class Authenticator {
         return (token_str, progress)
     }
 
-    class func request(#region: String, completion: ((Authenticator?, NSError?) -> Void)) {
+    class func request(#region: Authenticator.Region, completion: ((Authenticator?, NSError?) -> Void)) {
         let key = get_otp(37)
-        let text = ("\x01" + key + region + AuthenticatorConstants.CLIENT_MODEL).leftFixedString(length: 56, pad: "\0")
+        let text = ("\x01" + key + region.toRaw() + CLIENT_MODEL).leftFixedString(length: 56, pad: "\0")
         let payload = rsa_encrypt(text)
 
-        http_request(region: region, path: AuthenticatorConstants.ENROLLMENT_REQUEST_PATH, body: payload) {
+        http_request(region: region, path: .Enroll, body: payload) {
             bytes, error in
             if error {
                 completion(nil, error)
@@ -74,7 +74,7 @@ class Authenticator {
     }
 
     class func restore(#serial: Serial, restorecode: Restorecode, completion: ((Authenticator?, NSError?) -> Void)) {
-        http_request(region: serial.region, path: AuthenticatorConstants.RESTORE_INIT_REQUEST_PATH, body: serial.binary) {
+        http_request(region: serial.region, path: .RestoreInit, body: serial.binary) {
             challenge, error in
             if error {
                 completion(nil, error)
@@ -86,7 +86,7 @@ class Authenticator {
 
             let payload = serial.binary + rsa_encrypt(digest + key.bytes)
 
-            http_request(region: serial.region, path: AuthenticatorConstants.RESTORE_VALIDATE_REQUEST_PATH, body: payload) {
+            http_request(region: serial.region, path: .RestoreValidate, body: payload) {
                 bytes, error in
                 if error {
                     completion(nil, error)
@@ -104,8 +104,8 @@ class Authenticator {
         restore(serial: Serial(serial), restorecode: Restorecode(restorecode), completion)
     }
 
-    class func syncTime(#region: String, completion: ((NSTimeInterval?, NSError?) -> Void)) {
-        http_request(region: region, path: AuthenticatorConstants.TIME_REQUEST_PATH, body: nil) {
+    class func syncTime(#region: Authenticator.Region, completion: ((NSTimeInterval?, NSError?) -> Void)) {
+        http_request(region: region, path: .Time, body: nil) {
             bytes, error in
             if error {
                 completion(nil, error)

@@ -13,9 +13,9 @@ class Serial: Printable, Equatable {
     var binary: UInt8[] { return normalized.bytes }
     var prettified: String {
         let suffix = normalized.substringFromIndex(2).scan(".{4}").joinedBy("-")
-        return "\(region)\(suffix)"
+        return "\(stringify_region(region))\(suffix)"
     }
-    var region: String { return normalized.substringToIndex(2) }
+    var region: Authenticator.Region { return extract_region(normalized.substringToIndex(2))! }
     var description: String { return prettified }
 
     init(_ text: String) {
@@ -32,9 +32,8 @@ class Serial: Printable, Equatable {
 
     class func isValid(inout serial: String) -> Bool {
         let text = serial.uppercaseString.stringByReplacingOccurrencesOfString("-", withString: "")
-        let valid_regions_pattern = Array(AuthenticatorConstants.AUTHENTICATOR_HOSTS.keys).joinedBy("|")
 
-        if text.matches("\(valid_regions_pattern)\\d{12}") {
+        if extract_region(text.substringToIndex(2)) && text.matches("^[A-Z]{2}\\d{12}$") {
             serial = text
             return true
         }

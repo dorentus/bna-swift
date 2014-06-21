@@ -18,7 +18,6 @@
 		8C48B6FD194821C500829493 /* Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; };
 		8C48B6FE194821C500829493 /* Authenticator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8C48B7131948274000829493 /* NSData+Crypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C48B7121948274000829493 /* NSData+Crypt.m */; };
-		8C48B7141948274700829493 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012821940642D00ED0557 /* Constants.swift */; };
 		8C48B7151948274D00829493 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25090B194166DF00E7582A /* Extensions.swift */; };
 		8C48B7171948276500829493 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127C194063A600ED0557 /* Serial.swift */; };
 		8C48B7181948276500829493 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127E194063D700ED0557 /* Secret.swift */; };
@@ -127,7 +126,6 @@
 		8C10127C194063A600ED0557 /* Serial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
 		8C10127E194063D700ED0557 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		8C1012801940640000ED0557 /* Restorecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restorecode.swift; sourceTree = "<group>"; };
-		8C1012821940642D00ED0557 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8C25090B194166DF00E7582A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8C48B6E8194821C400829493 /* Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C48B6EB194821C500829493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		8C10127919403E9900ED0557 /* bnet */ = {
 			isa = PBXGroup;
 			children = (
-				8C1012821940642D00ED0557 /* Constants.swift */,
 				8C15DA8F19446D8D00A380BC /* ext */,
 				8C15DA9019446D9F00A380BC /* attr */,
 				8C10127A19403EAC00ED0557 /* Authenticator.swift */,
@@ -524,7 +521,6 @@
 				8C48B71A1948276700829493 /* Authenticator.swift in Sources */,
 				8C48B7181948276500829493 /* Secret.swift in Sources */,
 				8C48B7151948274D00829493 /* Extensions.swift in Sources */,
-				8C48B7141948274700829493 /* Constants.swift in Sources */,
 				8CAE2D501955832800370B1A /* bigd.c in Sources */,
 				8C48B7171948276500829493 /* Serial.swift in Sources */,
 				8CAE2D571955851600370B1A /* functions.m in Sources */,
