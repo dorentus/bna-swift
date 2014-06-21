@@ -242,7 +242,9 @@
 			isa = PBXGroup;
 			children = (
 				8C15DA8F19446D8D00A380BC /* ext */,
-				8C15DA9019446D9F00A380BC /* attr */,
+				8C10127C194063A600ED0557 /* Serial.swift */,
+				8C10127E194063D700ED0557 /* Secret.swift */,
+				8C1012801940640000ED0557 /* Restorecode.swift */,
 				8C10127A19403EAC00ED0557 /* Authenticator.swift */,
 			);
 			path = bnet;
@@ -258,16 +260,6 @@
 				8CAE2D561955851600370B1A /* functions.m */,
 			);
 			path = ext;
-			sourceTree = "<group>";
-		};
-		8C15DA9019446D9F00A380BC /* attr */ = {
-			isa = PBXGroup;
-			children = (
-				8C10127C194063A600ED0557 /* Serial.swift */,
-				8C10127E194063D700ED0557 /* Secret.swift */,
-				8C1012801940640000ED0557 /* Restorecode.swift */,
-			);
-			path = attr;
 			sourceTree = "<group>";
 		};
 		8C48B6E9194821C400829493 /* Authenticator */ = {

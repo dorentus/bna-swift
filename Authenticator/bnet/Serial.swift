@@ -9,7 +9,7 @@
 import Foundation
 
 class Serial: Printable, Equatable {
-    var normalized: String!
+    var normalized: String
     var binary: UInt8[] { return normalized.bytes }
     var prettified: String {
         let suffix = normalized.substringFromIndex(2).scan(".{4}").joinedBy("-")
@@ -19,15 +19,27 @@ class Serial: Printable, Equatable {
     var description: String { return prettified }
 
     init(_ text: String) {
+        self.normalized = text
+    }
+}
+
+func ==(lhs: Serial, rhs: Serial) -> Bool {
+    return lhs.normalized == rhs.normalized
+}
+
+extension Serial {
+    class func withText(text: String) -> Serial? {
         var serial = text
         if Serial.isValid(&serial) {
-            self.normalized = serial
+            return Serial(serial)
         }
+
+        return nil
     }
 
-    convenience init(_ binary: UInt8[]) {
+    class func withBinary(binary: UInt8[]) -> Serial? {
         let serial = NSString(bytes: binary, length: countElements(binary), encoding: NSASCIIStringEncoding)
-        self.init(serial)
+        return withText(serial)
     }
 
     class func isValid(inout serial: String) -> Bool {
@@ -40,8 +52,4 @@ class Serial: Printable, Equatable {
 
         return false
     }
-}
-
-func ==(lhs: Serial, rhs: Serial) -> Bool {
-    return lhs.normalized == rhs.normalized
 }

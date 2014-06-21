@@ -19,12 +19,26 @@ class Authenticator {
         self.secret = secret
     }
 
-    convenience init(_ serial: String, _ secret: String) {
-        self.init(Serial(serial), Secret(secret))
+    class func withSerial(serial: String, secret: String) -> Authenticator? {
+        let sr = Serial.withText(serial)
+        let sc = Secret.withText(secret)
+
+        if !sr || !sc {
+            return nil
+        }
+
+        return Authenticator(sr!, sc!)
     }
 
-    convenience init(_ serial: UInt8[], _ secret: UInt8[]) {
-        self.init(Serial(serial), Secret(secret))
+    class func withSerial(serial: UInt8[], secret: UInt8[]) -> Authenticator? {
+        let sr = Serial.withBinary(serial)
+        let sc = Secret.withBinary(secret)
+
+        if !sr || !sc {
+            return nil
+        }
+
+        return Authenticator(sr!, sc!)
     }
 
     func token(timestamp: NSTimeInterval = { NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate }()) -> (String, Double) {
@@ -67,8 +81,8 @@ class Authenticator {
                 let serial_bytes = Array(decrypted[20..37])
                 let secret_bytes = Array(decrypted[0..20])
 
-                let authenticator = Authenticator(serial_bytes, secret_bytes)
-                completion(authenticator, nil)
+                let authenticator = Authenticator.withSerial(serial_bytes, secret: secret_bytes)
+                completion(authenticator, nil)  // TODO: handles nil authenticator
             }
         }
     }
@@ -93,15 +107,22 @@ class Authenticator {
                 }
                 else {
                     let secret_bytes = decrypt_response(bytes, key.bytes)
-                    let authenticator = Authenticator(serial.binary, secret_bytes)
-                    completion(authenticator, nil)
+                    let authenticator = Authenticator.withSerial(serial.binary, secret: secret_bytes)
+                    completion(authenticator, nil)  // TODO: handles nil authenticator
                 }
             }
         }
     }
 
     class func restore(#serial: String, restorecode: String, completion: ((Authenticator?, NSError?) -> Void)) {
-        restore(serial: Serial(serial), restorecode: Restorecode(restorecode), completion)
+        let s = Serial.withText(serial)
+        let r = Restorecode.withText(restorecode)
+        if !s || !r {
+            completion(nil, nil)  // TODO: report error
+        }
+        else {
+            restore(serial: s!, restorecode: r!, completion)
+        }
     }
 
     class func syncTime(#region: Region, completion: ((NSTimeInterval?, NSError?) -> Void)) {

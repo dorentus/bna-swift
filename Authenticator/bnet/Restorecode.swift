@@ -16,10 +16,7 @@ class Restorecode: Printable, Equatable {
     var description: String { return text }
 
     init(_ text: String) {
-        var code = text
-        if Restorecode.isValid(&code) {
-            self.text = code
-        }
+        self.text = text
     }
 
     convenience init(_ serial: Serial, _ secret: Secret) {
@@ -29,12 +26,34 @@ class Restorecode: Printable, Equatable {
         let parts:Array<String> = last_10_bytes.map({ i in
             let c = RESTORECODE_MAP[UInt8(i & 0x1f)]!
             return NSString(format: "%c", c)
-        })
+            })
         self.init(parts.joinedBy(""))
     }
+}
 
-    convenience init(_ serial: String, _ secret: String) {
-        self.init(Serial(serial), Secret(secret))
+func ==(lhs: Restorecode, rhs: Restorecode) -> Bool {
+    return lhs.text == rhs.text
+}
+
+extension Restorecode {
+    class func withText(text: String) -> Restorecode? {
+        var code = text
+        if Restorecode.isValid(&code) {
+            return Restorecode(code)
+        }
+
+        return nil
+    }
+
+    class func withSerial(serial: String, secret: String) -> Restorecode? {
+        let sr = Serial.withText(serial)
+        let sc = Secret.withText(secret)
+
+        if !sr || !sc {
+            return nil
+        }
+
+        return Restorecode(sr!, sc!)
     }
 
     class func isValid(inout restorecode: String) -> Bool {
@@ -46,8 +65,4 @@ class Restorecode: Printable, Equatable {
 
         return false
     }
-}
-
-func ==(lhs: Restorecode, rhs: Restorecode) -> Bool {
-    return lhs.text == rhs.text
 }

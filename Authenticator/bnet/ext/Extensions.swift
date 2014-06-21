@@ -103,6 +103,9 @@ func hex2bin(hex: String) -> UInt8[] {
 }
 
 func bin2hex(bin: UInt8[]) -> String {
+    if countElements(bin) == 0 {
+        return ""
+    }
     return bin.map({ c in NSString(format: "%02x", c) }).joinedBy("")
 }
 
@@ -156,6 +159,9 @@ func http_request(#region: Region, #path: RequestPath, #body: Array<UInt8>?, com
         (response, data, error) in
         if let error = error {
             completion(nil, error)
+        }
+        else if (response as NSHTTPURLResponse).statusCode != 200 {
+            completion(nil, nil)    // TODO: report error
         }
         else {
             let ptr = UnsafePointer<UInt8>(data!.bytes)

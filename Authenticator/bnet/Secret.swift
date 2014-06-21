@@ -9,20 +9,32 @@
 import Foundation
 
 class Secret: Printable, Equatable {
-    var text: String!
+    var text: String
     var binary: UInt8[] { return hex2bin(text) }
     var description: String { return text }
 
     init(_ text: String) {
+        self.text = text
+    }
+}
+
+func ==(lhs: Secret, rhs: Secret) -> Bool {
+    return lhs.text == rhs.text
+}
+
+extension Secret {
+    class func withText(text: String) -> Secret? {
         var secret = text
         if Secret.isValid(&secret) {
-            self.text = secret
+            return Secret(secret)
         }
+
+        return nil
     }
 
-    convenience init(_ binary: UInt8[]) {
+    class func withBinary(binary: UInt8[]) -> Secret? {
         let secret = bin2hex(binary)
-        self.init(secret)
+        return withText(secret)
     }
 
     class func isValid(inout secret: String) -> Bool {
@@ -35,8 +47,4 @@ class Secret: Printable, Equatable {
 
         return false
     }
-}
-
-func ==(lhs: Secret, rhs: Secret) -> Bool {
-    return lhs.text == rhs.text
 }
