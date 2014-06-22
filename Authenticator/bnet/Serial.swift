@@ -19,7 +19,20 @@ class Serial: Printable, Equatable {
     var description: String { return prettified }
 
     init(_ text: String) {
-        self.normalized = text
+        let serial = Serial.format(serial: text)
+        if !serial {
+            NSException.raise(NSInvalidArgumentException, format: "invalid serial", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
+        }
+        self.normalized = serial!
+    }
+
+    class func format(#serial: String) -> String? {
+        let text = serial.uppercaseString.stringByReplacingOccurrencesOfString("-", withString: "")
+        if Region.fromRaw(text.substringToIndex(2)) && text.matches("^[A-Z]{2}\\d{12}$") {
+            return text
+        }
+
+        return nil
     }
 }
 
@@ -29,8 +42,7 @@ func ==(lhs: Serial, rhs: Serial) -> Bool {
 
 extension Serial {
     class func withText(text: String) -> Serial? {
-        var serial = text
-        if Serial.isValid(&serial) {
+        if let serial = self.format(serial: text) {
             return Serial(serial)
         }
 
@@ -40,16 +52,5 @@ extension Serial {
     class func withBinary(binary: UInt8[]) -> Serial? {
         let serial = NSString(bytes: binary, length: countElements(binary), encoding: NSASCIIStringEncoding)
         return withText(serial)
-    }
-
-    class func isValid(inout serial: String) -> Bool {
-        let text = serial.uppercaseString.stringByReplacingOccurrencesOfString("-", withString: "")
-
-        if Region.fromRaw(text.substringToIndex(2)) && text.matches("^[A-Z]{2}\\d{12}$") {
-            serial = text
-            return true
-        }
-
-        return false
     }
 }

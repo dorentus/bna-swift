@@ -16,7 +16,11 @@ class Restorecode: Printable, Equatable {
     var description: String { return text }
 
     init(_ text: String) {
-        self.text = text
+        let code = Restorecode.format(restorecode: text)
+        if !code {
+            NSException.raise(NSInvalidArgumentException, format: "invalid restorecode", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
+        }
+        self.text = code!
     }
 
     convenience init(_ serial: Serial, _ secret: Secret) {
@@ -29,6 +33,15 @@ class Restorecode: Printable, Equatable {
             })
         self.init(parts.joinedBy(""))
     }
+
+    class func format(#restorecode: String) -> String? {
+        let text = restorecode.uppercaseString
+        if text.matches("[0-9A-Z]{10}") {
+            return text
+        }
+
+        return nil
+    }
 }
 
 func ==(lhs: Restorecode, rhs: Restorecode) -> Bool {
@@ -37,8 +50,7 @@ func ==(lhs: Restorecode, rhs: Restorecode) -> Bool {
 
 extension Restorecode {
     class func withText(text: String) -> Restorecode? {
-        var code = text
-        if Restorecode.isValid(&code) {
+        if let code = self.format(restorecode: text) {
             return Restorecode(code)
         }
 
@@ -54,15 +66,5 @@ extension Restorecode {
         }
 
         return Restorecode(sr!, sc!)
-    }
-
-    class func isValid(inout restorecode: String) -> Bool {
-        let text = restorecode.uppercaseString
-        if text.matches("[0-9A-Z]{10}") {
-            restorecode = text
-            return true
-        }
-
-        return false
     }
 }

@@ -14,7 +14,21 @@ class Secret: Printable, Equatable {
     var description: String { return text }
 
     init(_ text: String) {
-        self.text = text
+        let secret = Secret.format(secret: text)
+        if !secret {
+            NSException.raise(NSInvalidArgumentException, format: "invalid secret", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
+        }
+        self.text = secret!
+    }
+
+    class func format(#secret: String) -> String? {
+        let text = secret.lowercaseString
+
+        if text.matches("[0-9a-f]{40}") {
+            return text
+        }
+
+        return nil
     }
 }
 
@@ -24,8 +38,7 @@ func ==(lhs: Secret, rhs: Secret) -> Bool {
 
 extension Secret {
     class func withText(text: String) -> Secret? {
-        var secret = text
-        if Secret.isValid(&secret) {
+        if let secret = self.format(secret: text) {
             return Secret(secret)
         }
 
@@ -35,16 +48,5 @@ extension Secret {
     class func withBinary(binary: UInt8[]) -> Secret? {
         let secret = bin2hex(binary)
         return withText(secret)
-    }
-
-    class func isValid(inout secret: String) -> Bool {
-        let text = secret.lowercaseString
-
-        if text.matches("[0-9a-f]{40}") {
-            secret = text
-            return true
-        }
-
-        return false
     }
 }
