@@ -58,6 +58,16 @@ extension Array {
     }
 }
 
+func -<T: Equatable>(lhs: T[], rhs: T[]) -> T[] {
+    var result = lhs
+    for v in rhs {
+        if let index = find(result, v) {
+            result.removeAtIndex(index)
+        }
+    }
+    return result
+}
+
 extension String {
     var length: Int { return countElements(self) }
     var bytes: UInt8[] { return Array(self.utf8) }
