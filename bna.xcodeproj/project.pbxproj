@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10125B19403C7D00ED0557 /* AppDelegate.swift */; };
-		8C10125E19403C7D00ED0557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10125D19403C7D00ED0557 /* ViewController.swift */; };
+		8C10125E19403C7D00ED0557 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10125D19403C7D00ED0557 /* MainViewController.swift */; };
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
 		8C10126319403C7D00ED0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C10126219403C7D00ED0557 /* Images.xcassets */; };
 		8C10126F19403C7D00ED0557 /* bnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10126E19403C7D00ED0557 /* bnaTests.swift */; };
@@ -31,6 +31,9 @@
 		8CAE2D541955832800370B1A /* bigdtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAE2D4F1955832800370B1A /* bigdtypes.h */; };
 		8CAE2D571955851600370B1A /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2D561955851600370B1A /* functions.m */; };
 		8CF742381957FF53000275BC /* AuthenticatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF742371957FF53000275BC /* AuthenticatorList.swift */; };
+		8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423A1958251B000275BC /* AuthenticatorCell.swift */; };
+		8CF7423D19582549000275BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423C19582549000275BC /* DetailViewController.swift */; };
+		8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423E19582567000275BC /* RestorationViewController.swift */; };
 		ABA6FAF506D248EC8C7530B8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30005F2DE527471C89AB3A0C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +123,7 @@
 		8C10125619403C7D00ED0557 /* bna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C10125A19403C7D00ED0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C10125B19403C7D00ED0557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C10125D19403C7D00ED0557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C10125D19403C7D00ED0557 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8C10126019403C7D00ED0557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C10126219403C7D00ED0557 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C10126819403C7D00ED0557 /* bnaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bnaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +152,9 @@
 		8CAE2D561955851600370B1A /* functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
 		8CF742371957FF53000275BC /* AuthenticatorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorList.swift; sourceTree = "<group>"; };
 		8CF742391957FFE6000275BC /* bna-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bna-Bridging-Header.h"; sourceTree = "<group>"; };
+		8CF7423A1958251B000275BC /* AuthenticatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorCell.swift; sourceTree = "<group>"; };
+		8CF7423C19582549000275BC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8CF7423E19582567000275BC /* RestorationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,12 +228,15 @@
 			isa = PBXGroup;
 			children = (
 				8C10125919403C7D00ED0557 /* Supporting Files */,
+				8CF742391957FFE6000275BC /* bna-Bridging-Header.h */,
 				8C10126219403C7D00ED0557 /* Images.xcassets */,
 				8C10125F19403C7D00ED0557 /* Main.storyboard */,
 				8C10125B19403C7D00ED0557 /* AppDelegate.swift */,
-				8C10125D19403C7D00ED0557 /* ViewController.swift */,
 				8CF742371957FF53000275BC /* AuthenticatorList.swift */,
-				8CF742391957FFE6000275BC /* bna-Bridging-Header.h */,
+				8C10125D19403C7D00ED0557 /* MainViewController.swift */,
+				8CF7423A1958251B000275BC /* AuthenticatorCell.swift */,
+				8CF7423C19582549000275BC /* DetailViewController.swift */,
+				8CF7423E19582567000275BC /* RestorationViewController.swift */,
 			);
 			path = bna;
 			sourceTree = "<group>";
@@ -546,7 +555,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C10125E19403C7D00ED0557 /* ViewController.swift in Sources */,
+				8C10125E19403C7D00ED0557 /* MainViewController.swift in Sources */,
+				8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */,
+				8CF7423D19582549000275BC /* DetailViewController.swift in Sources */,
+				8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */,
 				8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */,
 				8CF742381957FF53000275BC /* AuthenticatorList.swift in Sources */,
 			);

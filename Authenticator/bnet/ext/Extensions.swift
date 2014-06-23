@@ -32,6 +32,7 @@ enum Region: String {
     case CN = "CN"
     case EU = "EU"
     case US = "US"
+    static let allValues = [CN, EU, US]
 }
 enum RequestPath: String {
     case Enroll = "/enrollment/enroll.htm"
