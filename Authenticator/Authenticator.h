@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for authenticator.
-FOUNDATION_EXPORT double authenticatorVersionNumber;
+//! Project version number for Authenticator.
+FOUNDATION_EXPORT double AuthenticatorVersionNumber;
 
-//! Project version string for authenticator.
-FOUNDATION_EXPORT const unsigned char authenticatorVersionString[];
+//! Project version string for Authenticator.
+FOUNDATION_EXPORT const unsigned char AuthenticatorVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <authenticator/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <Authenticator/PublicHeader.h>
