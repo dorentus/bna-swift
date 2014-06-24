@@ -8,7 +8,7 @@
         <scene sceneID="uus-7m-MVy">
             <objects>
                 <tableViewController id="94O-E8-sdt" customClass="MainViewController" customModule="bna" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="1" id="l5H-kX-PUt">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="1" id="l5H-kX-PUt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,7 +39,7 @@
                                 <connections>
                                     <outlet property="serial_label" destination="vAq-lg-a0V" id="x0i-VH-Ys8"/>
                                     <outlet property="token_label" destination="sbc-I3-PG2" id="UmD-V4-5eI"/>
-                                    <segue destination="6ca-OA-vef" kind="push" identifier="authenticator_detail" id="kSG-Z9-epo"/>
+                                    <segue destination="6ca-OA-vef" kind="show" identifier="authenticator_detail" id="kSG-Z9-epo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,7 +62,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <segue destination="hjv-jx-zhy" kind="modal" identifier="authenticator_restore" id="yRS-cr-cfE"/>
+                        <segue destination="hjv-jx-zhy" kind="presentation" identifier="authenticator_restore" id="yRS-cr-cfE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQv-nz-V9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,8 +74,8 @@
             <objects>
                 <viewController modalTransitionStyle="partialCurl" id="hjv-jx-zhy" customClass="RestorationViewController" customModule="bna" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VCB-zc-ge4"/>
-                        <viewControllerLayoutGuide type="bottom" id="HNK-Rr-qOe"/>
+                        <viewControllerLayoutGuide type="top" id="KFX-5P-wuB"/>
+                        <viewControllerLayoutGuide type="bottom" id="JSK-Gc-RZJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dgi-yM-fNd">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>

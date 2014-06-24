@@ -26,20 +26,20 @@ class MainViewController: UITableViewController {
         for region in Region.allValues {
             alert.addAction(UIAlertAction(title: region.toRaw(), style: .Default) {
                 /*[unowned self] */_ in
+                MMProgressHUD.show()
                 Authenticator.request(region: region) {
                     authenticator, error in
                     println(authenticator)
                     println(error)
                     if let a = authenticator {
                         if self.authenticators.add(a) {
-                            self.tableView.reloadData()
+                            self.reloadAndScrollToBottom()
                         }
+                        MMProgressHUD.dismissWithSuccess("success!")
                     }
                     else {
                         let message = error ? error!.localizedDescription : "unknown error"
-                        let alert = UIAlertController(title: nil, message: message, preferredStyle: .Alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-                        self.presentViewController(alert, animated: true, completion: nil)
+                        MMProgressHUD.dismissWithError(message)
                     }
                 }
                 println(region)
@@ -58,6 +58,12 @@ class MainViewController: UITableViewController {
             let dest = segue.destinationViewController as DetailViewController
             dest.authenticator = (sender as AuthenticatorCell).authenticator
         }
+    }
+
+    func reloadAndScrollToBottom() {
+        tableView.reloadData()
+        let last = NSIndexPath(forRow: authenticators.count - 1, inSection: 0)
+        tableView.scrollToRowAtIndexPath(last, atScrollPosition: .Bottom, animated: true)
     }
 }
 
