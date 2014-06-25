@@ -29,11 +29,9 @@ class MainViewController: UITableViewController {
                 MMProgressHUD.show()
                 Authenticator.request(region: region) {
                     authenticator, error in
-                    println(authenticator)
-                    println(error)
                     if let a = authenticator {
-                        if self?.authenticators.add(a) {
-                            self?.reloadAndScrollToBottom()
+                        if self!.authenticators.add(a) {
+                            self!.reloadAndScrollToBottom()
                         }
                         MMProgressHUD.dismissWithSuccess("success!")
                     }
@@ -42,7 +40,6 @@ class MainViewController: UITableViewController {
                         MMProgressHUD.dismissWithError(message)
                     }
                 }
-                println(region)
             })
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
@@ -93,8 +90,11 @@ extension MainViewController {
 
     override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         if editingStyle == .Delete {
-            let authenticator = (tableView.cellForRowAtIndexPath(indexPath) as AuthenticatorCell).authenticator
-            println(authenticator)
+            if let authenticator = (tableView.cellForRowAtIndexPath(indexPath) as AuthenticatorCell).authenticator {
+                if authenticators.del(authenticator) {
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+            }
         }
     }
 
