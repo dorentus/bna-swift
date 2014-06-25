@@ -25,15 +25,15 @@ class MainViewController: UITableViewController {
         let alert = UIAlertController(title: "Choose Region", message: nil, preferredStyle: .ActionSheet)
         for region in Region.allValues {
             alert.addAction(UIAlertAction(title: region.toRaw(), style: .Default) {
-                /*[unowned self] */_ in
+                [weak self] _ in
                 MMProgressHUD.show()
                 Authenticator.request(region: region) {
                     authenticator, error in
                     println(authenticator)
                     println(error)
                     if let a = authenticator {
-                        if self.authenticators.add(a) {
-                            self.reloadAndScrollToBottom()
+                        if self?.authenticators.add(a) {
+                            self?.reloadAndScrollToBottom()
                         }
                         MMProgressHUD.dismissWithSuccess("success!")
                     }

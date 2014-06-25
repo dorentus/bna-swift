@@ -88,14 +88,11 @@ class AuthenticatorStorage {
     class Keychain {
         let service: String
         var serials: String[] {
+            let k = get_kSecAttrAccount()
             if let accounts = SSKeychain.accountsForService(service) as? NSDictionary[] {
                 return accounts.map {
                     v in
-                    // FIXME:
-                    //   the value of kSecAttrAccount: Unmanaged<AnyObject>! is: "acct"
-                    //   having problem handling Unmanaged here:
-                    //     kSecAttrAccount.takeUnretainedValue() causing compiler fault
-                    return v["acct"] as String
+                    return v[k] as String
                 }
             }
 

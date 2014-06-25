@@ -12,6 +12,10 @@
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
 		8C10126319403C7D00ED0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C10126219403C7D00ED0557 /* Images.xcassets */; };
 		8C10126F19403C7D00ED0557 /* bnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10126E19403C7D00ED0557 /* bnaTests.swift */; };
+		8C37BE26195AB3E700DD12DA /* keychain_fix.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C37BE25195AB3E700DD12DA /* keychain_fix.m */; };
+		8C4DD3BA195AAEEA00D6FEC9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4DD3B9195AAEE900D6FEC9 /* NotificationCenter.framework */; };
+		8C4DD3BF195AAEEA00D6FEC9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DD3BE195AAEEA00D6FEC9 /* TodayViewController.swift */; };
+		8C4DD3C1195AAEEA00D6FEC9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4DD3C0195AAEEA00D6FEC9 /* MainInterface.storyboard */; };
 		8CB98223195AA7D5007A7115 /* Padlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98222195AA7D5007A7115 /* Padlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CB98229195AA7D5007A7115 /* Padlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; };
 		8CB98230195AA7D5007A7115 /* PadlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9822F195AA7D5007A7115 /* PadlockTests.swift */; };
@@ -128,6 +132,12 @@
 		8C10126819403C7D00ED0557 /* bnaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bnaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C10126D19403C7D00ED0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C10126E19403C7D00ED0557 /* bnaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bnaTests.swift; sourceTree = "<group>"; };
+		8C37BE25195AB3E700DD12DA /* keychain_fix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keychain_fix.m; sourceTree = "<group>"; };
+		8C37BE27195AB40200DD12DA /* keychain_fix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keychain_fix.h; sourceTree = "<group>"; };
+		8C4DD3B9195AAEE900D6FEC9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8C4DD3BD195AAEEA00D6FEC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C4DD3BE195AAEEA00D6FEC9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		8C4DD3C0195AAEEA00D6FEC9 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		8CB9821E195AA7D5007A7115 /* Padlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Padlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB98221195AA7D5007A7115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB98222195AA7D5007A7115 /* Padlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Padlock.h; sourceTree = "<group>"; };
@@ -352,6 +362,8 @@
 		8CB98249195AA962007A7115 /* AuthenticatorStorage */ = {
 			isa = PBXGroup;
 			children = (
+				8C37BE27195AB40200DD12DA /* keychain_fix.h */,
+				8C37BE25195AB3E700DD12DA /* keychain_fix.m */,
 				8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */,
 			);
 			path = AuthenticatorStorage;
@@ -641,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C37BE26195AB3E700DD12DA /* keychain_fix.m in Sources */,
 				8CB9824B195AA962007A7115 /* Authenticator.swift in Sources */,
 				8CB98252195AA962007A7115 /* Secret.swift in Sources */,
 				8CB98251195AA962007A7115 /* Restorecode.swift in Sources */,
