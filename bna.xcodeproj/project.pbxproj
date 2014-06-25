@@ -25,6 +25,16 @@
 		8C48B71A1948276700829493 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127A19403EAC00ED0557 /* Authenticator.swift */; };
 		8C48B71D1948282600829493 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C48B71C1948282600829493 /* Bridging-Header.h */; };
 		8CAE2D571955851600370B1A /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2D561955851600370B1A /* functions.m */; };
+		8CE6E16B195AA2ED00DAEF7C /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E157195AA2ED00DAEF7C /* MMHud.m */; };
+		8CE6E16C195AA2ED00DAEF7C /* MMLinearProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */; };
+		8CE6E16D195AA2ED00DAEF7C /* MMProgressHUD+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */; };
+		8CE6E16E195AA2ED00DAEF7C /* MMProgressHUD+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15C195AA2ED00DAEF7C /* MMProgressHUD+Class.m */; };
+		8CE6E16F195AA2ED00DAEF7C /* MMProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15E195AA2ED00DAEF7C /* MMProgressHUD.m */; };
+		8CE6E170195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E161195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m */; };
+		8CE6E171195AA2ED00DAEF7C /* MMProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E163195AA2ED00DAEF7C /* MMProgressHUDViewController.m */; };
+		8CE6E172195AA2ED00DAEF7C /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */; };
+		8CE6E173195AA2ED00DAEF7C /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */; };
+		8CE6E174195AA2ED00DAEF7C /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */; };
 		8CE7AED219596EA100F48DB6 /* KeychainStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AED119596EA100F48DB6 /* KeychainStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CE7AED819596EA100F48DB6 /* KeychainStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */; };
 		8CE7AEDF19596EA100F48DB6 /* KeychainStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7AEDE19596EA100F48DB6 /* KeychainStorageTests.swift */; };
@@ -44,7 +54,6 @@
 		8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423A1958251B000275BC /* AuthenticatorCell.swift */; };
 		8CF7423D19582549000275BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423C19582549000275BC /* DetailViewController.swift */; };
 		8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423E19582567000275BC /* RestorationViewController.swift */; };
-		ABA6FAF506D248EC8C7530B8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30005F2DE527471C89AB3A0C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,8 +208,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		30005F2DE527471C89AB3A0C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F46FAD859CC4BADB3472076 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8C10125619403C7D00ED0557 /* bna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C10125A19403C7D00ED0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C10125B19403C7D00ED0557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +233,27 @@
 		8C48B71C1948282600829493 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8CAE2D551955850C00370B1A /* functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
 		8CAE2D561955851600370B1A /* functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
+		8CE6E156195AA2ED00DAEF7C /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
+		8CE6E157195AA2ED00DAEF7C /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
+		8CE6E158195AA2ED00DAEF7C /* MMLinearProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLinearProgressView.h; sourceTree = "<group>"; };
+		8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLinearProgressView.m; sourceTree = "<group>"; };
+		8CE6E15A195AA2ED00DAEF7C /* MMProgressHUD+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressHUD+Animations.h"; sourceTree = "<group>"; };
+		8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Animations.m"; sourceTree = "<group>"; };
+		8CE6E15C195AA2ED00DAEF7C /* MMProgressHUD+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Class.m"; sourceTree = "<group>"; };
+		8CE6E15D195AA2ED00DAEF7C /* MMProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUD.h; sourceTree = "<group>"; };
+		8CE6E15E195AA2ED00DAEF7C /* MMProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUD.m; sourceTree = "<group>"; };
+		8CE6E15F195AA2ED00DAEF7C /* MMProgressHUDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDCommon.h; sourceTree = "<group>"; };
+		8CE6E160195AA2ED00DAEF7C /* MMProgressHUDOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDOverlayView.h; sourceTree = "<group>"; };
+		8CE6E161195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDOverlayView.m; sourceTree = "<group>"; };
+		8CE6E162195AA2ED00DAEF7C /* MMProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDViewController.h; sourceTree = "<group>"; };
+		8CE6E163195AA2ED00DAEF7C /* MMProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDViewController.m; sourceTree = "<group>"; };
+		8CE6E164195AA2ED00DAEF7C /* MMProgressHUDWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDWindow.h; sourceTree = "<group>"; };
+		8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDWindow.m; sourceTree = "<group>"; };
+		8CE6E166195AA2ED00DAEF7C /* MMProgressView-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressView-Protocol.h"; sourceTree = "<group>"; };
+		8CE6E167195AA2ED00DAEF7C /* MMRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRadialProgressView.h; sourceTree = "<group>"; };
+		8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
+		8CE6E169195AA2ED00DAEF7C /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
+		8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
 		8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE7AED019596EA100F48DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE7AED119596EA100F48DB6 /* KeychainStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainStorage.h; sourceTree = "<group>"; };
@@ -256,7 +284,6 @@
 			files = (
 				8C48B6FD194821C500829493 /* Authenticator.framework in Frameworks */,
 				8CE7AEE219596EA100F48DB6 /* KeychainStorage.framework in Frameworks */,
-				ABA6FAF506D248EC8C7530B8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +330,6 @@
 		42A1B1FC39414C05ABE03AF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				30005F2DE527471C89AB3A0C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,7 +344,6 @@
 				8CE7AECE19596EA100F48DB6 /* KeychainStorage */,
 				8CE7AEDB19596EA100F48DB6 /* KeychainStorageTests */,
 				8C10125719403C7D00ED0557 /* Products */,
-				3F46FAD859CC4BADB3472076 /* Pods.xcconfig */,
 				42A1B1FC39414C05ABE03AF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -339,6 +364,7 @@
 		8C10125819403C7D00ED0557 /* bna */ = {
 			isa = PBXGroup;
 			children = (
+				8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */,
 				8C10125919403C7D00ED0557 /* Supporting Files */,
 				8CF742391957FFE6000275BC /* bna-Bridging-Header.h */,
 				8C10126219403C7D00ED0557 /* Images.xcassets */,
@@ -438,6 +464,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6E156195AA2ED00DAEF7C /* MMHud.h */,
+				8CE6E157195AA2ED00DAEF7C /* MMHud.m */,
+				8CE6E158195AA2ED00DAEF7C /* MMLinearProgressView.h */,
+				8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */,
+				8CE6E15A195AA2ED00DAEF7C /* MMProgressHUD+Animations.h */,
+				8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */,
+				8CE6E15C195AA2ED00DAEF7C /* MMProgressHUD+Class.m */,
+				8CE6E15D195AA2ED00DAEF7C /* MMProgressHUD.h */,
+				8CE6E15E195AA2ED00DAEF7C /* MMProgressHUD.m */,
+				8CE6E15F195AA2ED00DAEF7C /* MMProgressHUDCommon.h */,
+				8CE6E160195AA2ED00DAEF7C /* MMProgressHUDOverlayView.h */,
+				8CE6E161195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m */,
+				8CE6E162195AA2ED00DAEF7C /* MMProgressHUDViewController.h */,
+				8CE6E163195AA2ED00DAEF7C /* MMProgressHUDViewController.m */,
+				8CE6E164195AA2ED00DAEF7C /* MMProgressHUDWindow.h */,
+				8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */,
+				8CE6E166195AA2ED00DAEF7C /* MMProgressView-Protocol.h */,
+				8CE6E167195AA2ED00DAEF7C /* MMRadialProgressView.h */,
+				8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */,
+				8CE6E169195AA2ED00DAEF7C /* MMVectorImage.h */,
+				8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */,
+			);
+			name = MMProgressHUD;
+			path = vendors/MMProgressHUD/MMProgressHUD;
+			sourceTree = SOURCE_ROOT;
+		};
 		8CE7AECE19596EA100F48DB6 /* KeychainStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,12 +588,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C10127219403C7D00ED0557 /* Build configuration list for PBXNativeTarget "bna" */;
 			buildPhases = (
-				92600ED40CB44EA8BACF37F2 /* Check Pods Manifest.lock */,
 				8C10125219403C7D00ED0557 /* Sources */,
 				8C10125319403C7D00ED0557 /* Frameworks */,
 				8C10125419403C7D00ED0557 /* Resources */,
 				8C48B706194821C500829493 /* Embed Frameworks */,
-				75A5E827A82540F88ECC11DD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -757,49 +810,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		75A5E827A82540F88ECC11DD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		92600ED40CB44EA8BACF37F2 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		8C10125219403C7D00ED0557 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CE6E16F195AA2ED00DAEF7C /* MMProgressHUD.m in Sources */,
 				8C10125E19403C7D00ED0557 /* MainViewController.swift in Sources */,
+				8CE6E172195AA2ED00DAEF7C /* MMProgressHUDWindow.m in Sources */,
 				8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */,
+				8CE6E171195AA2ED00DAEF7C /* MMProgressHUDViewController.m in Sources */,
 				8CF7423D19582549000275BC /* DetailViewController.swift in Sources */,
+				8CE6E173195AA2ED00DAEF7C /* MMRadialProgressView.m in Sources */,
+				8CE6E16D195AA2ED00DAEF7C /* MMProgressHUD+Animations.m in Sources */,
+				8CE6E16C195AA2ED00DAEF7C /* MMLinearProgressView.m in Sources */,
+				8CE6E16B195AA2ED00DAEF7C /* MMHud.m in Sources */,
+				8CE6E170195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m in Sources */,
 				8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */,
+				8CE6E174195AA2ED00DAEF7C /* MMVectorImage.m in Sources */,
 				8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */,
+				8CE6E16E195AA2ED00DAEF7C /* MMProgressHUD+Class.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -969,8 +999,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -985,7 +1013,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1011,8 +1038,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1028,7 +1053,6 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1044,7 +1068,6 @@
 		};
 		8C10127319403C7D00ED0557 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F46FAD859CC4BADB3472076 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1062,7 +1085,6 @@
 		};
 		8C10127419403C7D00ED0557 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F46FAD859CC4BADB3472076 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
