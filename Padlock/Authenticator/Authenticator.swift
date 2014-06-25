@@ -41,7 +41,7 @@ class Authenticator {
         return Authenticator(sr!, sc!)
     }
 
-    func token(timestamp: NSTimeInterval = { NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate }()) -> (String, Double) {
+    func token(timestamp: NSTimeInterval = current_epoch()) -> (String, Double) {
         let t = UInt32(timestamp / 30)
 
         let t0 = UInt8((t & 0xff000000) >> 24)
@@ -60,10 +60,15 @@ class Authenticator {
 
         let token_str = NSString(format: "%08d", (token & 0x7fffffff) % 100000000) as String
 
+        return (token_str, Authenticator.progress(timestamp: timestamp))
+    }
+
+    class func progress(timestamp: NSTimeInterval = current_epoch()) -> Double {
+        let t = UInt32(timestamp / 30)
         let next_timestamp = NSTimeInterval(t + 1) * 30.0
         let progress = 1.0 - (next_timestamp - timestamp) / 30.0
 
-        return (token_str, progress)
+        return progress
     }
 
     class func request(#region: Region, completion: ((Authenticator?, NSError?) -> Void)) {

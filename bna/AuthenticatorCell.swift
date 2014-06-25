@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 import Padlock
 
 @IBDesignable
@@ -15,7 +16,7 @@ class AuthenticatorCell: UITableViewCell {
     @IBOutlet var token_label: UILabel
     @IBOutlet var serial_label: UILabel
 
-    var timer: NSTimer?
+    var timer: CADisplayLink?
 
     var authenticator: Authenticator? {
         didSet {
@@ -24,21 +25,17 @@ class AuthenticatorCell: UITableViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func update_token() {
         if let a = authenticator {
             let (token, progress) = a.token()
             token_label.text = token
+            token_label.textColor = color(progress: progress)
         }
     }
 
     func start_timer() {
-        timer = NSTimer(timeInterval: 0.5, target: self, selector: Selector("update_token"), userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        let timer = CADisplayLink(target: self, selector: Selector("update_token"))
+        timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
 
     func stop_timer() {

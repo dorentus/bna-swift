@@ -13,9 +13,7 @@
 		8C10126319403C7D00ED0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C10126219403C7D00ED0557 /* Images.xcassets */; };
 		8C10126F19403C7D00ED0557 /* bnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10126E19403C7D00ED0557 /* bnaTests.swift */; };
 		8C37BE26195AB3E700DD12DA /* keychain_fix.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C37BE25195AB3E700DD12DA /* keychain_fix.m */; };
-		8C4DD3BA195AAEEA00D6FEC9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4DD3B9195AAEE900D6FEC9 /* NotificationCenter.framework */; };
-		8C4DD3BF195AAEEA00D6FEC9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DD3BE195AAEEA00D6FEC9 /* TodayViewController.swift */; };
-		8C4DD3C1195AAEEA00D6FEC9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4DD3C0195AAEEA00D6FEC9 /* MainInterface.storyboard */; };
+		8C62F139195ABD6B00E9FA4F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62F138195ABD6B00E9FA4F /* Util.swift */; };
 		8CB98223195AA7D5007A7115 /* Padlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98222195AA7D5007A7115 /* Padlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CB98229195AA7D5007A7115 /* Padlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; };
 		8CB98230195AA7D5007A7115 /* PadlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9822F195AA7D5007A7115 /* PadlockTests.swift */; };
@@ -134,10 +132,7 @@
 		8C10126E19403C7D00ED0557 /* bnaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bnaTests.swift; sourceTree = "<group>"; };
 		8C37BE25195AB3E700DD12DA /* keychain_fix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keychain_fix.m; sourceTree = "<group>"; };
 		8C37BE27195AB40200DD12DA /* keychain_fix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keychain_fix.h; sourceTree = "<group>"; };
-		8C4DD3B9195AAEE900D6FEC9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		8C4DD3BD195AAEEA00D6FEC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C4DD3BE195AAEEA00D6FEC9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		8C4DD3C0195AAEEA00D6FEC9 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		8C62F138195ABD6B00E9FA4F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		8CB9821E195AA7D5007A7115 /* Padlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Padlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB98221195AA7D5007A7115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB98222195AA7D5007A7115 /* Padlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Padlock.h; sourceTree = "<group>"; };
@@ -265,6 +260,7 @@
 				8CF7423A1958251B000275BC /* AuthenticatorCell.swift */,
 				8CF7423C19582549000275BC /* DetailViewController.swift */,
 				8CF7423E19582567000275BC /* RestorationViewController.swift */,
+				8C62F138195ABD6B00E9FA4F /* Util.swift */,
 				8C10126219403C7D00ED0557 /* Images.xcassets */,
 				8CB9826F195AABF2007A7115 /* vendor */,
 				8C10125919403C7D00ED0557 /* Supporting Files */,
@@ -626,6 +622,7 @@
 				8CE6E16F195AA2ED00DAEF7C /* MMProgressHUD.m in Sources */,
 				8C10125E19403C7D00ED0557 /* MainViewController.swift in Sources */,
 				8CE6E172195AA2ED00DAEF7C /* MMProgressHUDWindow.m in Sources */,
+				8C62F139195ABD6B00E9FA4F /* Util.swift in Sources */,
 				8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */,
 				8CE6E171195AA2ED00DAEF7C /* MMProgressHUDViewController.m in Sources */,
 				8CF7423D19582549000275BC /* DetailViewController.swift in Sources */,
@@ -996,6 +993,7 @@
 				8CB98238195AA7D5007A7115 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CB9823C195AA7D5007A7115 /* Build configuration list for PBXNativeTarget "PadlockTests" */ = {
 			isa = XCConfigurationList;
@@ -1004,6 +1002,7 @@
 				8CB9823A195AA7D5007A7115 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -215,3 +215,7 @@ func rsa_encrypt(input: UInt8[]) -> UInt8[] {
 func rsa_encrypt(input: String) -> UInt8[] {
     return rsa_encrypt(input.bytes)
 }
+
+func current_epoch() -> NSTimeInterval {
+    return NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate
+}
