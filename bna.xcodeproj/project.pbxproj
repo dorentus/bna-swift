@@ -49,6 +49,7 @@
 		8CE6E172195AA2ED00DAEF7C /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */; };
 		8CE6E173195AA2ED00DAEF7C /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */; };
 		8CE6E174195AA2ED00DAEF7C /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */; };
+		8CF459DB195B02A6006F5F4E /* BNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */; };
 		8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423A1958251B000275BC /* AuthenticatorCell.swift */; };
 		8CF7423D19582549000275BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423C19582549000275BC /* DetailViewController.swift */; };
 		8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423E19582567000275BC /* RestorationViewController.swift */; };
@@ -180,6 +181,7 @@
 		8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
 		8CE6E169195AA2ED00DAEF7C /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
 		8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
+		8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNNavigationController.swift; sourceTree = "<group>"; };
 		8CF742391957FFE6000275BC /* bna-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bna-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CF7423A1958251B000275BC /* AuthenticatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorCell.swift; sourceTree = "<group>"; };
 		8CF7423C19582549000275BC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				8CF7423A1958251B000275BC /* AuthenticatorCell.swift */,
 				8CF7423C19582549000275BC /* DetailViewController.swift */,
 				8CF7423E19582567000275BC /* RestorationViewController.swift */,
+				8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */,
 				8C62F138195ABD6B00E9FA4F /* Util.swift */,
 				8C10126219403C7D00ED0557 /* Images.xcassets */,
 				8CB9826F195AABF2007A7115 /* vendor */,
@@ -626,6 +629,7 @@
 				8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */,
 				8CE6E171195AA2ED00DAEF7C /* MMProgressHUDViewController.m in Sources */,
 				8CF7423D19582549000275BC /* DetailViewController.swift in Sources */,
+				8CF459DB195B02A6006F5F4E /* BNNavigationController.swift in Sources */,
 				8CE6E173195AA2ED00DAEF7C /* MMRadialProgressView.m in Sources */,
 				8CE6E16D195AA2ED00DAEF7C /* MMProgressHUD+Animations.m in Sources */,
 				8CE6E16C195AA2ED00DAEF7C /* MMLinearProgressView.m in Sources */,

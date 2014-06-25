@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Security
 
 class AuthenticatorStorage {
     class func sharedStorage() -> AuthenticatorStorage {
@@ -17,11 +16,77 @@ class AuthenticatorStorage {
         return Singleton.instance
     }
 
+    let KEYCHAIN_SERVICE = "bna_authenticators"
+    let USERDEFAULTS_KEY = "bna_authenticator_serials"
+
+    let userDefaults: UserDefaults
+    let keychain: Keychain
+
+    var serials: String[] {
+        let a = userDefaults.serials
+        let b = keychain.serials
+        return a - (a - b) + (b - a)
+    }
+
+    init() {
+        self.userDefaults = UserDefaults(USERDEFAULTS_KEY)
+        self.keychain = Keychain(KEYCHAIN_SERVICE)
+    }
+
+    var count: Int {
+        return countElements(serials)
+    }
+
+    subscript(index: Int) -> Authenticator? {
+        if index < 0 || index >= count {
+            return nil
+        }
+
+        let serial = serials[index]
+        if let secret = self.keychain.secretForSerial(serial) {
+            return Authenticator.withSerial(serial, secret: secret)
+        }
+
+        return nil
+    }
+
+    func add(authenticator: Authenticator) -> Bool {
+        if exists(authenticator) {
+            return false
+        }
+
+        return self.keychain.add(authenticator) && self.userDefaults.add(authenticator)
+    }
+
+    func del(authenticator: Authenticator) -> Bool {
+        return self.keychain.del(authenticator) && self.userDefaults.del(authenticator)
+    }
+
+    func move(#from: Int, to: Int) -> Bool {
+        return self.userDefaults.move(from: from, to: to)
+    }
+
+    func exists(serial: String) -> Bool {
+        if find(self.serials, serial) {
+            return true
+        }
+
+        return false
+    }
+
+    func exists(authenticator: Authenticator) -> Bool {
+        return exists(authenticator.serial.description)
+    }
+
+}
+
+extension AuthenticatorStorage {
+
     class UserDefaults {
         let key: String
         var serials: String[] {
-            if let serials = NSUserDefaults.standardUserDefaults().objectForKey(key) as? String[] {
-                return serials
+        if let serials = NSUserDefaults.standardUserDefaults().objectForKey(key) as? String[] {
+            return serials
             }
             return []
         }
@@ -88,7 +153,7 @@ class AuthenticatorStorage {
     class Keychain {
         let service: String
         var serials: String[] {
-            let k = get_kSecAttrAccount()
+        let k = get_kSecAttrAccount()
             if let accounts = SSKeychain.accountsForService(service) as? NSDictionary[] {
                 return accounts.map {
                     v in
@@ -110,72 +175,9 @@ class AuthenticatorStorage {
         func del(authenticator: Authenticator) -> Bool {
             return SSKeychain.deletePasswordForService(service, account: authenticator.serial.description)
         }
-
+        
         func secretForSerial(serial: String) -> String? {
             return SSKeychain.passwordForService(service, account: serial)
         }
     }
-
-    let KEYCHAIN_SERVICE = "bna_authenticators"
-    let USERDEFAULTS_KEY = "bna_authenticator_serials"
-
-    let userDefaults: UserDefaults
-    let keychain: Keychain
-
-    var serials: String[] {
-        let a = userDefaults.serials
-        let b = keychain.serials
-        return a - (a - b) + (b - a)
-    }
-
-    init() {
-        self.userDefaults = UserDefaults(USERDEFAULTS_KEY)
-        self.keychain = Keychain(KEYCHAIN_SERVICE)
-    }
-
-    var count: Int {
-        return countElements(serials)
-    }
-
-    subscript(index: Int) -> Authenticator? {
-        if index < 0 || index >= count {
-            return nil
-        }
-
-        let serial = serials[index]
-        if let secret = self.keychain.secretForSerial(serial) {
-            return Authenticator.withSerial(serial, secret: secret)
-        }
-
-        return nil
-    }
-
-    func add(authenticator: Authenticator) -> Bool {
-        if exists(authenticator) {
-            return false
-        }
-
-        return self.keychain.add(authenticator) && self.userDefaults.add(authenticator)
-    }
-
-    func del(authenticator: Authenticator) -> Bool {
-        return self.keychain.del(authenticator) && self.userDefaults.del(authenticator)
-    }
-
-    func move(#from: Int, to: Int) -> Bool {
-        return self.userDefaults.move(from: from, to: to)
-    }
-
-    func exists(serial: String) -> Bool {
-        if find(self.serials, serial) {
-            return true
-        }
-
-        return false
-    }
-
-    func exists(authenticator: Authenticator) -> Bool {
-        return exists(authenticator.serial.description)
-    }
-
 }

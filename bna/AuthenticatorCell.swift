@@ -34,8 +34,8 @@ class AuthenticatorCell: UITableViewCell {
     }
 
     func start_timer() {
-        let timer = CADisplayLink(target: self, selector: Selector("update_token"))
-        timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        timer = CADisplayLink(target: self, selector: Selector("update_token"))
+        timer!.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
 
     func stop_timer() {
