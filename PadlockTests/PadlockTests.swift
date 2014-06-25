@@ -1,15 +1,15 @@
 //
-//  AuthenticatorTests.swift
-//  AuthenticatorTests
+//  PadlockTests.swift
+//  PadlockTests
 //
-//  Created by Zhang Yi on 2014-6-11.
+//  Created by Rox Dorentus on 2014-6-25.
 //  Copyright (c) 2014年 rubyist.today. All rights reserved.
 //
 
 import XCTest
-import Authenticator
+import Padlock
 
-class AuthenticatorTests: XCTestCase {
+class PadlockTests: XCTestCase {
     let serial = "CN-1402-1943-1283"
     let secret = "4202aa2182640745d8a807e0fe7e34b30c1edb23"
     let restorecode = "4CKBN08QEB"
@@ -120,4 +120,5 @@ class AuthenticatorTests: XCTestCase {
         }
         waitForExpectationsWithTimeout(5.0, nil)
     }
+
 }

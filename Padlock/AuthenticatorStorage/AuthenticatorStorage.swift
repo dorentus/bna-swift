@@ -1,6 +1,6 @@
 //
-//  AuthenticatorList.swift
-//  bna
+//  AuthenticatorStorage.swift
+//  AuthenticatorStorage
 //
 //  Created by Rox Dorentus on 2014-6-23.
 //  Copyright (c) 2014年 rubyist.today. All rights reserved.
@@ -8,12 +8,11 @@
 
 import Foundation
 import Security
-import Authenticator
 
-class AuthenticatorList {
-    class func sharedInstance() -> AuthenticatorList {
+class AuthenticatorStorage {
+    class func sharedStorage() -> AuthenticatorStorage {
         struct Singleton {
-            static let instance = AuthenticatorList()
+            static let instance = AuthenticatorStorage()
         }
         return Singleton.instance
     }

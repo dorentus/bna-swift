@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import Authenticator
-import KeychainStorage
+import Padlock
 
 class MainViewController: UITableViewController {
     let SegueDetail = "authenticator_detail"
     let SegueRestore = "authenticator_restore"
 
-    @lazy var authenticators: AuthenticatorList = {
-        return AuthenticatorList.sharedInstance()
+    @lazy var authenticators: AuthenticatorStorage = {
+        return AuthenticatorStorage.sharedStorage()
     }()
 
     override func viewDidLoad() {

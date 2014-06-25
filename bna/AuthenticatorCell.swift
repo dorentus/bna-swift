@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Authenticator
+import Padlock
 
 @IBDesignable
 class AuthenticatorCell: UITableViewCell {
@@ -19,7 +19,6 @@ class AuthenticatorCell: UITableViewCell {
 
     var authenticator: Authenticator? {
         didSet {
-            println("did set \(authenticator)")
             serial_label.text = authenticator?.serial.description
             update_token()
         }

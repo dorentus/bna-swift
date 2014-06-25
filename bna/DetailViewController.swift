@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Authenticator
+import Padlock
 
 class DetailViewController: UITableViewController {
 

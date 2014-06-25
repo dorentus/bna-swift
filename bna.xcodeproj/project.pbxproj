@@ -12,19 +12,31 @@
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
 		8C10126319403C7D00ED0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C10126219403C7D00ED0557 /* Images.xcassets */; };
 		8C10126F19403C7D00ED0557 /* bnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10126E19403C7D00ED0557 /* bnaTests.swift */; };
-		8C48B6ED194821C500829493 /* Authenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C48B6EC194821C500829493 /* Authenticator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C48B6F3194821C500829493 /* Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; };
-		8C48B6FA194821C500829493 /* AuthenticatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C48B6F9194821C500829493 /* AuthenticatorTests.swift */; };
-		8C48B6FD194821C500829493 /* Authenticator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; };
-		8C48B6FE194821C500829493 /* Authenticator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C48B6E8194821C400829493 /* Authenticator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		8C48B7131948274000829493 /* NSData+Crypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C48B7121948274000829493 /* NSData+Crypt.m */; };
-		8C48B7151948274D00829493 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25090B194166DF00E7582A /* Extensions.swift */; };
-		8C48B7171948276500829493 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127C194063A600ED0557 /* Serial.swift */; };
-		8C48B7181948276500829493 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127E194063D700ED0557 /* Secret.swift */; };
-		8C48B7191948276500829493 /* Restorecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1012801940640000ED0557 /* Restorecode.swift */; };
-		8C48B71A1948276700829493 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10127A19403EAC00ED0557 /* Authenticator.swift */; };
-		8C48B71D1948282600829493 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C48B71C1948282600829493 /* Bridging-Header.h */; };
-		8CAE2D571955851600370B1A /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE2D561955851600370B1A /* functions.m */; };
+		8CB98223195AA7D5007A7115 /* Padlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98222195AA7D5007A7115 /* Padlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CB98229195AA7D5007A7115 /* Padlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; };
+		8CB98230195AA7D5007A7115 /* PadlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9822F195AA7D5007A7115 /* PadlockTests.swift */; };
+		8CB98233195AA7D5007A7115 /* Padlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; };
+		8CB98234195AA7D5007A7115 /* Padlock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8CB9824B195AA962007A7115 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9823E195AA962007A7115 /* Authenticator.swift */; };
+		8CB9824C195AA962007A7115 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98240195AA962007A7115 /* Extensions.swift */; };
+		8CB9824D195AA962007A7115 /* functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98241195AA962007A7115 /* functions.h */; };
+		8CB9824E195AA962007A7115 /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98242195AA962007A7115 /* functions.m */; };
+		8CB9824F195AA962007A7115 /* NSData+Crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98243195AA962007A7115 /* NSData+Crypt.h */; };
+		8CB98250195AA962007A7115 /* NSData+Crypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98244195AA962007A7115 /* NSData+Crypt.m */; };
+		8CB98251195AA962007A7115 /* Restorecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98245195AA962007A7115 /* Restorecode.swift */; };
+		8CB98252195AA962007A7115 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98246195AA962007A7115 /* Secret.swift */; };
+		8CB98253195AA962007A7115 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98247195AA962007A7115 /* Serial.swift */; };
+		8CB98254195AA962007A7115 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98248195AA962007A7115 /* Bridging-Header.h */; };
+		8CB98255195AA962007A7115 /* AuthenticatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */; };
+		8CB98260195AA9EB007A7115 /* bigd.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9825A195AA9EB007A7115 /* bigd.c */; };
+		8CB98261195AA9EB007A7115 /* bigd.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB9825B195AA9EB007A7115 /* bigd.h */; };
+		8CB98262195AA9EB007A7115 /* bigdigits.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9825C195AA9EB007A7115 /* bigdigits.c */; };
+		8CB98263195AA9EB007A7115 /* bigdigits.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB9825D195AA9EB007A7115 /* bigdigits.h */; };
+		8CB98265195AA9EB007A7115 /* bigdtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB9825F195AA9EB007A7115 /* bigdtypes.h */; };
+		8CB9826B195AAA04007A7115 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98267195AAA04007A7115 /* SSKeychain.h */; };
+		8CB9826C195AAA04007A7115 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98268195AAA04007A7115 /* SSKeychain.m */; };
+		8CB9826D195AAA04007A7115 /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98269195AAA04007A7115 /* SSKeychainQuery.h */; };
+		8CB9826E195AAA04007A7115 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9826A195AAA04007A7115 /* SSKeychainQuery.m */; };
 		8CE6E16B195AA2ED00DAEF7C /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E157195AA2ED00DAEF7C /* MMHud.m */; };
 		8CE6E16C195AA2ED00DAEF7C /* MMLinearProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */; };
 		8CE6E16D195AA2ED00DAEF7C /* MMProgressHUD+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */; };
@@ -35,22 +47,6 @@
 		8CE6E172195AA2ED00DAEF7C /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */; };
 		8CE6E173195AA2ED00DAEF7C /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */; };
 		8CE6E174195AA2ED00DAEF7C /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */; };
-		8CE7AED219596EA100F48DB6 /* KeychainStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AED119596EA100F48DB6 /* KeychainStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8CE7AED819596EA100F48DB6 /* KeychainStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */; };
-		8CE7AEDF19596EA100F48DB6 /* KeychainStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7AEDE19596EA100F48DB6 /* KeychainStorageTests.swift */; };
-		8CE7AEE219596EA100F48DB6 /* KeychainStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */; };
-		8CE7AEE319596EA100F48DB6 /* KeychainStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		8CE7AEF619596EE800F48DB6 /* bigd.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7AEF119596EE800F48DB6 /* bigd.c */; };
-		8CE7AEF719596EE800F48DB6 /* bigd.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AEF219596EE800F48DB6 /* bigd.h */; };
-		8CE7AEF819596EE800F48DB6 /* bigdigits.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7AEF319596EE800F48DB6 /* bigdigits.c */; };
-		8CE7AEF919596EE800F48DB6 /* bigdigits.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AEF419596EE800F48DB6 /* bigdigits.h */; };
-		8CE7AEFA19596EE800F48DB6 /* bigdtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AEF519596EE800F48DB6 /* bigdtypes.h */; };
-		8CE7AF0019596FC200F48DB6 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AEFC19596FC200F48DB6 /* SSKeychain.h */; };
-		8CE7AF0119596FC200F48DB6 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7AEFD19596FC200F48DB6 /* SSKeychain.m */; };
-		8CE7AF0219596FC200F48DB6 /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AEFE19596FC200F48DB6 /* SSKeychainQuery.h */; };
-		8CE7AF0319596FC200F48DB6 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7AEFF19596FC200F48DB6 /* SSKeychainQuery.m */; };
-		8CE7AF051959703600F48DB6 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE7AF041959703600F48DB6 /* Bridging-Header.h */; };
-		8CE7AF09195971A200F48DB6 /* AuthenticatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE7AF08195971A200F48DB6 /* AuthenticatorList.swift */; };
 		8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423A1958251B000275BC /* AuthenticatorCell.swift */; };
 		8CF7423D19582549000275BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423C19582549000275BC /* DetailViewController.swift */; };
 		8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423E19582567000275BC /* RestorationViewController.swift */; };
@@ -78,69 +74,6 @@
 			remoteGlobalIDString = 8C10125519403C7D00ED0557;
 			remoteInfo = bna;
 		};
-		8C1D51181959724B004D7FBC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = Authenticator;
-		};
-		8C1D511A1959724F004D7FBC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8CE7AECC19596EA100F48DB6;
-			remoteInfo = KeychainStorage;
-		};
-		8C48B6F4194821C500829493 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = authenticator;
-		};
-		8C48B6FB194821C500829493 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = authenticator;
-		};
-		8C48B6FF194821C500829493 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = authenticator;
-		};
-		8C48B708194821C600829493 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = authenticator;
-		};
-		8C48B70A194821C700829493 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = authenticator;
-		};
-		8C48B70C194821C900829493 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = authenticator;
-		};
-		8C48B70E194821D700829493 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8C48B6E7194821C400829493;
-			remoteInfo = authenticator;
-		};
 		8C48B710194821D900829493 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
@@ -148,47 +81,26 @@
 			remoteGlobalIDString = 8C10125519403C7D00ED0557;
 			remoteInfo = bna;
 		};
-		8CE7AED919596EA100F48DB6 /* PBXContainerItemProxy */ = {
+		8CB9822A195AA7D5007A7115 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8CE7AECC19596EA100F48DB6;
-			remoteInfo = KeychainStorage;
+			remoteGlobalIDString = 8CB9821D195AA7D5007A7115;
+			remoteInfo = Padlock;
 		};
-		8CE7AEE019596EA100F48DB6 /* PBXContainerItemProxy */ = {
+		8CB98231195AA7D5007A7115 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8CE7AECC19596EA100F48DB6;
-			remoteInfo = KeychainStorage;
+			remoteGlobalIDString = 8CB9821D195AA7D5007A7115;
+			remoteInfo = Padlock;
 		};
-		8CE7AEE419596EA100F48DB6 /* PBXContainerItemProxy */ = {
+		8CB98235195AA7D5007A7115 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8CE7AECC19596EA100F48DB6;
-			remoteInfo = KeychainStorage;
-		};
-		8CE7AEEC19596EA200F48DB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8CE7AECC19596EA100F48DB6;
-			remoteInfo = KeychainStorage;
-		};
-		8CE7AEEE19596EA200F48DB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8CE7AECC19596EA100F48DB6;
-			remoteInfo = KeychainStorage;
-		};
-		8CE7AF061959706200F48DB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8CE7AECC19596EA100F48DB6;
-			remoteInfo = KeychainStorage;
+			remoteGlobalIDString = 8CB9821D195AA7D5007A7115;
+			remoteInfo = Padlock;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -199,8 +111,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8CE7AEE319596EA100F48DB6 /* KeychainStorage.framework in Embed Frameworks */,
-				8C48B6FE194821C500829493 /* Authenticator.framework in Embed Frameworks */,
+				8CB98234195AA7D5007A7115 /* Padlock.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,22 +128,32 @@
 		8C10126819403C7D00ED0557 /* bnaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bnaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C10126D19403C7D00ED0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C10126E19403C7D00ED0557 /* bnaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bnaTests.swift; sourceTree = "<group>"; };
-		8C10127A19403EAC00ED0557 /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
-		8C10127C194063A600ED0557 /* Serial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
-		8C10127E194063D700ED0557 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
-		8C1012801940640000ED0557 /* Restorecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restorecode.swift; sourceTree = "<group>"; };
-		8C25090B194166DF00E7582A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		8C48B6E8194821C400829493 /* Authenticator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authenticator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C48B6EB194821C500829493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C48B6EC194821C500829493 /* Authenticator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authenticator.h; sourceTree = "<group>"; };
-		8C48B6F2194821C500829493 /* AuthenticatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthenticatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C48B6F8194821C500829493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C48B6F9194821C500829493 /* AuthenticatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorTests.swift; sourceTree = "<group>"; };
-		8C48B7121948274000829493 /* NSData+Crypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Crypt.m"; sourceTree = "<group>"; };
-		8C48B71B1948279A00829493 /* NSData+Crypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Crypt.h"; sourceTree = "<group>"; };
-		8C48B71C1948282600829493 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		8CAE2D551955850C00370B1A /* functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
-		8CAE2D561955851600370B1A /* functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
+		8CB9821E195AA7D5007A7115 /* Padlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Padlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB98221195AA7D5007A7115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB98222195AA7D5007A7115 /* Padlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Padlock.h; sourceTree = "<group>"; };
+		8CB98228195AA7D5007A7115 /* PadlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PadlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB9822E195AA7D5007A7115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB9822F195AA7D5007A7115 /* PadlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadlockTests.swift; sourceTree = "<group>"; };
+		8CB9823E195AA962007A7115 /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		8CB98240195AA962007A7115 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8CB98241195AA962007A7115 /* functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
+		8CB98242195AA962007A7115 /* functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
+		8CB98243195AA962007A7115 /* NSData+Crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Crypt.h"; sourceTree = "<group>"; };
+		8CB98244195AA962007A7115 /* NSData+Crypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Crypt.m"; sourceTree = "<group>"; };
+		8CB98245195AA962007A7115 /* Restorecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restorecode.swift; sourceTree = "<group>"; };
+		8CB98246195AA962007A7115 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		8CB98247195AA962007A7115 /* Serial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
+		8CB98248195AA962007A7115 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorStorage.swift; sourceTree = "<group>"; };
+		8CB9825A195AA9EB007A7115 /* bigd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigd.c; sourceTree = "<group>"; };
+		8CB9825B195AA9EB007A7115 /* bigd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigd.h; sourceTree = "<group>"; };
+		8CB9825C195AA9EB007A7115 /* bigdigits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigdigits.c; sourceTree = "<group>"; };
+		8CB9825D195AA9EB007A7115 /* bigdigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdigits.h; sourceTree = "<group>"; };
+		8CB9825F195AA9EB007A7115 /* bigdtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdtypes.h; sourceTree = "<group>"; };
+		8CB98267195AAA04007A7115 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		8CB98268195AAA04007A7115 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		8CB98269195AAA04007A7115 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		8CB9826A195AAA04007A7115 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		8CE6E156195AA2ED00DAEF7C /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
 		8CE6E157195AA2ED00DAEF7C /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
 		8CE6E158195AA2ED00DAEF7C /* MMLinearProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLinearProgressView.h; sourceTree = "<group>"; };
@@ -254,23 +175,6 @@
 		8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
 		8CE6E169195AA2ED00DAEF7C /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
 		8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
-		8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CE7AED019596EA100F48DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CE7AED119596EA100F48DB6 /* KeychainStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainStorage.h; sourceTree = "<group>"; };
-		8CE7AED719596EA100F48DB6 /* KeychainStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CE7AEDD19596EA100F48DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CE7AEDE19596EA100F48DB6 /* KeychainStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorageTests.swift; sourceTree = "<group>"; };
-		8CE7AEF119596EE800F48DB6 /* bigd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigd.c; sourceTree = "<group>"; };
-		8CE7AEF219596EE800F48DB6 /* bigd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigd.h; sourceTree = "<group>"; };
-		8CE7AEF319596EE800F48DB6 /* bigdigits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigdigits.c; sourceTree = "<group>"; };
-		8CE7AEF419596EE800F48DB6 /* bigdigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdigits.h; sourceTree = "<group>"; };
-		8CE7AEF519596EE800F48DB6 /* bigdtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdtypes.h; sourceTree = "<group>"; };
-		8CE7AEFC19596FC200F48DB6 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		8CE7AEFD19596FC200F48DB6 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		8CE7AEFE19596FC200F48DB6 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		8CE7AEFF19596FC200F48DB6 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
-		8CE7AF041959703600F48DB6 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		8CE7AF08195971A200F48DB6 /* AuthenticatorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorList.swift; sourceTree = "<group>"; };
 		8CF742391957FFE6000275BC /* bna-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bna-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CF7423A1958251B000275BC /* AuthenticatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorCell.swift; sourceTree = "<group>"; };
 		8CF7423C19582549000275BC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -282,8 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6FD194821C500829493 /* Authenticator.framework in Frameworks */,
-				8CE7AEE219596EA100F48DB6 /* KeychainStorage.framework in Frameworks */,
+				8CB98233195AA7D5007A7115 /* Padlock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,33 +197,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C48B6E4194821C400829493 /* Frameworks */ = {
+		8CB9821A195AA7D5007A7115 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C48B6EF194821C500829493 /* Frameworks */ = {
+		8CB98225195AA7D5007A7115 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6F3194821C500829493 /* Authenticator.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CE7AEC919596EA100F48DB6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CE7AED419596EA100F48DB6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CE7AED819596EA100F48DB6 /* KeychainStorage.framework in Frameworks */,
+				8CB98229195AA7D5007A7115 /* Padlock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,10 +227,8 @@
 			children = (
 				8C10125819403C7D00ED0557 /* bna */,
 				8C10126B19403C7D00ED0557 /* bnaTests */,
-				8C48B6E9194821C400829493 /* Authenticator */,
-				8C48B6F6194821C500829493 /* AuthenticatorTests */,
-				8CE7AECE19596EA100F48DB6 /* KeychainStorage */,
-				8CE7AEDB19596EA100F48DB6 /* KeychainStorageTests */,
+				8CB9821F195AA7D5007A7115 /* Padlock */,
+				8CB9822C195AA7D5007A7115 /* PadlockTests */,
 				8C10125719403C7D00ED0557 /* Products */,
 				42A1B1FC39414C05ABE03AF4 /* Frameworks */,
 			);
@@ -353,10 +239,8 @@
 			children = (
 				8C10125619403C7D00ED0557 /* bna.app */,
 				8C10126819403C7D00ED0557 /* bnaTests.xctest */,
-				8C48B6E8194821C400829493 /* Authenticator.framework */,
-				8C48B6F2194821C500829493 /* AuthenticatorTests.xctest */,
-				8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */,
-				8CE7AED719596EA100F48DB6 /* KeychainStorageTests.xctest */,
+				8CB9821E195AA7D5007A7115 /* Padlock.framework */,
+				8CB98228195AA7D5007A7115 /* PadlockTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -364,16 +248,16 @@
 		8C10125819403C7D00ED0557 /* bna */ = {
 			isa = PBXGroup;
 			children = (
-				8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */,
-				8C10125919403C7D00ED0557 /* Supporting Files */,
 				8CF742391957FFE6000275BC /* bna-Bridging-Header.h */,
-				8C10126219403C7D00ED0557 /* Images.xcassets */,
 				8C10125F19403C7D00ED0557 /* Main.storyboard */,
 				8C10125B19403C7D00ED0557 /* AppDelegate.swift */,
 				8C10125D19403C7D00ED0557 /* MainViewController.swift */,
 				8CF7423A1958251B000275BC /* AuthenticatorCell.swift */,
 				8CF7423C19582549000275BC /* DetailViewController.swift */,
 				8CF7423E19582567000275BC /* RestorationViewController.swift */,
+				8C10126219403C7D00ED0557 /* Images.xcassets */,
+				8CB9826F195AABF2007A7115 /* vendors */,
+				8C10125919403C7D00ED0557 /* Supporting Files */,
 			);
 			path = bna;
 			sourceTree = "<group>";
@@ -403,65 +287,116 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8C10127919403E9900ED0557 /* bnet */ = {
+		8CB9821F195AA7D5007A7115 /* Padlock */ = {
 			isa = PBXGroup;
 			children = (
-				8C15DA8F19446D8D00A380BC /* ext */,
-				8C10127C194063A600ED0557 /* Serial.swift */,
-				8C10127E194063D700ED0557 /* Secret.swift */,
-				8C1012801940640000ED0557 /* Restorecode.swift */,
-				8C10127A19403EAC00ED0557 /* Authenticator.swift */,
+				8CB98222195AA7D5007A7115 /* Padlock.h */,
+				8CB98248195AA962007A7115 /* Bridging-Header.h */,
+				8CB9823D195AA962007A7115 /* Authenticator */,
+				8CB98249195AA962007A7115 /* AuthenticatorStorage */,
+				8CB98220195AA7D5007A7115 /* Supporting Files */,
+				8CB98270195AAC05007A7115 /* vendors */,
 			);
-			path = bnet;
+			path = Padlock;
 			sourceTree = "<group>";
 		};
-		8C15DA8F19446D8D00A380BC /* ext */ = {
+		8CB98220195AA7D5007A7115 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8C25090B194166DF00E7582A /* Extensions.swift */,
-				8C48B71B1948279A00829493 /* NSData+Crypt.h */,
-				8C48B7121948274000829493 /* NSData+Crypt.m */,
-				8CAE2D551955850C00370B1A /* functions.h */,
-				8CAE2D561955851600370B1A /* functions.m */,
+				8CB98221195AA7D5007A7115 /* Info.plist */,
 			);
-			path = ext;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8C48B6E9194821C400829493 /* Authenticator */ = {
+		8CB9822C195AA7D5007A7115 /* PadlockTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C48B71C1948282600829493 /* Bridging-Header.h */,
-				8C48B6EC194821C500829493 /* Authenticator.h */,
-				8CE7AEF019596EE800F48DB6 /* BigDigits */,
-				8C10127919403E9900ED0557 /* bnet */,
-				8C48B6EA194821C400829493 /* Supporting Files */,
+				8CB9822F195AA7D5007A7115 /* PadlockTests.swift */,
+				8CB9822D195AA7D5007A7115 /* Supporting Files */,
+			);
+			path = PadlockTests;
+			sourceTree = "<group>";
+		};
+		8CB9822D195AA7D5007A7115 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CB9822E195AA7D5007A7115 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CB9823D195AA962007A7115 /* Authenticator */ = {
+			isa = PBXGroup;
+			children = (
+				8CB9823F195AA962007A7115 /* ext */,
+				8CB9823E195AA962007A7115 /* Authenticator.swift */,
+				8CB98245195AA962007A7115 /* Restorecode.swift */,
+				8CB98246195AA962007A7115 /* Secret.swift */,
+				8CB98247195AA962007A7115 /* Serial.swift */,
 			);
 			path = Authenticator;
 			sourceTree = "<group>";
 		};
-		8C48B6EA194821C400829493 /* Supporting Files */ = {
+		8CB9823F195AA962007A7115 /* ext */ = {
 			isa = PBXGroup;
 			children = (
-				8C48B6EB194821C500829493 /* Info.plist */,
+				8CB98240195AA962007A7115 /* Extensions.swift */,
+				8CB98241195AA962007A7115 /* functions.h */,
+				8CB98242195AA962007A7115 /* functions.m */,
+				8CB98243195AA962007A7115 /* NSData+Crypt.h */,
+				8CB98244195AA962007A7115 /* NSData+Crypt.m */,
 			);
-			name = "Supporting Files";
+			path = ext;
 			sourceTree = "<group>";
 		};
-		8C48B6F6194821C500829493 /* AuthenticatorTests */ = {
+		8CB98249195AA962007A7115 /* AuthenticatorStorage */ = {
 			isa = PBXGroup;
 			children = (
-				8C48B6F9194821C500829493 /* AuthenticatorTests.swift */,
-				8C48B6F7194821C500829493 /* Supporting Files */,
+				8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */,
 			);
-			path = AuthenticatorTests;
+			path = AuthenticatorStorage;
 			sourceTree = "<group>";
 		};
-		8C48B6F7194821C500829493 /* Supporting Files */ = {
+		8CB98259195AA9EB007A7115 /* BigDigits */ = {
 			isa = PBXGroup;
 			children = (
-				8C48B6F8194821C500829493 /* Info.plist */,
+				8CB9825A195AA9EB007A7115 /* bigd.c */,
+				8CB9825B195AA9EB007A7115 /* bigd.h */,
+				8CB9825C195AA9EB007A7115 /* bigdigits.c */,
+				8CB9825D195AA9EB007A7115 /* bigdigits.h */,
+				8CB9825F195AA9EB007A7115 /* bigdtypes.h */,
 			);
-			name = "Supporting Files";
+			name = BigDigits;
+			path = vendors/BigDigits;
+			sourceTree = SOURCE_ROOT;
+		};
+		8CB98266195AAA04007A7115 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				8CB98267195AAA04007A7115 /* SSKeychain.h */,
+				8CB98268195AAA04007A7115 /* SSKeychain.m */,
+				8CB98269195AAA04007A7115 /* SSKeychainQuery.h */,
+				8CB9826A195AAA04007A7115 /* SSKeychainQuery.m */,
+			);
+			name = SSKeychain;
+			path = vendors/SSKeychain/SSKeychain;
+			sourceTree = SOURCE_ROOT;
+		};
+		8CB9826F195AABF2007A7115 /* vendors */ = {
+			isa = PBXGroup;
+			children = (
+				8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */,
+			);
+			name = vendors;
+			sourceTree = "<group>";
+		};
+		8CB98270195AAC05007A7115 /* vendors */ = {
+			isa = PBXGroup;
+			children = (
+				8CB98266195AAA04007A7115 /* SSKeychain */,
+				8CB98259195AA9EB007A7115 /* BigDigits */,
+			);
+			name = vendors;
 			sourceTree = "<group>";
 		};
 		8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */ = {
@@ -493,91 +428,22 @@
 			path = vendors/MMProgressHUD/MMProgressHUD;
 			sourceTree = SOURCE_ROOT;
 		};
-		8CE7AECE19596EA100F48DB6 /* KeychainStorage */ = {
-			isa = PBXGroup;
-			children = (
-				8CE7AF08195971A200F48DB6 /* AuthenticatorList.swift */,
-				8CE7AF041959703600F48DB6 /* Bridging-Header.h */,
-				8CE7AED119596EA100F48DB6 /* KeychainStorage.h */,
-				8CE7AEFB19596FC200F48DB6 /* SSKeychain */,
-				8CE7AECF19596EA100F48DB6 /* Supporting Files */,
-			);
-			path = KeychainStorage;
-			sourceTree = "<group>";
-		};
-		8CE7AECF19596EA100F48DB6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8CE7AED019596EA100F48DB6 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8CE7AEDB19596EA100F48DB6 /* KeychainStorageTests */ = {
-			isa = PBXGroup;
-			children = (
-				8CE7AEDE19596EA100F48DB6 /* KeychainStorageTests.swift */,
-				8CE7AEDC19596EA100F48DB6 /* Supporting Files */,
-			);
-			path = KeychainStorageTests;
-			sourceTree = "<group>";
-		};
-		8CE7AEDC19596EA100F48DB6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8CE7AEDD19596EA100F48DB6 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8CE7AEF019596EE800F48DB6 /* BigDigits */ = {
-			isa = PBXGroup;
-			children = (
-				8CE7AEF119596EE800F48DB6 /* bigd.c */,
-				8CE7AEF219596EE800F48DB6 /* bigd.h */,
-				8CE7AEF319596EE800F48DB6 /* bigdigits.c */,
-				8CE7AEF419596EE800F48DB6 /* bigdigits.h */,
-				8CE7AEF519596EE800F48DB6 /* bigdtypes.h */,
-			);
-			name = BigDigits;
-			path = vendors/BigDigits;
-			sourceTree = SOURCE_ROOT;
-		};
-		8CE7AEFB19596FC200F48DB6 /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				8CE7AEFC19596FC200F48DB6 /* SSKeychain.h */,
-				8CE7AEFD19596FC200F48DB6 /* SSKeychain.m */,
-				8CE7AEFE19596FC200F48DB6 /* SSKeychainQuery.h */,
-				8CE7AEFF19596FC200F48DB6 /* SSKeychainQuery.m */,
-			);
-			name = SSKeychain;
-			path = vendors/SSKeychain/SSKeychain;
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8C48B6E5194821C400829493 /* Headers */ = {
+		8CB9821B195AA7D5007A7115 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6ED194821C500829493 /* Authenticator.h in Headers */,
-				8CE7AEF719596EE800F48DB6 /* bigd.h in Headers */,
-				8CE7AEFA19596EE800F48DB6 /* bigdtypes.h in Headers */,
-				8C48B71D1948282600829493 /* Bridging-Header.h in Headers */,
-				8CE7AEF919596EE800F48DB6 /* bigdigits.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CE7AECA19596EA100F48DB6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CE7AF0019596FC200F48DB6 /* SSKeychain.h in Headers */,
-				8CE7AF0219596FC200F48DB6 /* SSKeychainQuery.h in Headers */,
-				8CE7AED219596EA100F48DB6 /* KeychainStorage.h in Headers */,
-				8CE7AF051959703600F48DB6 /* Bridging-Header.h in Headers */,
+				8CB98261195AA9EB007A7115 /* bigd.h in Headers */,
+				8CB9824D195AA962007A7115 /* functions.h in Headers */,
+				8CB98223195AA7D5007A7115 /* Padlock.h in Headers */,
+				8CB9824F195AA962007A7115 /* NSData+Crypt.h in Headers */,
+				8CB9826B195AAA04007A7115 /* SSKeychain.h in Headers */,
+				8CB98254195AA962007A7115 /* Bridging-Header.h in Headers */,
+				8CB98265195AA9EB007A7115 /* bigdtypes.h in Headers */,
+				8CB9826D195AAA04007A7115 /* SSKeychainQuery.h in Headers */,
+				8CB98263195AA9EB007A7115 /* bigdigits.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,10 +462,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				8C48B6FC194821C500829493 /* PBXTargetDependency */,
-				8C48B700194821C500829493 /* PBXTargetDependency */,
-				8CE7AEE119596EA100F48DB6 /* PBXTargetDependency */,
-				8CE7AEE519596EA100F48DB6 /* PBXTargetDependency */,
+				8CB98232195AA7D5007A7115 /* PBXTargetDependency */,
+				8CB98236195AA7D5007A7115 /* PBXTargetDependency */,
 			);
 			name = bna;
 			productName = bna;
@@ -627,85 +491,40 @@
 			productReference = 8C10126819403C7D00ED0557 /* bnaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8C48B6E7194821C400829493 /* Authenticator */ = {
+		8CB9821D195AA7D5007A7115 /* Padlock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C48B705194821C500829493 /* Build configuration list for PBXNativeTarget "Authenticator" */;
+			buildConfigurationList = 8CB9823B195AA7D5007A7115 /* Build configuration list for PBXNativeTarget "Padlock" */;
 			buildPhases = (
-				8C48B6E3194821C400829493 /* Sources */,
-				8C48B6E4194821C400829493 /* Frameworks */,
-				8C48B6E5194821C400829493 /* Headers */,
-				8C48B6E6194821C400829493 /* Resources */,
+				8CB98219195AA7D5007A7115 /* Sources */,
+				8CB9821A195AA7D5007A7115 /* Frameworks */,
+				8CB9821B195AA7D5007A7115 /* Headers */,
+				8CB9821C195AA7D5007A7115 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Authenticator;
-			productName = authenticator;
-			productReference = 8C48B6E8194821C400829493 /* Authenticator.framework */;
+			name = Padlock;
+			productName = Padlock;
+			productReference = 8CB9821E195AA7D5007A7115 /* Padlock.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8C48B6F1194821C500829493 /* AuthenticatorTests */ = {
+		8CB98227195AA7D5007A7115 /* PadlockTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C48B707194821C500829493 /* Build configuration list for PBXNativeTarget "AuthenticatorTests" */;
+			buildConfigurationList = 8CB9823C195AA7D5007A7115 /* Build configuration list for PBXNativeTarget "PadlockTests" */;
 			buildPhases = (
-				8C48B6EE194821C500829493 /* Sources */,
-				8C48B6EF194821C500829493 /* Frameworks */,
-				8C48B6F0194821C500829493 /* Resources */,
+				8CB98224195AA7D5007A7115 /* Sources */,
+				8CB98225195AA7D5007A7115 /* Frameworks */,
+				8CB98226195AA7D5007A7115 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8C48B6F5194821C500829493 /* PBXTargetDependency */,
-				8C48B709194821C600829493 /* PBXTargetDependency */,
-				8C48B70B194821C700829493 /* PBXTargetDependency */,
-				8C48B70D194821C900829493 /* PBXTargetDependency */,
-				8C48B70F194821D700829493 /* PBXTargetDependency */,
-				8C1D51191959724B004D7FBC /* PBXTargetDependency */,
+				8CB9822B195AA7D5007A7115 /* PBXTargetDependency */,
 			);
-			name = AuthenticatorTests;
-			productName = authenticatorTests;
-			productReference = 8C48B6F2194821C500829493 /* AuthenticatorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8CE7AECC19596EA100F48DB6 /* KeychainStorage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8CE7AEEA19596EA100F48DB6 /* Build configuration list for PBXNativeTarget "KeychainStorage" */;
-			buildPhases = (
-				8CE7AEC819596EA100F48DB6 /* Sources */,
-				8CE7AEC919596EA100F48DB6 /* Frameworks */,
-				8CE7AECA19596EA100F48DB6 /* Headers */,
-				8CE7AECB19596EA100F48DB6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = KeychainStorage;
-			productName = KeychainStorage;
-			productReference = 8CE7AECD19596EA100F48DB6 /* KeychainStorage.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8CE7AED619596EA100F48DB6 /* KeychainStorageTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8CE7AEEB19596EA100F48DB6 /* Build configuration list for PBXNativeTarget "KeychainStorageTests" */;
-			buildPhases = (
-				8CE7AED319596EA100F48DB6 /* Sources */,
-				8CE7AED419596EA100F48DB6 /* Frameworks */,
-				8CE7AED519596EA100F48DB6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8CE7AEDA19596EA100F48DB6 /* PBXTargetDependency */,
-				8CE7AEED19596EA200F48DB6 /* PBXTargetDependency */,
-				8CE7AEEF19596EA200F48DB6 /* PBXTargetDependency */,
-				8CE7AF071959706200F48DB6 /* PBXTargetDependency */,
-				8C1D511B1959724F004D7FBC /* PBXTargetDependency */,
-			);
-			name = KeychainStorageTests;
-			productName = KeychainStorageTests;
-			productReference = 8CE7AED719596EA100F48DB6 /* KeychainStorageTests.xctest */;
+			name = PadlockTests;
+			productName = PadlockTests;
+			productReference = 8CB98228195AA7D5007A7115 /* PadlockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -724,19 +543,12 @@
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 8C10125519403C7D00ED0557;
 					};
-					8C48B6E7194821C400829493 = {
+					8CB9821D195AA7D5007A7115 = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					8C48B6F1194821C500829493 = {
+					8CB98227195AA7D5007A7115 = {
 						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 8C48B6E7194821C400829493;
-					};
-					8CE7AECC19596EA100F48DB6 = {
-						CreatedOnToolsVersion = 6.0;
-					};
-					8CE7AED619596EA100F48DB6 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 8CE7AECC19596EA100F48DB6;
+						TestTargetID = 8CB9821D195AA7D5007A7115;
 					};
 				};
 			};
@@ -755,10 +567,8 @@
 			targets = (
 				8C10125519403C7D00ED0557 /* bna */,
 				8C10126719403C7D00ED0557 /* bnaTests */,
-				8C48B6E7194821C400829493 /* Authenticator */,
-				8C48B6F1194821C500829493 /* AuthenticatorTests */,
-				8CE7AECC19596EA100F48DB6 /* KeychainStorage */,
-				8CE7AED619596EA100F48DB6 /* KeychainStorageTests */,
+				8CB9821D195AA7D5007A7115 /* Padlock */,
+				8CB98227195AA7D5007A7115 /* PadlockTests */,
 			);
 		};
 /* End PBXProject section */
@@ -780,28 +590,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C48B6E6194821C400829493 /* Resources */ = {
+		8CB9821C195AA7D5007A7115 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C48B6F0194821C500829493 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CE7AECB19596EA100F48DB6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CE7AED519596EA100F48DB6 /* Resources */ = {
+		8CB98226195AA7D5007A7115 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -841,45 +637,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C48B6E3194821C400829493 /* Sources */ = {
+		8CB98219195AA7D5007A7115 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B7131948274000829493 /* NSData+Crypt.m in Sources */,
-				8C48B71A1948276700829493 /* Authenticator.swift in Sources */,
-				8C48B7181948276500829493 /* Secret.swift in Sources */,
-				8C48B7151948274D00829493 /* Extensions.swift in Sources */,
-				8C48B7171948276500829493 /* Serial.swift in Sources */,
-				8CE7AEF619596EE800F48DB6 /* bigd.c in Sources */,
-				8CAE2D571955851600370B1A /* functions.m in Sources */,
-				8C48B7191948276500829493 /* Restorecode.swift in Sources */,
-				8CE7AEF819596EE800F48DB6 /* bigdigits.c in Sources */,
+				8CB9824B195AA962007A7115 /* Authenticator.swift in Sources */,
+				8CB98252195AA962007A7115 /* Secret.swift in Sources */,
+				8CB98251195AA962007A7115 /* Restorecode.swift in Sources */,
+				8CB98250195AA962007A7115 /* NSData+Crypt.m in Sources */,
+				8CB9826E195AAA04007A7115 /* SSKeychainQuery.m in Sources */,
+				8CB98262195AA9EB007A7115 /* bigdigits.c in Sources */,
+				8CB9824E195AA962007A7115 /* functions.m in Sources */,
+				8CB98255195AA962007A7115 /* AuthenticatorStorage.swift in Sources */,
+				8CB98260195AA9EB007A7115 /* bigd.c in Sources */,
+				8CB9826C195AAA04007A7115 /* SSKeychain.m in Sources */,
+				8CB9824C195AA962007A7115 /* Extensions.swift in Sources */,
+				8CB98253195AA962007A7115 /* Serial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C48B6EE194821C500829493 /* Sources */ = {
+		8CB98224195AA7D5007A7115 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C48B6FA194821C500829493 /* AuthenticatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CE7AEC819596EA100F48DB6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CE7AF0319596FC200F48DB6 /* SSKeychainQuery.m in Sources */,
-				8CE7AF0119596FC200F48DB6 /* SSKeychain.m in Sources */,
-				8CE7AF09195971A200F48DB6 /* AuthenticatorList.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CE7AED319596EA100F48DB6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CE7AEDF19596EA100F48DB6 /* KeychainStorageTests.swift in Sources */,
+				8CB98230195AA7D5007A7115 /* PadlockTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,85 +682,25 @@
 			target = 8C10125519403C7D00ED0557 /* bna */;
 			targetProxy = 8C1D511619597249004D7FBC /* PBXContainerItemProxy */;
 		};
-		8C1D51191959724B004D7FBC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C1D51181959724B004D7FBC /* PBXContainerItemProxy */;
-		};
-		8C1D511B1959724F004D7FBC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8CE7AECC19596EA100F48DB6 /* KeychainStorage */;
-			targetProxy = 8C1D511A1959724F004D7FBC /* PBXContainerItemProxy */;
-		};
-		8C48B6F5194821C500829493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C48B6F4194821C500829493 /* PBXContainerItemProxy */;
-		};
-		8C48B6FC194821C500829493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C48B6FB194821C500829493 /* PBXContainerItemProxy */;
-		};
-		8C48B700194821C500829493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C48B6FF194821C500829493 /* PBXContainerItemProxy */;
-		};
-		8C48B709194821C600829493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C48B708194821C600829493 /* PBXContainerItemProxy */;
-		};
-		8C48B70B194821C700829493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C48B70A194821C700829493 /* PBXContainerItemProxy */;
-		};
-		8C48B70D194821C900829493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C48B70C194821C900829493 /* PBXContainerItemProxy */;
-		};
-		8C48B70F194821D700829493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8C48B6E7194821C400829493 /* Authenticator */;
-			targetProxy = 8C48B70E194821D700829493 /* PBXContainerItemProxy */;
-		};
 		8C48B711194821D900829493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8C10125519403C7D00ED0557 /* bna */;
 			targetProxy = 8C48B710194821D900829493 /* PBXContainerItemProxy */;
 		};
-		8CE7AEDA19596EA100F48DB6 /* PBXTargetDependency */ = {
+		8CB9822B195AA7D5007A7115 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8CE7AECC19596EA100F48DB6 /* KeychainStorage */;
-			targetProxy = 8CE7AED919596EA100F48DB6 /* PBXContainerItemProxy */;
+			target = 8CB9821D195AA7D5007A7115 /* Padlock */;
+			targetProxy = 8CB9822A195AA7D5007A7115 /* PBXContainerItemProxy */;
 		};
-		8CE7AEE119596EA100F48DB6 /* PBXTargetDependency */ = {
+		8CB98232195AA7D5007A7115 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8CE7AECC19596EA100F48DB6 /* KeychainStorage */;
-			targetProxy = 8CE7AEE019596EA100F48DB6 /* PBXContainerItemProxy */;
+			target = 8CB9821D195AA7D5007A7115 /* Padlock */;
+			targetProxy = 8CB98231195AA7D5007A7115 /* PBXContainerItemProxy */;
 		};
-		8CE7AEE519596EA100F48DB6 /* PBXTargetDependency */ = {
+		8CB98236195AA7D5007A7115 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8CE7AECC19596EA100F48DB6 /* KeychainStorage */;
-			targetProxy = 8CE7AEE419596EA100F48DB6 /* PBXContainerItemProxy */;
-		};
-		8CE7AEED19596EA200F48DB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8CE7AECC19596EA100F48DB6 /* KeychainStorage */;
-			targetProxy = 8CE7AEEC19596EA200F48DB6 /* PBXContainerItemProxy */;
-		};
-		8CE7AEEF19596EA200F48DB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8CE7AECC19596EA100F48DB6 /* KeychainStorage */;
-			targetProxy = 8CE7AEEE19596EA200F48DB6 /* PBXContainerItemProxy */;
-		};
-		8CE7AF071959706200F48DB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8CE7AECC19596EA100F48DB6 /* KeychainStorage */;
-			targetProxy = 8CE7AF061959706200F48DB6 /* PBXContainerItemProxy */;
+			target = 8CB9821D195AA7D5007A7115 /* Padlock */;
+			targetProxy = 8CB98235195AA7D5007A7115 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1135,156 +856,90 @@
 			};
 			name = Release;
 		};
-		8C48B701194821C500829493 /* Debug */ = {
+		8CB98237195AA7D5007A7115 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Authenticator/Info.plist;
+				INFOPLIST_FILE = Padlock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Authenticator/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Padlock/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		8C48B702194821C500829493 /* Release */ = {
+		8CB98238195AA7D5007A7115 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Authenticator/Info.plist;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_FILE = Padlock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Authenticator/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Padlock/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		8C48B703194821C500829493 /* Debug */ = {
+		8CB98239195AA7D5007A7115 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = authenticatorTests/Info.plist;
+				INFOPLIST_FILE = PadlockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		8C48B704194821C500829493 /* Release */ = {
+		8CB9823A195AA7D5007A7115 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = authenticatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		8CE7AEE619596EA100F48DB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KeychainStorage/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "KeychainStorage/Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8CE7AEE719596EA100F48DB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KeychainStorage/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "KeychainStorage/Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8CE7AEE819596EA100F48DB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KeychainStorageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		8CE7AEE919596EA100F48DB6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = KeychainStorageTests/Info.plist;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_FILE = PadlockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1321,41 +976,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C48B705194821C500829493 /* Build configuration list for PBXNativeTarget "Authenticator" */ = {
+		8CB9823B195AA7D5007A7115 /* Build configuration list for PBXNativeTarget "Padlock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C48B701194821C500829493 /* Debug */,
-				8C48B702194821C500829493 /* Release */,
+				8CB98237195AA7D5007A7115 /* Debug */,
+				8CB98238195AA7D5007A7115 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		8C48B707194821C500829493 /* Build configuration list for PBXNativeTarget "AuthenticatorTests" */ = {
+		8CB9823C195AA7D5007A7115 /* Build configuration list for PBXNativeTarget "PadlockTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C48B703194821C500829493 /* Debug */,
-				8C48B704194821C500829493 /* Release */,
+				8CB98239195AA7D5007A7115 /* Debug */,
+				8CB9823A195AA7D5007A7115 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8CE7AEEA19596EA100F48DB6 /* Build configuration list for PBXNativeTarget "KeychainStorage" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8CE7AEE619596EA100F48DB6 /* Debug */,
-				8CE7AEE719596EA100F48DB6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8CE7AEEB19596EA100F48DB6 /* Build configuration list for PBXNativeTarget "KeychainStorageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8CE7AEE819596EA100F48DB6 /* Debug */,
-				8CE7AEE919596EA100F48DB6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
