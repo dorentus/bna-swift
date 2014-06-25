@@ -256,7 +256,7 @@
 				8CF7423C19582549000275BC /* DetailViewController.swift */,
 				8CF7423E19582567000275BC /* RestorationViewController.swift */,
 				8C10126219403C7D00ED0557 /* Images.xcassets */,
-				8CB9826F195AABF2007A7115 /* vendors */,
+				8CB9826F195AABF2007A7115 /* vendor */,
 				8C10125919403C7D00ED0557 /* Supporting Files */,
 			);
 			path = bna;
@@ -295,7 +295,7 @@
 				8CB9823D195AA962007A7115 /* Authenticator */,
 				8CB98249195AA962007A7115 /* AuthenticatorStorage */,
 				8CB98220195AA7D5007A7115 /* Supporting Files */,
-				8CB98270195AAC05007A7115 /* vendors */,
+				8CB98270195AAC05007A7115 /* vendor */,
 			);
 			path = Padlock;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 				8CB9825F195AA9EB007A7115 /* bigdtypes.h */,
 			);
 			name = BigDigits;
-			path = vendors/BigDigits;
+			path = vendor/BigDigits;
 			sourceTree = SOURCE_ROOT;
 		};
 		8CB98266195AAA04007A7115 /* SSKeychain */ = {
@@ -379,24 +379,24 @@
 				8CB9826A195AAA04007A7115 /* SSKeychainQuery.m */,
 			);
 			name = SSKeychain;
-			path = vendors/SSKeychain/SSKeychain;
+			path = vendor/SSKeychain/SSKeychain;
 			sourceTree = SOURCE_ROOT;
 		};
-		8CB9826F195AABF2007A7115 /* vendors */ = {
+		8CB9826F195AABF2007A7115 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
 				8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */,
 			);
-			name = vendors;
+			name = vendor;
 			sourceTree = "<group>";
 		};
-		8CB98270195AAC05007A7115 /* vendors */ = {
+		8CB98270195AAC05007A7115 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
 				8CB98266195AAA04007A7115 /* SSKeychain */,
 				8CB98259195AA9EB007A7115 /* BigDigits */,
 			);
-			name = vendors;
+			name = vendor;
 			sourceTree = "<group>";
 		};
 		8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */ = {
@@ -425,7 +425,7 @@
 				8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */,
 			);
 			name = MMProgressHUD;
-			path = vendors/MMProgressHUD/MMProgressHUD;
+			path = vendor/MMProgressHUD/MMProgressHUD;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
