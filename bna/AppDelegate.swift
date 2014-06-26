@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        // Override point for customization after application launch.
+
+        let backgroundColor = UIColor(red: 1, green: 0.98, blue: 0.94, alpha: 1)
+        let highlightColor = UIColor(red: 0.96, green: 0.87, blue: 0.70, alpha: 1)
+
+        UINavigationBar.appearance().barTintColor = backgroundColor
+        AuthenticatorCell.SelectionBackgroundView.appearance().backgroundColor = highlightColor
+
         return true
     }
 

@@ -12,6 +12,7 @@ import Padlock
 
 @IBDesignable
 class AuthenticatorCell: UITableViewCell {
+    class SelectionBackgroundView: UIView { }
 
     @IBOutlet var token_label: UILabel
     @IBOutlet var serial_label: UILabel
@@ -23,6 +24,11 @@ class AuthenticatorCell: UITableViewCell {
             serial_label.text = authenticator?.serial.description
             update_token()
         }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectedBackgroundView = SelectionBackgroundView()
     }
 
     func update_token() {
