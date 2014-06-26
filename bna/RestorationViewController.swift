@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Padlock
 
-class RestorationViewController: UIViewController {
+class RestorationViewController: UIViewController, UITextFieldDelegate {
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        // Custom initialization
-    }
+    @IBOutlet var error_label: UILabel
+    @IBOutlet var serial_field: UITextField
+    @IBOutlet var restorecode_field: UITextField
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +21,93 @@ class RestorationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        serial_field.becomeFirstResponder()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // #pragma mark - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    @IBAction func dismiss(sender: UIButton!) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
+
+    @IBAction func textChanged(sender: UITextField!) {
+        validate(textField: sender)
+    }
+
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        let valid = validate(textField: textField)
+
+        if textField == serial_field {
+            restorecode_field.becomeFirstResponder()
+        }
+        else if textField == restorecode_field {
+            submit()
+        }
+
+        return valid
+    }
+
+    func validate(#textField: UITextField) -> Bool {
+        if textField == serial_field {
+            return _validateSerialField()
+        }
+        else if textField == restorecode_field {
+            return _validateRestorecodeField()
+        }
+
+        return false
+    }
+
+    func submit() {
+        MMProgressHUD.show()
+
+        Authenticator.restore(serial: serial_field.text, restorecode: restorecode_field.text) {
+            [weak self] authenticator, error in
+            if let a = authenticator {
+                AuthenticatorStorage.sharedStorage().add(a)
+                MMProgressHUD.dismissWithSuccess("success!")
+                let pc = self!.presentingViewController as UINavigationController
+                self!.dismissViewControllerAnimated(true) {
+                    (pc.topViewController as MainViewController).reloadAndScrollToBottom()
+                }
+            }
+            else {
+                let message = error ? error!.localizedDescription : "unknown error"
+                MMProgressHUD.dismissWithError(message)
+            }
+        }
+    }
+
+    func _validateSerialField() -> Bool {
+        if Serial.format(serial: serial_field.text) {
+
+            if AuthenticatorStorage.sharedStorage().exists(serial_field.text) {
+                error_label.text = "authenticator already exists"
+                return false
+            }
+
+            error_label.text = ""
+            return true
+        }
+
+        error_label.text = "invalid serial"
+        return false
+    }
+
+    func _validateRestorecodeField() -> Bool {
+        if Restorecode.format(restorecode: restorecode_field.text) {
+            error_label.text = ""
+            return true
+        }
+
+        error_label.text = "invalid restoration code"
+        return false
+    }
 
 }

@@ -23,6 +23,10 @@ class MainViewController: UITableViewController {
 
     @IBAction func addButtonTapped(sender: AnyObject) {
         let alert = UIAlertController(title: "Choose Region", message: nil, preferredStyle: .ActionSheet)
+        alert.addAction(UIAlertAction(title: "Restore", style: UIAlertActionStyle.Default) {
+            [weak self] _ in
+            self!.performSegueWithIdentifier(self!.SegueRestore, sender: sender)
+        })
         for region in Region.allValues {
             alert.addAction(UIAlertAction(title: region.toRaw(), style: .Default) {
                 [weak self] _ in

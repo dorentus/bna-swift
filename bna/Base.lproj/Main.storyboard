@@ -62,7 +62,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <segue destination="hjv-jx-zhy" kind="presentation" identifier="authenticator_restore" id="yRS-cr-cfE"/>
+                        <segue destination="hjv-jx-zhy" kind="presentation" identifier="authenticator_restore" id="N4q-24-zoA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQv-nz-V9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
         <!--Restoration View Controller-->
         <scene sceneID="Bi8-Se-1cF">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" id="hjv-jx-zhy" customClass="RestorationViewController" customModule="bna" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hjv-jx-zhy" customClass="RestorationViewController" customModule="bna" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KFX-5P-wuB"/>
                         <viewControllerLayoutGuide type="bottom" id="JSK-Gc-RZJ"/>
@@ -105,10 +105,18 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icr-bL-WwC">
+                                <rect key="frame" x="20" y="20" width="22" height="22"/>
+                                <state key="normal" title="x"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="hjv-jx-zhy" eventType="touchUpInside" id="sfg-bj-FaC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yU3-QC-rls"/>
                     <connections>
                         <outlet property="error_label" destination="ZEn-5k-6dg" id="kI0-qY-CuM"/>
                         <outlet property="restorecode_field" destination="gKv-KB-hKS" id="bTc-wb-SaD"/>
