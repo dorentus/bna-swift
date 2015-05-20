@@ -345,7 +345,7 @@ void bdPrintDecimal(const char *prefix, T p, const char *suffix)
 
 void bdPrintBits(const char *prefix, T b, const char *suffix)
 {
-	int nbits, i, v;
+	size_t nbits, i, v;
 	if (prefix) printf("%s", prefix);
 	nbits = bdBitLength(b);
 	for (i = nbits; i > 0; i--)

@@ -13,7 +13,7 @@ class MainViewController: UITableViewController {
     let SegueDetail = "authenticator_detail"
     let SegueRestore = "authenticator_restore"
 
-    @lazy var authenticators: AuthenticatorStorage = {
+    lazy var authenticators: AuthenticatorStorage = {
         return AuthenticatorStorage.sharedStorage()
     }()
 
@@ -56,7 +56,7 @@ class MainViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if segue.identifier == SegueDetail {
-            let dest = segue.destinationViewController as DetailViewController
+            let dest = segue.destinationViewController as! DetailViewController
             dest.authenticator = (sender as AuthenticatorCell).authenticator
         }
     }
@@ -75,7 +75,7 @@ extension MainViewController {
     }
 
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AUTHENTICATOR_CELL", forIndexPath: indexPath) as AuthenticatorCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("AUTHENTICATOR_CELL", forIndexPath: indexPath) as! AuthenticatorCell
         cell.authenticator = authenticators[indexPath.row]
         return cell
     }

@@ -13,7 +13,7 @@ func color(#progress: CGFloat) -> UIColor {
 
     let r = p
     let g = 0.5 - p * 0.5
-    let b = 1.0
+    let b: CGFloat = 1.0
 
     return UIColor(red: r, green: g, blue: b, alpha: 1.0)
 }

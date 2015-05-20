@@ -8,27 +8,40 @@
 
 import Foundation
 
-class Serial: Printable, Equatable {
-    var normalized: String
-    var binary: UInt8[] { return normalized.bytes }
+struct Serial: Printable, Equatable {
+    let normalized: String
+    var binary: [UInt8] { return normalized.bytes }
+
     var prettified: String {
-        let suffix = normalized.substringFromIndex(2).scan(".{4}").joinedBy("-")
-        return "\(region.toRaw())\(suffix)"
+        let suffix = "-".join((normalized as NSString).substringFromIndex(2).scan(".{4}"))
+        return "\(region.rawValue)\(suffix)"
     }
-    var region: Region { return Region.fromRaw(normalized.substringToIndex(2))! }
+    var region: Region {
+        return Region(rawValue: (normalized as NSString).substringToIndex(2))!
+    }
     var description: String { return prettified }
 
-    init(_ text: String) {
-        let serial = Serial.format(serial: text)
-        if !serial {
-            NSException.raise(NSInvalidArgumentException, format: "invalid serial", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
+    init?(text: String) {
+        if let serial = Serial.format(serial: text) {
+            self.normalized = serial
         }
-        self.normalized = serial!
+        else {
+            return nil
+        }
     }
 
-    class func format(#serial: String) -> String? {
+    init?(binary: [UInt8]) {
+        if let text = String(bytes: binary, encoding: NSASCIIStringEncoding) {
+            self.init(text: text)
+        }
+        else {
+            return nil
+        }
+    }
+
+    static func format(#serial: String) -> String? {
         let text = serial.uppercaseString.stringByReplacingOccurrencesOfString("-", withString: "")
-        if Region.fromRaw(text.substringToIndex(2)) && text.matches("^[A-Z]{2}\\d{12}$") {
+        if Region(rawValue: (text as NSString).substringToIndex(2)) != nil && text.matches("^[A-Z]{2}\\d{12}$") {
             return text
         }
 
@@ -38,19 +51,4 @@ class Serial: Printable, Equatable {
 
 func ==(lhs: Serial, rhs: Serial) -> Bool {
     return lhs.normalized == rhs.normalized
-}
-
-extension Serial {
-    class func withText(text: String) -> Serial? {
-        if let serial = self.format(serial: text) {
-            return Serial(serial)
-        }
-
-        return nil
-    }
-
-    class func withBinary(binary: UInt8[]) -> Serial? {
-        let serial = NSString(bytes: binary, length: countElements(binary), encoding: NSASCIIStringEncoding)
-        return withText(serial)
-    }
 }

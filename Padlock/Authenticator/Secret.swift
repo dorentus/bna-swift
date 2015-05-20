@@ -8,22 +8,26 @@
 
 import Foundation
 
-class Secret: Printable, Equatable {
-    var text: String
-    var binary: UInt8[] { return hex2bin(text) }
+struct Secret: Printable, Equatable {
+    let text: String
+    var binary: [UInt8] { return hex2bin(text) }
     var description: String { return text }
 
-    init(_ text: String) {
-        let secret = Secret.format(secret: text)
-        if !secret {
-            NSException.raise(NSInvalidArgumentException, format: "invalid secret", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
+    init?(text: String) {
+        if let secret = Secret.format(secret: text) {
+            self.text = secret
         }
-        self.text = secret!
+        else {
+            return nil
+        }
     }
 
-    class func format(#secret: String) -> String? {
-        let text = secret.lowercaseString
+    init?(binary: [UInt8]) {
+        self.init(text: bin2hex(binary))
+    }
 
+    static func format(#secret: String) -> String? {
+        let text = secret.lowercaseString
         if text.matches("[0-9a-f]{40}") {
             return text
         }
@@ -34,19 +38,4 @@ class Secret: Printable, Equatable {
 
 func ==(lhs: Secret, rhs: Secret) -> Bool {
     return lhs.text == rhs.text
-}
-
-extension Secret {
-    class func withText(text: String) -> Secret? {
-        if let secret = self.format(secret: text) {
-            return Secret(secret)
-        }
-
-        return nil
-    }
-
-    class func withBinary(binary: UInt8[]) -> Secret? {
-        let secret = bin2hex(binary)
-        return withText(secret)
-    }
 }

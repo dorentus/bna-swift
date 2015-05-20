@@ -1,0 +1,15 @@
+module CommonCrypto [system] {
+    header "/usr/include/CommonCrypto/CommonCrypto.h"
+    link "CommonCrypto"
+    export *
+}
+
+module SSKeychain {
+    header "../vendor/SSKeychain/SSKeychain/SSKeychain.h"
+    export *
+}
+
+module BigDigits {
+    header "../vendor/BigDigits/bigd.h"
+    export *
+}
