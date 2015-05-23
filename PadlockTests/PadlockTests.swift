@@ -34,31 +34,31 @@ class PadlockTests: XCTestCase {
     }
 
     func testModExp() {
-        XCTAssertEqualObjects("3", mod_exp_hex("64", "5", "d"))
-        XCTAssertEqualObjects("299", mod_exp_hex("955e4bd989f3917d2f15544a7e0504eb9d7bb66b6f8a2fe470e453c779200e5e3ad2e43a02d06c4adbd8d328f1a426b83658e88bfd949b2af4eaf30054673a1419a250fa4cc1278d12855b5b25818d162c6e6ee2ab4a350d401d78f6ddb99711e72626b48bd8b5b0b7f3acf9ea3c9e0005fee59e19136cdb7c83f2ab8b0a2a99", "101", "400"))
+        XCTAssertEqual("3", mod_exp_hex("64", "5", "d"))
+        XCTAssertEqual("299", mod_exp_hex("955e4bd989f3917d2f15544a7e0504eb9d7bb66b6f8a2fe470e453c779200e5e3ad2e43a02d06c4adbd8d328f1a426b83658e88bfd949b2af4eaf30054673a1419a250fa4cc1278d12855b5b25818d162c6e6ee2ab4a350d401d78f6ddb99711e72626b48bd8b5b0b7f3acf9ea3c9e0005fee59e19136cdb7c83f2ab8b0a2a99", "101", "400"))
     }
 
     func testEquatableSerials() {
-        let s0 = Serial.withText(serial)!
-        let s1 = Serial.withText(s0.prettified)!
+        let s0 = Serial(text: serial)!
+        let s1 = Serial(text: s0.prettified)!
 
         XCTAssertEqual(s0, s1)
     }
 
     func testEquatableSecrets() {
-        let s0 = Secret.withText(secret)!
-        let s1 = Secret.withBinary(s0.binary)!
+        let s0 = Secret(text: secret)!
+        let s1 = Secret(binary: s0.binary)!
 
         XCTAssertEqual(s0, s1)
     }
 
     func testEquatableRestorecodes() {
-        let sl = Serial.withText(serial)!
-        let st = Secret.withText(secret)!
+        let sl = Serial(text: serial)!
+        let st = Secret(text: secret)!
 
-        let r0 = Restorecode(sl, st)
-        let r1 = Restorecode.withText(restorecode)!
-        let r2 = Restorecode.withSerial(serial, secret: secret)!
+        let r0 = Restorecode(serial: sl, secret: st)!
+        let r1 = Restorecode(text: restorecode)!
+        let r2 = Restorecode(serial: serial, secret: secret)!
 
         XCTAssertEqual(r0.text, restorecode)
         XCTAssertEqual(r0, r1)
@@ -66,14 +66,14 @@ class PadlockTests: XCTestCase {
     }
 
     func testRestorecode() {
-        let a = Authenticator.withSerial(serial, secret: secret)!
-        let r = Restorecode.withSerial(serial, secret: secret)!
+        let a = Authenticator(serial: serial, secret: secret)!
+        let r = Restorecode(serial: serial, secret: secret)!
 
         XCTAssertEqual(a.restorecode, r)
     }
 
     func testTokens() {
-        let a = Authenticator.withSerial(serial, secret: secret)!
+        let a = Authenticator(serial: serial, secret: secret)!
 
         let (t0, _) = a.token(timestamp: 1347279358)
         XCTAssertEqual("61459300", t0)
@@ -94,19 +94,18 @@ class PadlockTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        waitForExpectationsWithTimeout(5.0, nil)
+        waitForExpectationsWithTimeout(5.0, handler: nil)
     }
 
     func testRequestAuthenticator() {
         let expectation = expectationWithDescription("authenticator get")
         Authenticator.request(region: .CN) {
             authenticator, _ in
-            if let a = authenticator {
-                XCTAssertNotNil(a)
+            if let _ = authenticator {
                 expectation.fulfill()
             }
         }
-        waitForExpectationsWithTimeout(5.0, nil)
+        waitForExpectationsWithTimeout(5.0, handler: nil)
     }
 
     func testRestoreAuthenticator() {
@@ -118,7 +117,7 @@ class PadlockTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        waitForExpectationsWithTimeout(5.0, nil)
+        waitForExpectationsWithTimeout(5.0, handler: nil)
     }
 
 }

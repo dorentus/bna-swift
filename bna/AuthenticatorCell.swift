@@ -14,8 +14,8 @@ import Padlock
 class AuthenticatorCell: UITableViewCell {
     class SelectionBackgroundView: UIView { }
 
-    @IBOutlet var token_label: UILabel
-    @IBOutlet var serial_label: UILabel
+    @IBOutlet weak var token_label: UILabel!
+    @IBOutlet weak var serial_label: UILabel!
 
     var timer: CADisplayLink?
 

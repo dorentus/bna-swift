@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,33 +12,28 @@
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
 		8C10126319403C7D00ED0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C10126219403C7D00ED0557 /* Images.xcassets */; };
 		8C10126F19403C7D00ED0557 /* bnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10126E19403C7D00ED0557 /* bnaTests.swift */; };
-		8C37BE26195AB3E700DD12DA /* keychain_fix.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C37BE25195AB3E700DD12DA /* keychain_fix.m */; };
 		8C62F139195ABD6B00E9FA4F /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62F138195ABD6B00E9FA4F /* Util.swift */; };
+		8CAA9B321B0CD06700796744 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAA9B311B0CD06700796744 /* SystemConfiguration.framework */; };
+		8CAA9B3A1B0CD09300796744 /* bigd.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9B341B0CD09300796744 /* bigd.c */; };
+		8CAA9B3B1B0CD09300796744 /* bigd.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B351B0CD09300796744 /* bigd.h */; };
+		8CAA9B3C1B0CD09300796744 /* bigdigits.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9B361B0CD09300796744 /* bigdigits.c */; };
+		8CAA9B3D1B0CD09300796744 /* bigdigits.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B371B0CD09300796744 /* bigdigits.h */; };
+		8CAA9B3F1B0CD09300796744 /* bigdtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B391B0CD09300796744 /* bigdtypes.h */; };
+		8CAA9B451B0CD0CC00796744 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B411B0CD0CC00796744 /* SSKeychain.h */; };
+		8CAA9B461B0CD0CC00796744 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9B421B0CD0CC00796744 /* SSKeychain.m */; };
+		8CAA9B471B0CD0CC00796744 /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B431B0CD0CC00796744 /* SSKeychainQuery.h */; };
+		8CAA9B481B0CD0CC00796744 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9B441B0CD0CC00796744 /* SSKeychainQuery.m */; };
 		8CB98223195AA7D5007A7115 /* Padlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98222195AA7D5007A7115 /* Padlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CB98229195AA7D5007A7115 /* Padlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; };
 		8CB98230195AA7D5007A7115 /* PadlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9822F195AA7D5007A7115 /* PadlockTests.swift */; };
 		8CB98233195AA7D5007A7115 /* Padlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; };
 		8CB98234195AA7D5007A7115 /* Padlock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8CB9824B195AA962007A7115 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9823E195AA962007A7115 /* Authenticator.swift */; };
-		8CB9824C195AA962007A7115 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98240195AA962007A7115 /* Extensions.swift */; };
-		8CB9824D195AA962007A7115 /* functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98241195AA962007A7115 /* functions.h */; };
-		8CB9824E195AA962007A7115 /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98242195AA962007A7115 /* functions.m */; };
-		8CB9824F195AA962007A7115 /* NSData+Crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98243195AA962007A7115 /* NSData+Crypt.h */; };
-		8CB98250195AA962007A7115 /* NSData+Crypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98244195AA962007A7115 /* NSData+Crypt.m */; };
 		8CB98251195AA962007A7115 /* Restorecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98245195AA962007A7115 /* Restorecode.swift */; };
 		8CB98252195AA962007A7115 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98246195AA962007A7115 /* Secret.swift */; };
 		8CB98253195AA962007A7115 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98247195AA962007A7115 /* Serial.swift */; };
-		8CB98254195AA962007A7115 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98248195AA962007A7115 /* Bridging-Header.h */; };
 		8CB98255195AA962007A7115 /* AuthenticatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */; };
-		8CB98260195AA9EB007A7115 /* bigd.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9825A195AA9EB007A7115 /* bigd.c */; };
-		8CB98261195AA9EB007A7115 /* bigd.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB9825B195AA9EB007A7115 /* bigd.h */; };
-		8CB98262195AA9EB007A7115 /* bigdigits.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9825C195AA9EB007A7115 /* bigdigits.c */; };
-		8CB98263195AA9EB007A7115 /* bigdigits.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB9825D195AA9EB007A7115 /* bigdigits.h */; };
-		8CB98265195AA9EB007A7115 /* bigdtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB9825F195AA9EB007A7115 /* bigdtypes.h */; };
-		8CB9826B195AAA04007A7115 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98267195AAA04007A7115 /* SSKeychain.h */; };
-		8CB9826C195AAA04007A7115 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98268195AAA04007A7115 /* SSKeychain.m */; };
-		8CB9826D195AAA04007A7115 /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98269195AAA04007A7115 /* SSKeychainQuery.h */; };
-		8CB9826E195AAA04007A7115 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9826A195AAA04007A7115 /* SSKeychainQuery.m */; };
+		8CE4C5431B10B2BC00874BFA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4C5421B10B2BC00874BFA /* Functions.swift */; };
 		8CE6E16B195AA2ED00DAEF7C /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E157195AA2ED00DAEF7C /* MMHud.m */; };
 		8CE6E16C195AA2ED00DAEF7C /* MMLinearProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */; };
 		8CE6E16D195AA2ED00DAEF7C /* MMProgressHUD+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */; };
@@ -131,9 +126,18 @@
 		8C10126819403C7D00ED0557 /* bnaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bnaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C10126D19403C7D00ED0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C10126E19403C7D00ED0557 /* bnaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bnaTests.swift; sourceTree = "<group>"; };
-		8C37BE25195AB3E700DD12DA /* keychain_fix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keychain_fix.m; sourceTree = "<group>"; };
-		8C37BE27195AB40200DD12DA /* keychain_fix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keychain_fix.h; sourceTree = "<group>"; };
 		8C62F138195ABD6B00E9FA4F /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		8CAA9B2E1B0CCFE500796744 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		8CAA9B311B0CD06700796744 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8CAA9B341B0CD09300796744 /* bigd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigd.c; sourceTree = "<group>"; };
+		8CAA9B351B0CD09300796744 /* bigd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigd.h; sourceTree = "<group>"; };
+		8CAA9B361B0CD09300796744 /* bigdigits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigdigits.c; sourceTree = "<group>"; };
+		8CAA9B371B0CD09300796744 /* bigdigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdigits.h; sourceTree = "<group>"; };
+		8CAA9B391B0CD09300796744 /* bigdtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdtypes.h; sourceTree = "<group>"; };
+		8CAA9B411B0CD0CC00796744 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		8CAA9B421B0CD0CC00796744 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		8CAA9B431B0CD0CC00796744 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		8CAA9B441B0CD0CC00796744 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		8CB9821E195AA7D5007A7115 /* Padlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Padlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB98221195AA7D5007A7115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB98222195AA7D5007A7115 /* Padlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Padlock.h; sourceTree = "<group>"; };
@@ -141,25 +145,11 @@
 		8CB9822E195AA7D5007A7115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB9822F195AA7D5007A7115 /* PadlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadlockTests.swift; sourceTree = "<group>"; };
 		8CB9823E195AA962007A7115 /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
-		8CB98240195AA962007A7115 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		8CB98241195AA962007A7115 /* functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
-		8CB98242195AA962007A7115 /* functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
-		8CB98243195AA962007A7115 /* NSData+Crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Crypt.h"; sourceTree = "<group>"; };
-		8CB98244195AA962007A7115 /* NSData+Crypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Crypt.m"; sourceTree = "<group>"; };
 		8CB98245195AA962007A7115 /* Restorecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restorecode.swift; sourceTree = "<group>"; };
 		8CB98246195AA962007A7115 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		8CB98247195AA962007A7115 /* Serial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
-		8CB98248195AA962007A7115 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorStorage.swift; sourceTree = "<group>"; };
-		8CB9825A195AA9EB007A7115 /* bigd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigd.c; sourceTree = "<group>"; };
-		8CB9825B195AA9EB007A7115 /* bigd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigd.h; sourceTree = "<group>"; };
-		8CB9825C195AA9EB007A7115 /* bigdigits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigdigits.c; sourceTree = "<group>"; };
-		8CB9825D195AA9EB007A7115 /* bigdigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdigits.h; sourceTree = "<group>"; };
-		8CB9825F195AA9EB007A7115 /* bigdtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdtypes.h; sourceTree = "<group>"; };
-		8CB98267195AAA04007A7115 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		8CB98268195AAA04007A7115 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		8CB98269195AAA04007A7115 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		8CB9826A195AAA04007A7115 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		8CE4C5421B10B2BC00874BFA /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		8CE6E156195AA2ED00DAEF7C /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
 		8CE6E157195AA2ED00DAEF7C /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
 		8CE6E158195AA2ED00DAEF7C /* MMLinearProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLinearProgressView.h; sourceTree = "<group>"; };
@@ -208,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAA9B321B0CD06700796744 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +216,8 @@
 		42A1B1FC39414C05ABE03AF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CAA9B311B0CD06700796744 /* SystemConfiguration.framework */,
+				8CAA9B2E1B0CCFE500796744 /* libcommonCrypto.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,11 +289,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8CAA9B331B0CD09300796744 /* BigDigits */ = {
+			isa = PBXGroup;
+			children = (
+				8CAA9B341B0CD09300796744 /* bigd.c */,
+				8CAA9B351B0CD09300796744 /* bigd.h */,
+				8CAA9B361B0CD09300796744 /* bigdigits.c */,
+				8CAA9B371B0CD09300796744 /* bigdigits.h */,
+				8CAA9B391B0CD09300796744 /* bigdtypes.h */,
+			);
+			path = BigDigits;
+			sourceTree = "<group>";
+		};
+		8CAA9B401B0CD0CC00796744 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				8CAA9B411B0CD0CC00796744 /* SSKeychain.h */,
+				8CAA9B421B0CD0CC00796744 /* SSKeychain.m */,
+				8CAA9B431B0CD0CC00796744 /* SSKeychainQuery.h */,
+				8CAA9B441B0CD0CC00796744 /* SSKeychainQuery.m */,
+			);
+			name = SSKeychain;
+			path = SSKeychain/SSKeychain;
+			sourceTree = "<group>";
+		};
 		8CB9821F195AA7D5007A7115 /* Padlock */ = {
 			isa = PBXGroup;
 			children = (
 				8CB98222195AA7D5007A7115 /* Padlock.h */,
-				8CB98248195AA962007A7115 /* Bridging-Header.h */,
 				8CB9823D195AA962007A7115 /* Authenticator */,
 				8CB98249195AA962007A7115 /* AuthenticatorStorage */,
 				8CB98220195AA7D5007A7115 /* Supporting Files */,
@@ -337,7 +353,7 @@
 		8CB9823D195AA962007A7115 /* Authenticator */ = {
 			isa = PBXGroup;
 			children = (
-				8CB9823F195AA962007A7115 /* ext */,
+				8CE4C5421B10B2BC00874BFA /* Functions.swift */,
 				8CB9823E195AA962007A7115 /* Authenticator.swift */,
 				8CB98245195AA962007A7115 /* Restorecode.swift */,
 				8CB98246195AA962007A7115 /* Secret.swift */,
@@ -346,52 +362,13 @@
 			path = Authenticator;
 			sourceTree = "<group>";
 		};
-		8CB9823F195AA962007A7115 /* ext */ = {
-			isa = PBXGroup;
-			children = (
-				8CB98240195AA962007A7115 /* Extensions.swift */,
-				8CB98241195AA962007A7115 /* functions.h */,
-				8CB98242195AA962007A7115 /* functions.m */,
-				8CB98243195AA962007A7115 /* NSData+Crypt.h */,
-				8CB98244195AA962007A7115 /* NSData+Crypt.m */,
-			);
-			path = ext;
-			sourceTree = "<group>";
-		};
 		8CB98249195AA962007A7115 /* AuthenticatorStorage */ = {
 			isa = PBXGroup;
 			children = (
-				8C37BE27195AB40200DD12DA /* keychain_fix.h */,
-				8C37BE25195AB3E700DD12DA /* keychain_fix.m */,
 				8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */,
 			);
 			path = AuthenticatorStorage;
 			sourceTree = "<group>";
-		};
-		8CB98259195AA9EB007A7115 /* BigDigits */ = {
-			isa = PBXGroup;
-			children = (
-				8CB9825A195AA9EB007A7115 /* bigd.c */,
-				8CB9825B195AA9EB007A7115 /* bigd.h */,
-				8CB9825C195AA9EB007A7115 /* bigdigits.c */,
-				8CB9825D195AA9EB007A7115 /* bigdigits.h */,
-				8CB9825F195AA9EB007A7115 /* bigdtypes.h */,
-			);
-			name = BigDigits;
-			path = vendor/BigDigits;
-			sourceTree = SOURCE_ROOT;
-		};
-		8CB98266195AAA04007A7115 /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				8CB98267195AAA04007A7115 /* SSKeychain.h */,
-				8CB98268195AAA04007A7115 /* SSKeychain.m */,
-				8CB98269195AAA04007A7115 /* SSKeychainQuery.h */,
-				8CB9826A195AAA04007A7115 /* SSKeychainQuery.m */,
-			);
-			name = SSKeychain;
-			path = vendor/SSKeychain/SSKeychain;
-			sourceTree = SOURCE_ROOT;
 		};
 		8CB9826F195AABF2007A7115 /* vendor */ = {
 			isa = PBXGroup;
@@ -404,10 +381,11 @@
 		8CB98270195AAC05007A7115 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				8CB98266195AAA04007A7115 /* SSKeychain */,
-				8CB98259195AA9EB007A7115 /* BigDigits */,
+				8CAA9B401B0CD0CC00796744 /* SSKeychain */,
+				8CAA9B331B0CD09300796744 /* BigDigits */,
 			);
 			name = vendor;
+			path = ../vendor;
 			sourceTree = "<group>";
 		};
 		8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */ = {
@@ -446,15 +424,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CB98261195AA9EB007A7115 /* bigd.h in Headers */,
-				8CB9824D195AA962007A7115 /* functions.h in Headers */,
+				8CAA9B3F1B0CD09300796744 /* bigdtypes.h in Headers */,
+				8CAA9B471B0CD0CC00796744 /* SSKeychainQuery.h in Headers */,
+				8CAA9B3B1B0CD09300796744 /* bigd.h in Headers */,
 				8CB98223195AA7D5007A7115 /* Padlock.h in Headers */,
-				8CB9824F195AA962007A7115 /* NSData+Crypt.h in Headers */,
-				8CB9826B195AAA04007A7115 /* SSKeychain.h in Headers */,
-				8CB98254195AA962007A7115 /* Bridging-Header.h in Headers */,
-				8CB98265195AA9EB007A7115 /* bigdtypes.h in Headers */,
-				8CB9826D195AAA04007A7115 /* SSKeychainQuery.h in Headers */,
-				8CB98263195AA9EB007A7115 /* bigdigits.h in Headers */,
+				8CAA9B3D1B0CD09300796744 /* bigdigits.h in Headers */,
+				8CAA9B451B0CD0CC00796744 /* SSKeychain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +539,7 @@
 				};
 			};
 			buildConfigurationList = 8C10125119403C7D00ED0557 /* Build configuration list for PBXProject "bna" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -654,19 +629,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C37BE26195AB3E700DD12DA /* keychain_fix.m in Sources */,
+				8CAA9B481B0CD0CC00796744 /* SSKeychainQuery.m in Sources */,
 				8CB9824B195AA962007A7115 /* Authenticator.swift in Sources */,
 				8CB98252195AA962007A7115 /* Secret.swift in Sources */,
+				8CE4C5431B10B2BC00874BFA /* Functions.swift in Sources */,
 				8CB98251195AA962007A7115 /* Restorecode.swift in Sources */,
-				8CB98250195AA962007A7115 /* NSData+Crypt.m in Sources */,
-				8CB9826E195AAA04007A7115 /* SSKeychainQuery.m in Sources */,
-				8CB98262195AA9EB007A7115 /* bigdigits.c in Sources */,
-				8CB9824E195AA962007A7115 /* functions.m in Sources */,
 				8CB98255195AA962007A7115 /* AuthenticatorStorage.swift in Sources */,
-				8CB98260195AA9EB007A7115 /* bigd.c in Sources */,
-				8CB9826C195AAA04007A7115 /* SSKeychain.m in Sources */,
-				8CB9824C195AA962007A7115 /* Extensions.swift in Sources */,
+				8CAA9B3A1B0CD09300796744 /* bigd.c in Sources */,
 				8CB98253195AA962007A7115 /* Serial.swift in Sources */,
+				8CAA9B3C1B0CD09300796744 /* bigdigits.c in Sources */,
+				8CAA9B461B0CD0CC00796744 /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,7 +733,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -794,7 +765,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -809,7 +779,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = bna/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
@@ -826,7 +795,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = bna/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
@@ -888,10 +856,14 @@
 				INFOPLIST_FILE = Padlock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Padlock/Bridging-Header.h";
+				SWIFT_INCLUDE_PATHS = Frameworks;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -912,10 +884,14 @@
 				INFOPLIST_FILE = Padlock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Padlock/Bridging-Header.h";
+				SWIFT_INCLUDE_PATHS = Frameworks;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double PadlockVersionNumber;
 FOUNDATION_EXPORT const unsigned char PadlockVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Padlock/PublicHeader.h>
-
-

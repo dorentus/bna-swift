@@ -7,50 +7,38 @@
 //
 
 import Foundation
+import SSKeychain
 
-class AuthenticatorStorage {
-    class func sharedStorage() -> AuthenticatorStorage {
-        struct Singleton {
-            static let instance = AuthenticatorStorage()
-        }
-        return Singleton.instance
-    }
+public class AuthenticatorStorage {
+    public static let sharedStorage = AuthenticatorStorage()
 
-    let KEYCHAIN_SERVICE = "bna_authenticators"
-    let USERDEFAULTS_KEY = "bna_authenticator_serials"
+    private let userDefaults: UserDefaults = UserDefaults("bna_authenticator_serials")
+    private let keychain: Keychain = Keychain("bna_authenticators")
 
-    let userDefaults: UserDefaults
-    let keychain: Keychain
-
-    var serials: String[] {
+    public var serials: [String] {
         let a = userDefaults.serials
         let b = keychain.serials
         return a - (a - b) + (b - a)
     }
 
-    init() {
-        self.userDefaults = UserDefaults(USERDEFAULTS_KEY)
-        self.keychain = Keychain(KEYCHAIN_SERVICE)
+    public var count: Int {
+        return serials.count
     }
 
-    var count: Int {
-        return countElements(serials)
-    }
-
-    subscript(index: Int) -> Authenticator? {
+    public subscript(index: Int) -> Authenticator? {
         if index < 0 || index >= count {
             return nil
         }
 
         let serial = serials[index]
         if let secret = self.keychain.secretForSerial(serial) {
-            return Authenticator.withSerial(serial, secret: secret)
+            return Authenticator(serial: serial, secret: secret)
         }
 
         return nil
     }
 
-    func add(authenticator: Authenticator) -> Bool {
+    public func add(authenticator: Authenticator) -> Bool {
         if exists(authenticator) {
             return false
         }
@@ -58,23 +46,23 @@ class AuthenticatorStorage {
         return self.keychain.add(authenticator) && self.userDefaults.add(authenticator)
     }
 
-    func del(authenticator: Authenticator) -> Bool {
+    public func del(authenticator: Authenticator) -> Bool {
         return self.keychain.del(authenticator) && self.userDefaults.del(authenticator)
     }
 
-    func move(#from: Int, to: Int) -> Bool {
+    public func move(#from: Int, to: Int) -> Bool {
         return self.userDefaults.move(from: from, to: to)
     }
 
-    func exists(serial: String) -> Bool {
-        if find(self.serials, serial) {
+    public func exists(serial: String) -> Bool {
+        if find(self.serials, serial) != nil {
             return true
         }
 
         return false
     }
 
-    func exists(authenticator: Authenticator) -> Bool {
+    public func exists(authenticator: Authenticator) -> Bool {
         return exists(authenticator.serial.description)
     }
 
@@ -84,11 +72,8 @@ extension AuthenticatorStorage {
 
     class UserDefaults {
         let key: String
-        var serials: String[] {
-        if let serials = NSUserDefaults.standardUserDefaults().objectForKey(key) as? String[] {
-            return serials
-            }
-            return []
+        var serials: [String] {
+            return NSUserDefaults.standardUserDefaults().objectForKey(key) as? [String] ?? []
         }
 
         init(_ key: String) {
@@ -125,7 +110,7 @@ extension AuthenticatorStorage {
 
         func move(#from: Int, to: Int) -> Bool {
             var serials = self.serials
-            let count = countElements(serials)
+            let count = serials.count
             if from < 0 || from >= count || to < 0 || to >= count {
                 return false
             }
@@ -138,26 +123,24 @@ extension AuthenticatorStorage {
         }
 
         func exists(serial: String) -> Bool {
-            if find(serials, serial) {
+            if find(serials, serial) != nil {
                 return true
             }
 
             return false
         }
 
-        func replaceAndSave(serials: String[]) {
+        func replaceAndSave(serials: [String]) {
             NSUserDefaults.standardUserDefaults().setObject(serials, forKey: key)
         }
     }
 
     class Keychain {
         let service: String
-        var serials: String[] {
-        let k = get_kSecAttrAccount()
-            if let accounts = SSKeychain.accountsForService(service) as? NSDictionary[] {
+        var serials: [String] {
+            if let accounts = SSKeychain.accountsForService(service) as? [NSDictionary] {
                 return accounts.map {
-                    v in
-                    return v[k] as String
+                    return $0[kSecAttrAccount as! String] as! String
                 }
             }
 
