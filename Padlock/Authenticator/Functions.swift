@@ -215,7 +215,7 @@ func current_epoch() -> NSTimeInterval {
     return NSTimeIntervalSince1970 + NSDate().timeIntervalSinceReferenceDate
 }
 
-func mod_exp_hex(value: String, exp: String, mod: String) -> String {
+public func mod_exp_hex(value: String, exp: String, mod: String) -> String {
     var v_bd = bdNew()
     var exp_bd = bdNew()
     var mod_bd = bdNew()
