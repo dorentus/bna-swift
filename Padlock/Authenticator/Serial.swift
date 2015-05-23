@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct Serial: Printable, Equatable {
-    let normalized: String
-    var binary: [UInt8] { return normalized.bytes }
+public struct Serial: Printable, Equatable {
+    public let normalized: String
+    public var binary: [UInt8] { return normalized.bytes }
 
-    var prettified: String {
+    public var prettified: String {
         let suffix = "-".join((normalized as NSString).substringFromIndex(2).scan(".{4}"))
         return "\(region.rawValue)\(suffix)"
     }
-    var region: Region {
+    public var region: Region {
         return Region(rawValue: (normalized as NSString).substringToIndex(2))!
     }
-    var description: String { return prettified }
+    public var description: String { return prettified }
 
-    init?(text: String) {
+    public init?(text: String) {
         if let serial = Serial.format(serial: text) {
             self.normalized = serial
         }
@@ -30,7 +30,7 @@ struct Serial: Printable, Equatable {
         }
     }
 
-    init?(binary: [UInt8]) {
+    public init?(binary: [UInt8]) {
         if let text = String(bytes: binary, encoding: NSASCIIStringEncoding) {
             self.init(text: text)
         }
@@ -39,7 +39,7 @@ struct Serial: Printable, Equatable {
         }
     }
 
-    static func format(#serial: String) -> String? {
+    public static func format(#serial: String) -> String? {
         let text = serial.uppercaseString.stringByReplacingOccurrencesOfString("-", withString: "")
         if Region(rawValue: (text as NSString).substringToIndex(2)) != nil && text.matches("^[A-Z]{2}\\d{12}$") {
             return text
@@ -49,6 +49,6 @@ struct Serial: Printable, Equatable {
     }
 }
 
-func ==(lhs: Serial, rhs: Serial) -> Bool {
+public func ==(lhs: Serial, rhs: Serial) -> Bool {
     return lhs.normalized == rhs.normalized
 }

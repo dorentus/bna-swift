@@ -17,3 +17,7 @@ func color(#progress: CGFloat) -> UIColor {
 
     return UIColor(red: r, green: g, blue: b, alpha: 1.0)
 }
+
+func color(#progress: Double) -> UIColor {
+    return color(progress: CGFloat(progress))
+}

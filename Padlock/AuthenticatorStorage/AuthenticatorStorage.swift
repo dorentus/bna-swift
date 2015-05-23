@@ -9,36 +9,23 @@
 import Foundation
 import SSKeychain
 
-class AuthenticatorStorage {
-    class func sharedStorage() -> AuthenticatorStorage {
-        struct Singleton {
-            static let instance = AuthenticatorStorage()
-        }
-        return Singleton.instance
-    }
+public class AuthenticatorStorage {
+    public static let sharedStorage = AuthenticatorStorage()
 
-    let KEYCHAIN_SERVICE = "bna_authenticators"
-    let USERDEFAULTS_KEY = "bna_authenticator_serials"
+    private let userDefaults: UserDefaults = UserDefaults("bna_authenticator_serials")
+    private let keychain: Keychain = Keychain("bna_authenticators")
 
-    let userDefaults: UserDefaults
-    let keychain: Keychain
-
-    var serials: [String] {
+    public var serials: [String] {
         let a = userDefaults.serials
         let b = keychain.serials
         return a - (a - b) + (b - a)
     }
 
-    init() {
-        self.userDefaults = UserDefaults(USERDEFAULTS_KEY)
-        self.keychain = Keychain(KEYCHAIN_SERVICE)
-    }
-
-    var count: Int {
+    public var count: Int {
         return serials.count
     }
 
-    subscript(index: Int) -> Authenticator? {
+    public subscript(index: Int) -> Authenticator? {
         if index < 0 || index >= count {
             return nil
         }
@@ -51,7 +38,7 @@ class AuthenticatorStorage {
         return nil
     }
 
-    func add(authenticator: Authenticator) -> Bool {
+    public func add(authenticator: Authenticator) -> Bool {
         if exists(authenticator) {
             return false
         }
@@ -59,15 +46,15 @@ class AuthenticatorStorage {
         return self.keychain.add(authenticator) && self.userDefaults.add(authenticator)
     }
 
-    func del(authenticator: Authenticator) -> Bool {
+    public func del(authenticator: Authenticator) -> Bool {
         return self.keychain.del(authenticator) && self.userDefaults.del(authenticator)
     }
 
-    func move(#from: Int, to: Int) -> Bool {
+    public func move(#from: Int, to: Int) -> Bool {
         return self.userDefaults.move(from: from, to: to)
     }
 
-    func exists(serial: String) -> Bool {
+    public func exists(serial: String) -> Bool {
         if find(self.serials, serial) != nil {
             return true
         }
@@ -75,7 +62,7 @@ class AuthenticatorStorage {
         return false
     }
 
-    func exists(authenticator: Authenticator) -> Bool {
+    public func exists(authenticator: Authenticator) -> Bool {
         return exists(authenticator.serial.description)
     }
 

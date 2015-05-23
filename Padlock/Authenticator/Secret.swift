@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Secret: Printable, Equatable {
-    let text: String
-    var binary: [UInt8] { return hex2bin(text) }
-    var description: String { return text }
+public struct Secret: Printable, Equatable {
+    public let text: String
+    public var binary: [UInt8] { return hex2bin(text) }
+    public var description: String { return text }
 
-    init?(text: String) {
+    public init?(text: String) {
         if let secret = Secret.format(secret: text) {
             self.text = secret
         }
@@ -22,11 +22,11 @@ struct Secret: Printable, Equatable {
         }
     }
 
-    init?(binary: [UInt8]) {
+    public init?(binary: [UInt8]) {
         self.init(text: bin2hex(binary))
     }
 
-    static func format(#secret: String) -> String? {
+    public static func format(#secret: String) -> String? {
         let text = secret.lowercaseString
         if text.matches("[0-9a-f]{40}") {
             return text
@@ -36,6 +36,6 @@ struct Secret: Printable, Equatable {
     }
 }
 
-func ==(lhs: Secret, rhs: Secret) -> Bool {
+public func ==(lhs: Secret, rhs: Secret) -> Bool {
     return lhs.text == rhs.text
 }

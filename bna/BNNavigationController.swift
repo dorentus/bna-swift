@@ -15,7 +15,7 @@ class BNNavigationController: UINavigationController {
     var progressView: UIProgressView?
     var timer: CADisplayLink?
 
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addProgressView()
     }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Restorecode: Printable, Equatable {
-    static let RESTORECODE_MAP: [UInt8: UInt8] = [
+public struct Restorecode: Printable, Equatable {
+    private static let RESTORECODE_MAP: [UInt8: UInt8] = [
         0:  48,  1: 49,  2: 50,  3: 51,  4: 52,
         5:  53,  6: 54,  7: 55,  8: 56,  9: 57,
         10: 65, 11: 66, 12: 67, 13: 68, 14: 69,
@@ -18,7 +18,7 @@ struct Restorecode: Printable, Equatable {
         25: 84, 26: 85, 27: 86, 28: 87, 29: 88,
         30: 89, 31: 90, 32: 91
     ]
-    static let RESTORECODE_MAP_INVERSE: [UInt8: UInt8] = {
+    private static let RESTORECODE_MAP_INVERSE: [UInt8: UInt8] = {
         var dict: [UInt8: UInt8] = [:]
         for (key, value) in RESTORECODE_MAP {
             dict[value] = key
@@ -26,13 +26,13 @@ struct Restorecode: Printable, Equatable {
         return dict
     }()
 
-    let text: String
-    var binary: [UInt8] {
+    public let text: String
+    public var binary: [UInt8] {
         return text.bytes.map { i in Restorecode.RESTORECODE_MAP_INVERSE[i]! }
     }
-    var description: String { return text }
+    public var description: String { return text }
 
-    init?(text: String) {
+    public init?(text: String) {
         if let code = Restorecode.format(restorecode: text) {
             self.text = code
         }
@@ -41,7 +41,7 @@ struct Restorecode: Printable, Equatable {
         }
     }
 
-    init?(serial: Serial, secret: Secret) {
+    public init?(serial: Serial, secret: Secret) {
         let bytes = sha1_digest(serial.binary + secret.binary)
         let s = count(bytes) - 10
         let last_10_bytes = [] + bytes[s ..< s+10]
@@ -52,7 +52,7 @@ struct Restorecode: Printable, Equatable {
         self.init(text: "".join(parts))
     }
 
-    init?(serial: String, secret: String) {
+    public init?(serial: String, secret: String) {
         if let serial = Serial(text: serial), secret = Secret(text: secret) {
             self.init(serial: serial, secret: secret)
         }
@@ -61,7 +61,7 @@ struct Restorecode: Printable, Equatable {
         }
     }
 
-    static func format(#restorecode: String) -> String? {
+    public static func format(#restorecode: String) -> String? {
         let text = restorecode.uppercaseString
         if text.matches("[0-9A-Z]{10}") {
             return text
@@ -71,6 +71,6 @@ struct Restorecode: Printable, Equatable {
     }
 }
 
-func ==(lhs: Restorecode, rhs: Restorecode) -> Bool {
+public func ==(lhs: Restorecode, rhs: Restorecode) -> Bool {
     return lhs.text == rhs.text
 }

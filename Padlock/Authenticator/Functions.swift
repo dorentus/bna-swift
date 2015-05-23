@@ -14,11 +14,11 @@ let CLIENT_MODEL = "bn/authenticator"
 let RSA_MOD = "955e4bd989f3917d2f15544a7e0504eb9d7bb66b6f8a2fe470e453c779200e5e3ad2e43a02d06c4adbd8d328f1a426b83658e88bfd949b2af4eaf30054673a1419a250fa4cc1278d12855b5b25818d162c6e6ee2ab4a350d401d78f6ddb99711e72626b48bd8b5b0b7f3acf9ea3c9e0005fee59e19136cdb7c83f2ab8b0a2a99"
 let RSA_KEY = "101"
 
-enum Region: String {
+public enum Region: String {
     case CN = "CN"
     case EU = "EU"
     case US = "US"
-    static let allValues = [CN, EU, US]
+    public static let allValues = [CN, EU, US]
 }
 enum RequestPath: String {
     case Enroll = "/enrollment/enroll.htm"
@@ -115,11 +115,11 @@ func bin2hex(bin: [UInt8]) -> String {
     return "".join(bin.map({ c in String(format: "%02x", c) }))
 }
 
-func sha1_hexdigest(input: String) -> String {
+public func sha1_hexdigest(input: String) -> String {
     return sha1_hexdigest(input.bytes)
 }
 
-func sha1_hexdigest(input_bytes: [UInt8]) -> String {
+public func sha1_hexdigest(input_bytes: [UInt8]) -> String {
     let data = NSData(bytes: input_bytes, length: count(input_bytes))
     return data.SHA1HexDigest()
 }
@@ -139,7 +139,7 @@ func hmac_sha1_hexdigest(input_bytes: [UInt8], key_bytes: [UInt8]) -> String {
     return input_data.HMACSHA1HexDigest(key_data)
 }
 
-func hmac_sha1_hexdigest(input: String, key: String) -> String {
+public func hmac_sha1_hexdigest(input: String, key: String) -> String {
     return hmac_sha1_hexdigest(input.bytes, key.bytes)
 }
 
@@ -170,7 +170,7 @@ func http_request(#region: Region, #path: RequestPath, #body: Array<UInt8>?, com
             completion(nil, nil)    // TODO: report error
         }
         else {
-            var bytes = [UInt8]()
+            var bytes = [UInt8](count: data.length, repeatedValue: 0)
             data.getBytes(&bytes, length: data.length)
             completion(bytes, nil)
         }

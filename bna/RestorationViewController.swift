@@ -11,9 +11,9 @@ import Padlock
 
 class RestorationViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet var error_label: UILabel
-    @IBOutlet var serial_field: UITextField
-    @IBOutlet var restorecode_field: UITextField
+    @IBOutlet weak var error_label: UILabel!
+    @IBOutlet weak var serial_field: UITextField!
+    @IBOutlet weak var restorecode_field: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class RestorationViewController: UIViewController, UITextFieldDelegate {
         validate(textField: sender)
     }
 
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         let valid = validate(textField: textField)
 
         if textField == serial_field {
@@ -70,24 +70,24 @@ class RestorationViewController: UIViewController, UITextFieldDelegate {
         Authenticator.restore(serial: serial_field.text, restorecode: restorecode_field.text) {
             [weak self] authenticator, error in
             if let a = authenticator {
-                AuthenticatorStorage.sharedStorage().add(a)
+                AuthenticatorStorage.sharedStorage.add(a)
                 MMProgressHUD.dismissWithSuccess("success!")
-                let pc = self!.presentingViewController as UINavigationController
+                let pc = self!.presentingViewController as! UINavigationController
                 self!.dismissViewControllerAnimated(true) {
-                    (pc.topViewController as MainViewController).reloadAndScrollToBottom()
+                    (pc.topViewController as! MainViewController).reloadAndScrollToBottom()
                 }
             }
             else {
-                let message = error ? error!.localizedDescription : "unknown error"
+                let message = error?.localizedDescription ?? "unknown error"
                 MMProgressHUD.dismissWithError(message)
             }
         }
     }
 
     func _validateSerialField() -> Bool {
-        if Serial.format(serial: serial_field.text) {
+        if (Serial.format(serial: serial_field.text) != nil) {
 
-            if AuthenticatorStorage.sharedStorage().exists(serial_field.text) {
+            if AuthenticatorStorage.sharedStorage.exists(serial_field.text) {
                 error_label.text = "authenticator already exists"
                 return false
             }
@@ -101,7 +101,7 @@ class RestorationViewController: UIViewController, UITextFieldDelegate {
     }
 
     func _validateRestorecodeField() -> Bool {
-        if Restorecode.format(restorecode: restorecode_field.text) {
+        if (Restorecode.format(restorecode: restorecode_field.text) != nil) {
             error_label.text = ""
             return true
         }

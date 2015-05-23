@@ -13,9 +13,9 @@ import Padlock
 @IBDesignable
 class DetailViewController: UITableViewController {
 
-    @IBOutlet var serialView: UITextView
-    @IBOutlet var tokenView: UITextView
-    @IBOutlet var restorecodeView: UITextView
+    @IBOutlet weak var serialView: UITextView!
+    @IBOutlet weak var tokenView: UITextView!
+    @IBOutlet weak var restorecodeView: UITextView!
 
     var timer: NSTimer?
     var authenticator: Authenticator?
@@ -51,7 +51,7 @@ class DetailViewController: UITableViewController {
 
             let diff = 30 * (1 - progress)
             timer = NSTimer(timeInterval: diff, target: self, selector: Selector("tick"), userInfo: nil, repeats: false)
-            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+            NSRunLoop.currentRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
         }
     }
 }
