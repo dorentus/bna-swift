@@ -8,6 +8,7 @@
 
 import UIKit
 import Padlock
+import MMProgressHUD
 
 class MainViewController: UITableViewController {
     let SegueDetail = "authenticator_detail"

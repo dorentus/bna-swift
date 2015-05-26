@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		326599FD9C119F0A4FF21D9D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10125B19403C7D00ED0557 /* AppDelegate.swift */; };
 		8C10125E19403C7D00ED0557 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10125D19403C7D00ED0557 /* MainViewController.swift */; };
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
@@ -19,10 +20,6 @@
 		8CAA9B3C1B0CD09300796744 /* bigdigits.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9B361B0CD09300796744 /* bigdigits.c */; };
 		8CAA9B3D1B0CD09300796744 /* bigdigits.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B371B0CD09300796744 /* bigdigits.h */; };
 		8CAA9B3F1B0CD09300796744 /* bigdtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B391B0CD09300796744 /* bigdtypes.h */; };
-		8CAA9B451B0CD0CC00796744 /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B411B0CD0CC00796744 /* SSKeychain.h */; };
-		8CAA9B461B0CD0CC00796744 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9B421B0CD0CC00796744 /* SSKeychain.m */; };
-		8CAA9B471B0CD0CC00796744 /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CAA9B431B0CD0CC00796744 /* SSKeychainQuery.h */; };
-		8CAA9B481B0CD0CC00796744 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9B441B0CD0CC00796744 /* SSKeychainQuery.m */; };
 		8CB98223195AA7D5007A7115 /* Padlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB98222195AA7D5007A7115 /* Padlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CB98229195AA7D5007A7115 /* Padlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB9821E195AA7D5007A7115 /* Padlock.framework */; };
 		8CB98230195AA7D5007A7115 /* PadlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9822F195AA7D5007A7115 /* PadlockTests.swift */; };
@@ -34,20 +31,12 @@
 		8CB98253195AA962007A7115 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98247195AA962007A7115 /* Serial.swift */; };
 		8CB98255195AA962007A7115 /* AuthenticatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */; };
 		8CE4C5431B10B2BC00874BFA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4C5421B10B2BC00874BFA /* Functions.swift */; };
-		8CE6E16B195AA2ED00DAEF7C /* MMHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E157195AA2ED00DAEF7C /* MMHud.m */; };
-		8CE6E16C195AA2ED00DAEF7C /* MMLinearProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */; };
-		8CE6E16D195AA2ED00DAEF7C /* MMProgressHUD+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */; };
-		8CE6E16E195AA2ED00DAEF7C /* MMProgressHUD+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15C195AA2ED00DAEF7C /* MMProgressHUD+Class.m */; };
-		8CE6E16F195AA2ED00DAEF7C /* MMProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E15E195AA2ED00DAEF7C /* MMProgressHUD.m */; };
-		8CE6E170195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E161195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m */; };
-		8CE6E171195AA2ED00DAEF7C /* MMProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E163195AA2ED00DAEF7C /* MMProgressHUDViewController.m */; };
-		8CE6E172195AA2ED00DAEF7C /* MMProgressHUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */; };
-		8CE6E173195AA2ED00DAEF7C /* MMRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */; };
-		8CE6E174195AA2ED00DAEF7C /* MMVectorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */; };
 		8CF459DB195B02A6006F5F4E /* BNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */; };
 		8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423A1958251B000275BC /* AuthenticatorCell.swift */; };
 		8CF7423D19582549000275BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423C19582549000275BC /* DetailViewController.swift */; };
 		8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423E19582567000275BC /* RestorationViewController.swift */; };
+		C77D5F3BCB8A94C733D5F734 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58882790754E097BC38AAA5F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D157146BAB4191146D9D39E6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58882790754E097BC38AAA5F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +106,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		58882790754E097BC38AAA5F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E9257AC2A737FAC37968EA6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8C10125619403C7D00ED0557 /* bna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C10125A19403C7D00ED0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C10125B19403C7D00ED0557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,10 +125,6 @@
 		8CAA9B361B0CD09300796744 /* bigdigits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bigdigits.c; sourceTree = "<group>"; };
 		8CAA9B371B0CD09300796744 /* bigdigits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdigits.h; sourceTree = "<group>"; };
 		8CAA9B391B0CD09300796744 /* bigdtypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bigdtypes.h; sourceTree = "<group>"; };
-		8CAA9B411B0CD0CC00796744 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		8CAA9B421B0CD0CC00796744 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		8CAA9B431B0CD0CC00796744 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		8CAA9B441B0CD0CC00796744 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		8CB9821E195AA7D5007A7115 /* Padlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Padlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB98221195AA7D5007A7115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CB98222195AA7D5007A7115 /* Padlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Padlock.h; sourceTree = "<group>"; };
@@ -150,32 +137,11 @@
 		8CB98247195AA962007A7115 /* Serial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
 		8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorStorage.swift; sourceTree = "<group>"; };
 		8CE4C5421B10B2BC00874BFA /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		8CE6E156195AA2ED00DAEF7C /* MMHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHud.h; sourceTree = "<group>"; };
-		8CE6E157195AA2ED00DAEF7C /* MMHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHud.m; sourceTree = "<group>"; };
-		8CE6E158195AA2ED00DAEF7C /* MMLinearProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLinearProgressView.h; sourceTree = "<group>"; };
-		8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLinearProgressView.m; sourceTree = "<group>"; };
-		8CE6E15A195AA2ED00DAEF7C /* MMProgressHUD+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressHUD+Animations.h"; sourceTree = "<group>"; };
-		8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Animations.m"; sourceTree = "<group>"; };
-		8CE6E15C195AA2ED00DAEF7C /* MMProgressHUD+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMProgressHUD+Class.m"; sourceTree = "<group>"; };
-		8CE6E15D195AA2ED00DAEF7C /* MMProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUD.h; sourceTree = "<group>"; };
-		8CE6E15E195AA2ED00DAEF7C /* MMProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUD.m; sourceTree = "<group>"; };
-		8CE6E15F195AA2ED00DAEF7C /* MMProgressHUDCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDCommon.h; sourceTree = "<group>"; };
-		8CE6E160195AA2ED00DAEF7C /* MMProgressHUDOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDOverlayView.h; sourceTree = "<group>"; };
-		8CE6E161195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDOverlayView.m; sourceTree = "<group>"; };
-		8CE6E162195AA2ED00DAEF7C /* MMProgressHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDViewController.h; sourceTree = "<group>"; };
-		8CE6E163195AA2ED00DAEF7C /* MMProgressHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDViewController.m; sourceTree = "<group>"; };
-		8CE6E164195AA2ED00DAEF7C /* MMProgressHUDWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMProgressHUDWindow.h; sourceTree = "<group>"; };
-		8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMProgressHUDWindow.m; sourceTree = "<group>"; };
-		8CE6E166195AA2ED00DAEF7C /* MMProgressView-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMProgressView-Protocol.h"; sourceTree = "<group>"; };
-		8CE6E167195AA2ED00DAEF7C /* MMRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRadialProgressView.h; sourceTree = "<group>"; };
-		8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRadialProgressView.m; sourceTree = "<group>"; };
-		8CE6E169195AA2ED00DAEF7C /* MMVectorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMVectorImage.h; sourceTree = "<group>"; };
-		8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMVectorImage.m; sourceTree = "<group>"; };
 		8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNNavigationController.swift; sourceTree = "<group>"; };
-		8CF742391957FFE6000275BC /* bna-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bna-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CF7423A1958251B000275BC /* AuthenticatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorCell.swift; sourceTree = "<group>"; };
 		8CF7423C19582549000275BC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8CF7423E19582567000275BC /* RestorationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorationViewController.swift; sourceTree = "<group>"; };
+		B16347C85EAE83DBE4BBCF65 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CB98233195AA7D5007A7115 /* Padlock.framework in Frameworks */,
+				D157146BAB4191146D9D39E6 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +166,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAA9B321B0CD06700796744 /* SystemConfiguration.framework in Frameworks */,
+				326599FD9C119F0A4FF21D9D /* (null) in Frameworks */,
+				C77D5F3BCB8A94C733D5F734 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,11 +182,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AD13DBD02422C6122C8CA76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E9257AC2A737FAC37968EA6 /* Pods.debug.xcconfig */,
+				B16347C85EAE83DBE4BBCF65 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		42A1B1FC39414C05ABE03AF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				8CAA9B311B0CD06700796744 /* SystemConfiguration.framework */,
 				8CAA9B2E1B0CCFE500796744 /* libcommonCrypto.dylib */,
+				58882790754E097BC38AAA5F /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,6 +210,7 @@
 				8CB9822C195AA7D5007A7115 /* PadlockTests */,
 				8C10125719403C7D00ED0557 /* Products */,
 				42A1B1FC39414C05ABE03AF4 /* Frameworks */,
+				0AD13DBD02422C6122C8CA76 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,7 +228,6 @@
 		8C10125819403C7D00ED0557 /* bna */ = {
 			isa = PBXGroup;
 			children = (
-				8CF742391957FFE6000275BC /* bna-Bridging-Header.h */,
 				8C10125F19403C7D00ED0557 /* Main.storyboard */,
 				8C10125B19403C7D00ED0557 /* AppDelegate.swift */,
 				8C10125D19403C7D00ED0557 /* MainViewController.swift */,
@@ -258,7 +237,6 @@
 				8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */,
 				8C62F138195ABD6B00E9FA4F /* Util.swift */,
 				8C10126219403C7D00ED0557 /* Images.xcassets */,
-				8CB9826F195AABF2007A7115 /* vendor */,
 				8C10125919403C7D00ED0557 /* Supporting Files */,
 			);
 			path = bna;
@@ -299,18 +277,6 @@
 				8CAA9B391B0CD09300796744 /* bigdtypes.h */,
 			);
 			path = BigDigits;
-			sourceTree = "<group>";
-		};
-		8CAA9B401B0CD0CC00796744 /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				8CAA9B411B0CD0CC00796744 /* SSKeychain.h */,
-				8CAA9B421B0CD0CC00796744 /* SSKeychain.m */,
-				8CAA9B431B0CD0CC00796744 /* SSKeychainQuery.h */,
-				8CAA9B441B0CD0CC00796744 /* SSKeychainQuery.m */,
-			);
-			name = SSKeychain;
-			path = SSKeychain/SSKeychain;
 			sourceTree = "<group>";
 		};
 		8CB9821F195AA7D5007A7115 /* Padlock */ = {
@@ -370,52 +336,14 @@
 			path = AuthenticatorStorage;
 			sourceTree = "<group>";
 		};
-		8CB9826F195AABF2007A7115 /* vendor */ = {
-			isa = PBXGroup;
-			children = (
-				8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */,
-			);
-			name = vendor;
-			sourceTree = "<group>";
-		};
 		8CB98270195AAC05007A7115 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				8CAA9B401B0CD0CC00796744 /* SSKeychain */,
 				8CAA9B331B0CD09300796744 /* BigDigits */,
 			);
 			name = vendor;
 			path = ../vendor;
 			sourceTree = "<group>";
-		};
-		8CE6E155195AA2ED00DAEF7C /* MMProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				8CE6E156195AA2ED00DAEF7C /* MMHud.h */,
-				8CE6E157195AA2ED00DAEF7C /* MMHud.m */,
-				8CE6E158195AA2ED00DAEF7C /* MMLinearProgressView.h */,
-				8CE6E159195AA2ED00DAEF7C /* MMLinearProgressView.m */,
-				8CE6E15A195AA2ED00DAEF7C /* MMProgressHUD+Animations.h */,
-				8CE6E15B195AA2ED00DAEF7C /* MMProgressHUD+Animations.m */,
-				8CE6E15C195AA2ED00DAEF7C /* MMProgressHUD+Class.m */,
-				8CE6E15D195AA2ED00DAEF7C /* MMProgressHUD.h */,
-				8CE6E15E195AA2ED00DAEF7C /* MMProgressHUD.m */,
-				8CE6E15F195AA2ED00DAEF7C /* MMProgressHUDCommon.h */,
-				8CE6E160195AA2ED00DAEF7C /* MMProgressHUDOverlayView.h */,
-				8CE6E161195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m */,
-				8CE6E162195AA2ED00DAEF7C /* MMProgressHUDViewController.h */,
-				8CE6E163195AA2ED00DAEF7C /* MMProgressHUDViewController.m */,
-				8CE6E164195AA2ED00DAEF7C /* MMProgressHUDWindow.h */,
-				8CE6E165195AA2ED00DAEF7C /* MMProgressHUDWindow.m */,
-				8CE6E166195AA2ED00DAEF7C /* MMProgressView-Protocol.h */,
-				8CE6E167195AA2ED00DAEF7C /* MMRadialProgressView.h */,
-				8CE6E168195AA2ED00DAEF7C /* MMRadialProgressView.m */,
-				8CE6E169195AA2ED00DAEF7C /* MMVectorImage.h */,
-				8CE6E16A195AA2ED00DAEF7C /* MMVectorImage.m */,
-			);
-			name = MMProgressHUD;
-			path = vendor/MMProgressHUD/MMProgressHUD;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -425,11 +353,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAA9B3F1B0CD09300796744 /* bigdtypes.h in Headers */,
-				8CAA9B471B0CD0CC00796744 /* SSKeychainQuery.h in Headers */,
 				8CAA9B3B1B0CD09300796744 /* bigd.h in Headers */,
 				8CB98223195AA7D5007A7115 /* Padlock.h in Headers */,
 				8CAA9B3D1B0CD09300796744 /* bigdigits.h in Headers */,
-				8CAA9B451B0CD0CC00796744 /* SSKeychain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,10 +366,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C10127219403C7D00ED0557 /* Build configuration list for PBXNativeTarget "bna" */;
 			buildPhases = (
+				8CF3D06346E121C2C38C222B /* Check Pods Manifest.lock */,
 				8C10125219403C7D00ED0557 /* Sources */,
 				8C10125319403C7D00ED0557 /* Frameworks */,
 				8C10125419403C7D00ED0557 /* Resources */,
 				8C48B706194821C500829493 /* Embed Frameworks */,
+				54C1C0DF0F36DACB81C0F2BA /* Copy Pods Resources */,
+				F2F8965A571E2EA403ED3C46 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,10 +410,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CB9823B195AA7D5007A7115 /* Build configuration list for PBXNativeTarget "Padlock" */;
 			buildPhases = (
+				58C97EFDB2F6C753E3DE68DC /* Check Pods Manifest.lock */,
 				8CB98219195AA7D5007A7115 /* Sources */,
 				8CB9821A195AA7D5007A7115 /* Frameworks */,
 				8CB9821B195AA7D5007A7115 /* Headers */,
 				8CB9821C195AA7D5007A7115 /* Resources */,
+				972BB9E8544DD61EA1A1439D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -592,28 +523,96 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		54C1C0DF0F36DACB81C0F2BA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58C97EFDB2F6C753E3DE68DC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8CF3D06346E121C2C38C222B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		972BB9E8544DD61EA1A1439D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2F8965A571E2EA403ED3C46 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8C10125219403C7D00ED0557 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CE6E16F195AA2ED00DAEF7C /* MMProgressHUD.m in Sources */,
 				8C10125E19403C7D00ED0557 /* MainViewController.swift in Sources */,
-				8CE6E172195AA2ED00DAEF7C /* MMProgressHUDWindow.m in Sources */,
 				8C62F139195ABD6B00E9FA4F /* Util.swift in Sources */,
 				8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */,
-				8CE6E171195AA2ED00DAEF7C /* MMProgressHUDViewController.m in Sources */,
 				8CF7423D19582549000275BC /* DetailViewController.swift in Sources */,
 				8CF459DB195B02A6006F5F4E /* BNNavigationController.swift in Sources */,
-				8CE6E173195AA2ED00DAEF7C /* MMRadialProgressView.m in Sources */,
-				8CE6E16D195AA2ED00DAEF7C /* MMProgressHUD+Animations.m in Sources */,
-				8CE6E16C195AA2ED00DAEF7C /* MMLinearProgressView.m in Sources */,
-				8CE6E16B195AA2ED00DAEF7C /* MMHud.m in Sources */,
-				8CE6E170195AA2ED00DAEF7C /* MMProgressHUDOverlayView.m in Sources */,
 				8CF7423F19582567000275BC /* RestorationViewController.swift in Sources */,
-				8CE6E174195AA2ED00DAEF7C /* MMVectorImage.m in Sources */,
 				8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */,
-				8CE6E16E195AA2ED00DAEF7C /* MMProgressHUD+Class.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +628,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CAA9B481B0CD0CC00796744 /* SSKeychainQuery.m in Sources */,
 				8CB9824B195AA962007A7115 /* Authenticator.swift in Sources */,
 				8CB98252195AA962007A7115 /* Secret.swift in Sources */,
 				8CE4C5431B10B2BC00874BFA /* Functions.swift in Sources */,
@@ -638,7 +636,6 @@
 				8CAA9B3A1B0CD09300796744 /* bigd.c in Sources */,
 				8CB98253195AA962007A7115 /* Serial.swift in Sources */,
 				8CAA9B3C1B0CD09300796744 /* bigdigits.c in Sources */,
-				8CAA9B461B0CD0CC00796744 /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,6 +770,7 @@
 		};
 		8C10127319403C7D00ED0557 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E9257AC2A737FAC37968EA6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -781,7 +779,7 @@
 				INFOPLIST_FILE = bna/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -789,6 +787,7 @@
 		};
 		8C10127419403C7D00ED0557 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B16347C85EAE83DBE4BBCF65 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -797,7 +796,7 @@
 				INFOPLIST_FILE = bna/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "bna/bna-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -840,6 +839,7 @@
 		};
 		8CB98237195AA7D5007A7115 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E9257AC2A737FAC37968EA6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -872,6 +872,7 @@
 		};
 		8CB98238195AA7D5007A7115 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B16347C85EAE83DBE4BBCF65 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
