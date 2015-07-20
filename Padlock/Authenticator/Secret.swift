@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Secret: Printable, Equatable {
+public struct Secret: CustomStringConvertible, Equatable {
     public let text: String
     public var binary: [UInt8] { return hex2bin(text) }
     public var description: String { return text }
@@ -26,7 +26,7 @@ public struct Secret: Printable, Equatable {
         self.init(text: bin2hex(binary))
     }
 
-    public static func format(#secret: String) -> String? {
+    public static func format(secret secret: String) -> String? {
         let text = secret.lowercaseString
         if text.matches("[0-9a-f]{40}") {
             return text

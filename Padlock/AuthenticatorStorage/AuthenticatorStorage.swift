@@ -50,12 +50,12 @@ public class AuthenticatorStorage {
         return self.keychain.del(authenticator) && self.userDefaults.del(authenticator)
     }
 
-    public func move(#from: Int, to: Int) -> Bool {
+    public func move(from from: Int, to: Int) -> Bool {
         return self.userDefaults.move(from: from, to: to)
     }
 
     public func exists(serial: String) -> Bool {
-        if find(self.serials, serial) != nil {
+        if serials.indexOf(serial) != nil {
             return true
         }
 
@@ -98,7 +98,7 @@ extension AuthenticatorStorage {
             let serial = authenticator.serial.description
 
             var serials = self.serials
-            if let index = find(serials, serial) {
+            if let index = serials.indexOf(serial) {
                 serials.removeAtIndex(index)
                 replaceAndSave(serials)
 
@@ -108,7 +108,7 @@ extension AuthenticatorStorage {
             return false
         }
 
-        func move(#from: Int, to: Int) -> Bool {
+        func move(from from: Int, to: Int) -> Bool {
             var serials = self.serials
             let count = serials.count
             if from < 0 || from >= count || to < 0 || to >= count {
@@ -123,7 +123,7 @@ extension AuthenticatorStorage {
         }
 
         func exists(serial: String) -> Bool {
-            if find(serials, serial) != nil {
+            if serials.indexOf(serial) != nil {
                 return true
             }
 
@@ -140,7 +140,7 @@ extension AuthenticatorStorage {
         var serials: [String] {
             if let accounts = SSKeychain.accountsForService(service) as? [NSDictionary] {
                 return accounts.map {
-                    return $0[kSecAttrAccount as! String] as! String
+                    return $0[kSecAttrAccount as String] as! String
                 }
             }
 

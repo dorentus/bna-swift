@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		326599FD9C119F0A4FF21D9D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		8C10125C19403C7D00ED0557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10125B19403C7D00ED0557 /* AppDelegate.swift */; };
 		8C10125E19403C7D00ED0557 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C10125D19403C7D00ED0557 /* MainViewController.swift */; };
 		8C10126119403C7D00ED0557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C10125F19403C7D00ED0557 /* Main.storyboard */; };
@@ -30,6 +29,7 @@
 		8CB98252195AA962007A7115 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98246195AA962007A7115 /* Secret.swift */; };
 		8CB98253195AA962007A7115 /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB98247195AA962007A7115 /* Serial.swift */; };
 		8CB98255195AA962007A7115 /* AuthenticatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */; };
+		8CD91D641B5A886B00743B7B /* libcommonCrypto.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD91D631B5A886B00743B7B /* libcommonCrypto.tbd */; };
 		8CE4C5431B10B2BC00874BFA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4C5421B10B2BC00874BFA /* Functions.swift */; };
 		8CF459DB195B02A6006F5F4E /* BNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */; };
 		8CF7423B1958251B000275BC /* AuthenticatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7423A1958251B000275BC /* AuthenticatorCell.swift */; };
@@ -75,13 +75,6 @@
 			remoteGlobalIDString = 8CB9821D195AA7D5007A7115;
 			remoteInfo = Padlock;
 		};
-		8CB98231195AA7D5007A7115 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8CB9821D195AA7D5007A7115;
-			remoteInfo = Padlock;
-		};
 		8CB98235195AA7D5007A7115 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8C10124E19403C7D00ED0557 /* Project object */;
@@ -101,6 +94,16 @@
 				8CB98234195AA7D5007A7115 /* Padlock.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CFA34081B14BB18005E76DD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -136,11 +139,13 @@
 		8CB98246195AA962007A7115 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		8CB98247195AA962007A7115 /* Serial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
 		8CB9824A195AA962007A7115 /* AuthenticatorStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorStorage.swift; sourceTree = "<group>"; };
+		8CD91D631B5A886B00743B7B /* libcommonCrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = text; name = libcommonCrypto.tbd; path = usr/lib/system/libcommonCrypto.tbd; sourceTree = SDKROOT; };
 		8CE4C5421B10B2BC00874BFA /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		8CF459DA195B02A6006F5F4E /* BNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNNavigationController.swift; sourceTree = "<group>"; };
 		8CF7423A1958251B000275BC /* AuthenticatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatorCell.swift; sourceTree = "<group>"; };
 		8CF7423C19582549000275BC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8CF7423E19582567000275BC /* RestorationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestorationViewController.swift; sourceTree = "<group>"; };
+		8CFA33F91B14BB17005E76DD /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		B16347C85EAE83DBE4BBCF65 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,8 +170,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD91D641B5A886B00743B7B /* libcommonCrypto.tbd in Frameworks */,
 				8CAA9B321B0CD06700796744 /* SystemConfiguration.framework in Frameworks */,
-				326599FD9C119F0A4FF21D9D /* (null) in Frameworks */,
 				C77D5F3BCB8A94C733D5F734 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,9 +199,11 @@
 		42A1B1FC39414C05ABE03AF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CD91D631B5A886B00743B7B /* libcommonCrypto.tbd */,
 				8CAA9B311B0CD06700796744 /* SystemConfiguration.framework */,
 				8CAA9B2E1B0CCFE500796744 /* libcommonCrypto.dylib */,
 				58882790754E097BC38AAA5F /* Pods.framework */,
+				8CFA33F91B14BB17005E76DD /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -373,11 +380,11 @@
 				8C48B706194821C500829493 /* Embed Frameworks */,
 				54C1C0DF0F36DACB81C0F2BA /* Copy Pods Resources */,
 				F2F8965A571E2EA403ED3C46 /* Embed Pods Frameworks */,
+				8CFA34081B14BB18005E76DD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8CB98232195AA7D5007A7115 /* PBXTargetDependency */,
 				8CB98236195AA7D5007A7115 /* PBXTargetDependency */,
 			);
 			name = bna;
@@ -450,11 +457,13 @@
 		8C10124E19403C7D00ED0557 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = rubyist.today;
 				TargetAttributes = {
 					8C10125519403C7D00ED0557 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 8T3AZ32RQQ;
 					};
 					8C10126719403C7D00ED0557 = {
 						CreatedOnToolsVersion = 6.0;
@@ -470,7 +479,7 @@
 				};
 			};
 			buildConfigurationList = 8C10125119403C7D00ED0557 /* Build configuration list for PBXProject "bna" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -675,11 +684,6 @@
 			target = 8CB9821D195AA7D5007A7115 /* Padlock */;
 			targetProxy = 8CB9822A195AA7D5007A7115 /* PBXContainerItemProxy */;
 		};
-		8CB98232195AA7D5007A7115 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8CB9821D195AA7D5007A7115 /* Padlock */;
-			targetProxy = 8CB98231195AA7D5007A7115 /* PBXContainerItemProxy */;
-		};
 		8CB98236195AA7D5007A7115 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8CB9821D195AA7D5007A7115 /* Padlock */;
@@ -717,6 +721,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -775,9 +780,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = bna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -792,9 +800,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				INFOPLIST_FILE = bna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -816,6 +827,7 @@
 				INFOPLIST_FILE = bnaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -832,6 +844,7 @@
 				INFOPLIST_FILE = bnaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -841,6 +854,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E9257AC2A737FAC37968EA6 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CURRENT_PROJECT_VERSION = 1;
@@ -855,12 +869,14 @@
 				);
 				INFOPLIST_FILE = Padlock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = Frameworks;
@@ -874,6 +890,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B16347C85EAE83DBE4BBCF65 /* Pods.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CURRENT_PROJECT_VERSION = 1;
@@ -884,12 +901,14 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = Padlock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = Frameworks;
@@ -916,6 +935,7 @@
 				INFOPLIST_FILE = PadlockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -933,6 +953,7 @@
 				INFOPLIST_FILE = PadlockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "today.rubyist.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

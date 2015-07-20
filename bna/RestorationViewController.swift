@@ -54,7 +54,7 @@ class RestorationViewController: UIViewController, UITextFieldDelegate {
         return valid
     }
 
-    func validate(#textField: UITextField) -> Bool {
+    func validate(textField textField: UITextField) -> Bool {
         if textField == serial_field {
             return _validateSerialField()
         }
@@ -68,7 +68,7 @@ class RestorationViewController: UIViewController, UITextFieldDelegate {
     func submit() {
         MMProgressHUD.show()
 
-        Authenticator.restore(serial: serial_field.text, restorecode: restorecode_field.text) {
+        Authenticator.restore(serial: serial_field.text!, restorecode: restorecode_field.text!) {
             [weak self] authenticator, error in
             if let a = authenticator {
                 AuthenticatorStorage.sharedStorage.add(a)
@@ -86,9 +86,9 @@ class RestorationViewController: UIViewController, UITextFieldDelegate {
     }
 
     func _validateSerialField() -> Bool {
-        if (Serial.format(serial: serial_field.text) != nil) {
+        if (Serial.format(serial: serial_field.text!) != nil) {
 
-            if AuthenticatorStorage.sharedStorage.exists(serial_field.text) {
+            if AuthenticatorStorage.sharedStorage.exists(serial_field.text!) {
                 error_label.text = "authenticator already exists"
                 return false
             }
@@ -102,7 +102,7 @@ class RestorationViewController: UIViewController, UITextFieldDelegate {
     }
 
     func _validateRestorecodeField() -> Bool {
-        if (Restorecode.format(restorecode: restorecode_field.text) != nil) {
+        if (Restorecode.format(restorecode: restorecode_field.text!) != nil) {
             error_label.text = ""
             return true
         }

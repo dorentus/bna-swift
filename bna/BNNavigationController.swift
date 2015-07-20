@@ -24,7 +24,7 @@ class BNNavigationController: UINavigationController {
         let progressView = UIProgressView(progressViewStyle: .Default)
         progressView.trackTintColor = UIColor.clearColor()
         progressView.progress = 0.5
-        progressView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
 
         if let v = self.view {
             v.addSubview(progressView)

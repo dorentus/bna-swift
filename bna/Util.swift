@@ -8,7 +8,7 @@
 
 import UIKit
 
-func color(#progress: CGFloat) -> UIColor {
+func color(progress progress: CGFloat) -> UIColor {
     let p = min(1.0, max(0.0, progress))
 
     let r = p
@@ -18,6 +18,6 @@ func color(#progress: CGFloat) -> UIColor {
     return UIColor(red: r, green: g, blue: b, alpha: 1.0)
 }
 
-func color(#progress: Double) -> UIColor {
+func color(progress progress: Double) -> UIColor {
     return color(progress: CGFloat(progress))
 }

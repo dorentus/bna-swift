@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Restorecode: Printable, Equatable {
+public struct Restorecode: CustomStringConvertible, Equatable {
     private static let RESTORECODE_MAP: [UInt8: UInt8] = [
         0:  48,  1: 49,  2: 50,  3: 51,  4: 52,
         5:  53,  6: 54,  7: 55,  8: 56,  9: 57,
@@ -43,7 +43,7 @@ public struct Restorecode: Printable, Equatable {
 
     public init?(serial: Serial, secret: Secret) {
         let bytes = sha1_digest(serial.binary + secret.binary)
-        let s = count(bytes) - 10
+        let s = bytes.count - 10
         let last_10_bytes = [] + bytes[s ..< s+10]
         let parts = last_10_bytes.map { i -> String in
             let c = Restorecode.RESTORECODE_MAP[i & 0x1f]!
@@ -61,7 +61,7 @@ public struct Restorecode: Printable, Equatable {
         }
     }
 
-    public static func format(#restorecode: String) -> String? {
+    public static func format(restorecode restorecode: String) -> String? {
         let text = restorecode.uppercaseString
         if text.matches("[0-9A-Z]{10}") {
             return text

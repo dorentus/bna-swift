@@ -36,7 +36,7 @@ let REQUEST_HOSTS = [
 func -<T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
     var result = lhs
     for v in rhs {
-        if let index = find(result, v) {
+        if let index = result.indexOf(v) {
             result.removeAtIndex(index)
         }
     }
@@ -65,28 +65,38 @@ extension NSData {
 }
 
 extension String {
-    var length: Int { return count(self) }
+    var length: Int { return self.characters.count }
     var bytes: [UInt8] { return Array(self.utf8) }
 
     func matches(pattern: String) -> Bool {
-        let regex = NSRegularExpression(pattern: pattern, options: .DotMatchesLineSeparators, error: nil)
-        return regex?.numberOfMatchesInString(self, options: nil, range: NSMakeRange(0, self.length)) > 0
+        let regex: NSRegularExpression?
+        do {
+            regex = try NSRegularExpression(pattern: pattern, options: .DotMatchesLineSeparators)
+        } catch _ {
+            regex = nil
+        }
+        return regex?.numberOfMatchesInString(self, options: [], range: NSMakeRange(0, self.length)) > 0
     }
 
     func scan(pattern: String) -> [String] {
-        let regex = NSRegularExpression(pattern: pattern, options: .DotMatchesLineSeparators, error: nil)
-        let matches = regex?.matchesInString(self, options: nil, range: NSMakeRange(0, self.length)) ?? []
+        let regex: NSRegularExpression?
+        do {
+            regex = try NSRegularExpression(pattern: pattern, options: .DotMatchesLineSeparators)
+        } catch _ {
+            regex = nil
+        }
+        let matches = regex?.matchesInString(self, options: [], range: NSMakeRange(0, self.length)) ?? []
 
         return matches.map { m in
-            (self as NSString).substringWithRange((m as! NSTextCheckingResult).rangeAtIndex(0))
+            (self as NSString).substringWithRange((m as NSTextCheckingResult).rangeAtIndex(0))
         }
     }
 
-    func leftFixedString(#length: Int, pad: Character) -> String {
+    func leftFixedString(length length: Int, pad: Character) -> String {
         if self.length <= length {
             let diff = length - self.length
             var suffix = ""
-            for i in 0 ..< diff {
+            for _ in 0 ..< diff {
                 suffix += "\(pad)"
             }
             return self + suffix
@@ -109,7 +119,7 @@ func hex2bin(hex: String) -> [UInt8] {
 }
 
 func bin2hex(bin: [UInt8]) -> String {
-    if count(bin) == 0 {
+    if bin.count == 0 {
         return ""
     }
     return "".join(bin.map({ c in String(format: "%02x", c) }))
@@ -120,7 +130,7 @@ public func sha1_hexdigest(input: String) -> String {
 }
 
 public func sha1_hexdigest(input_bytes: [UInt8]) -> String {
-    let data = NSData(bytes: input_bytes, length: count(input_bytes))
+    let data = NSData(bytes: input_bytes, length: input_bytes.count)
     return data.SHA1HexDigest()
 }
 
@@ -133,35 +143,35 @@ func sha1_digest(input: [UInt8]) -> [UInt8] {
 }
 
 func hmac_sha1_hexdigest(input_bytes: [UInt8], key_bytes: [UInt8]) -> String {
-    let input_data = NSData(bytes: input_bytes, length: count(input_bytes))
-    let key_data = NSData(bytes: key_bytes, length: count(key_bytes))
+    let input_data = NSData(bytes: input_bytes, length: input_bytes.count)
+    let key_data = NSData(bytes: key_bytes, length: key_bytes.count)
 
     return input_data.HMACSHA1HexDigest(key_data)
 }
 
 public func hmac_sha1_hexdigest(input: String, key: String) -> String {
-    return hmac_sha1_hexdigest(input.bytes, key.bytes)
+    return hmac_sha1_hexdigest(input.bytes, key_bytes: key.bytes)
 }
 
 func hmac_sha1_digest(input: [UInt8], key: [UInt8]) -> [UInt8] {
-    return hex2bin(hmac_sha1_hexdigest(input, key))
+    return hex2bin(hmac_sha1_hexdigest(input, key_bytes: key))
 }
 
 func hmac_sha1_digest(input: String, key: String) -> [UInt8] {
-    return hex2bin(hmac_sha1_hexdigest(input, key))
+    return hex2bin(hmac_sha1_hexdigest(input, key: key))
 }
 
-func http_request(#region: Region, #path: RequestPath, #body: Array<UInt8>?, completion: ((Array<UInt8>!, NSError?) -> Void)) {
+func http_request(region region: Region, path: RequestPath, body: Array<UInt8>?, completion: ((Array<UInt8>!, NSError?) -> Void)) {
     let host = REQUEST_HOSTS[region]!
     let url = NSURL(string: "http://\(host)\(path.rawValue)")
     let request = NSMutableURLRequest(URL: url!)
     request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
     if let body = body {
         request.HTTPMethod = "POST"
-        request.HTTPBody = NSData(bytes: body, length: count(body))
+        request.HTTPBody = NSData(bytes: body, length: body.count)
     }
 
-    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.currentQueue()) {
+    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.currentQueue()!) {
         (response, data, error) in
         if let error = error {
             completion(nil, error)
@@ -170,8 +180,8 @@ func http_request(#region: Region, #path: RequestPath, #body: Array<UInt8>?, com
             completion(nil, nil)    // TODO: report error
         }
         else {
-            var bytes = [UInt8](count: data.length, repeatedValue: 0)
-            data.getBytes(&bytes, length: data.length)
+            var bytes = [UInt8](count: data!.length, repeatedValue: 0)
+            data!.getBytes(&bytes, length: data!.length)
             completion(bytes, nil)
         }
     }
@@ -189,9 +199,9 @@ func get_otp(length: Int) -> String {
 }
 
 func decrypt_response(input: [UInt8], key: [UInt8]) -> [UInt8] {
-    let length = count(input)
+    let length = input.count
 
-    assert(length == count(key))
+    assert(length == key.count)
 
     var result: [UInt8] = []
     for index in (0 ..< length) {
@@ -203,7 +213,7 @@ func decrypt_response(input: [UInt8], key: [UInt8]) -> [UInt8] {
 
 func rsa_encrypt(input: [UInt8]) -> [UInt8] {
     let input_hex = bin2hex(input)
-    let result_hex = mod_exp_hex(input_hex, RSA_KEY, RSA_MOD)
+    let result_hex = mod_exp_hex(input_hex, exp: RSA_KEY, mod: RSA_MOD)
     return hex2bin(result_hex)
 }
 
